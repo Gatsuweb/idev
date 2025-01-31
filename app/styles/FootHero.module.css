@@ -1,0 +1,39 @@
+.footerHeroContainer {
+    margin-top: -4%;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    overflow: hidden;
+}
+.footerHeroContainer a{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--colorp);
+    font-family: var(--fontt);
+    margin-right: 5%;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1580px) {
+    .footerHeroContainer {
+        margin-top: -3%;
+
+    }
+   
+  
+}
+@media screen and (max-width: 1025px) {
+    .footerHeroContainer {
+        margin-top: -5%;
+
+    }
+
+}
+@media screen and (max-width: 770px) {
+
+}
+@media screen and (max-width: 480px) {
+    .footerHeroContainer {
+        margin-top: -10%;
+
+    }
+}

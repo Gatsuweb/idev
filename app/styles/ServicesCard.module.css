@@ -1,0 +1,194 @@
+.servicesContainer {
+    display: flex;
+    gap: 100px;
+    height: auto;
+    width: 100%;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    margin-top: 10%;
+}
+
+.servicesContainer h2 {
+    position: sticky;
+    top: 10%;
+    height: 100vh;
+}
+.servicesCardContainer {
+    width: 100%;
+    color: var(--colorp);
+    font-weight: 500;
+    font-size: clamp(1rem, 0.8615rem + 0.6154vw, 1.6rem);
+
+}
+
+
+.servicesCardContainer section {
+    position: sticky;
+    width: 100%;
+     height: 85vh;
+}
+
+.contentCards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    top: 10%; 
+}
+.card span{
+    color: var(--colord);
+}
+
+.cards span{
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--colorp);
+}
+
+.cards:nth-child(2) {
+    background-color: black;
+    color: white;
+    top: 20%;
+    padding: 2%;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+}
+
+.cards:nth-child(3) {
+    background-color: white;
+    font-weight: 700;
+    color: black;
+    top: 27%;
+    padding: 2%;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+}
+.cards:nth-child(4) {
+    background-color: black;
+    color: white;
+    top: 34%;
+    padding: 2%;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+}
+.cards:nth-child(5) {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-weight: 700;
+    top:41%;
+    padding: 2%;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid black;
+}
+
+.canvas {
+    margin-top: 2%;
+}
+
+.canvas p{
+    width: 75%;
+}
+
+.canvas canvas{
+
+    margin-top: -2%;
+}
+
+@media screen and (max-width: 1580px) {
+  
+}
+@media screen and (max-width: 1025px) {
+    .servicesContainer {
+       flex-direction: column;
+        gap: 50px;
+      
+    }
+
+    .servicesCardContainer section {
+         height: 60vh;
+    }
+
+    .servicesCardContainer section:nth-child(1) {
+        height: 5vh;
+   }
+
+    .canvas p{
+        width: 90%;
+    }
+
+    .canvas canvas{
+
+        margin-top: 10%;
+    }
+
+    .card {
+        top: 15%; 
+    }
+
+    .cards:nth-child(2) {
+        
+        top: 22%;
+   
+    }
+    
+    .cards:nth-child(3) {
+  
+        top: 26%;
+
+    }
+    .cards:nth-child(4) {
+  
+        top: 30%;
+
+    }
+    .cards:nth-child(5) {
+
+        top:34%;
+
+    }
+}
+@media screen and (max-width: 770px) {
+
+}
+@media screen and (max-width: 480px) {
+
+    .servicesCardContainer section:nth-child(1) {
+        height: 15vh;
+   }
+    .canvas p{
+        width: 90%;
+    }
+
+    .canvas canvas{
+
+        margin-top: 10%;
+    }
+
+    .card {
+        top: 15%; 
+    }
+
+    .cards:nth-child(2) {
+        
+        top: 28%;
+   
+    }
+    
+    .cards:nth-child(3) {
+  
+        top: 32%;
+
+    }
+    .cards:nth-child(4) {
+  
+        top: 36%;
+
+    }
+    .cards:nth-child(5) {
+
+        top:40%;
+
+    }
+}
