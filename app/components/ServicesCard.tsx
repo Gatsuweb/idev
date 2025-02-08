@@ -20,6 +20,9 @@ const letterVariant = {
     },
   }),
 };
+interface LazyLoadComponentProps {
+  Component: React.ComponentType<any>;
+}
 
 
 const Fusee = dynamic(() => import("./Fusee"), { ssr: false });
@@ -27,7 +30,7 @@ const Loupe = dynamic(() => import("./Loupe"), { ssr: false });
 const Ordi = dynamic(() => import("./Ordi"), { ssr: false });
 const Paint = dynamic(() => import("./Paint"), { ssr: false });
 
-const LazyLoadComponent = ({ Component }) => {
+const LazyLoadComponent = ({ Component }: LazyLoadComponentProps) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 

@@ -28,7 +28,7 @@ export const Projets = () => {
     useEffect(() => {
       const cursor = document.getElementById("customCursor");
     
-      const moveCursor = (e) => {
+      const moveCursor = (e:any) => {
         if (cursor) {
           cursor.style.left = `${e.clientX}px`;
           cursor.style.top = `${e.clientY}px`;
@@ -117,8 +117,9 @@ export const Projets = () => {
             muted 
             playsInline 
             preload="auto"
-            onMouseEnter={() => document.getElementById("customCursor").classList.add(s.active)}
-            onMouseLeave={() => document.getElementById("customCursor").classList.remove(s.active)}
+            onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+            onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+            
           />
           </a>
             <Image
