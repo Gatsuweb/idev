@@ -1,17 +1,37 @@
 "use client"
-
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
 import s from "../styles/ServicesCard.module.css";
+
+const letterVariant = {
+  initial: {
+    y: 50, // Laisse un peu de place pour un effet naturel
+    opacity: 0,
+  },
+  animate: (i:number) => ({
+    y: 0,
+    opacity: 1,
+    rotate: [15, 0], // Ajoute une rotation qui revient à 0
+    transition: {
+      duration: 0.4,
+      delay: i * 0.05,
+      ease: "easeOut",
+    },
+  }),
+};
+
 
 const Fusee = dynamic(() => import("./Fusee"), { ssr: false });
 const Loupe = dynamic(() => import("./Loupe"), { ssr: false });
 const Ordi = dynamic(() => import("./Ordi"), { ssr: false });
 const Paint = dynamic(() => import("./Paint"), { ssr: false });
 
-const LazyLoadComponent = ({ Component}) => {
+const LazyLoadComponent = ({ Component }) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,11 +48,24 @@ const LazyLoadComponent = ({ Component}) => {
 export const ServicesCard = () => {
   return (
     <div className={s.servicesContainer}>
-      <h2>SERVICES</h2>
+      <h2 className={s.animatedTitle}>
+            {"SERVICES".split("").map((letter, i) => (
+              <motion.div
+              key={i}
+              custom={i}
+              variants={letterVariant}
+              initial="initial"
+              whileInView="animate"
+              className={s.letter}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.div>
+            ))}
+          </h2>
       <div className={s.servicesCardContainer}>
         <section className={s.card}>
           <p>
-            Vos projets prennent vie selon votre personnalité, <br /> vos goûts, vos envies additionné à ma patte <span>créative</span> et <span>immersive</span>
+          Je transforme vos idées en expériences web uniques, <br /> alliant votre univers à ma touche <span>créativité</span> et <span>immersive</span>
           </p>
         </section>
 
@@ -64,7 +97,7 @@ export const ServicesCard = () => {
             <span>(Spline)</span>
           </div>
           <div className={s.canvas}>
-            <p>Sur demande, je crée et intègre des éléments 3D. Avec possibilité de les animer et rendre votre site web interactif et immersif</p>
+            <p>Sur demande, je crée et intègre des éléments 3D, avec la possibilité de les animer pour rendre votre site web interactif et immersif.</p>
             <LazyLoadComponent Component={Fusee} />
           </div>
         </section>
@@ -78,7 +111,11 @@ export const ServicesCard = () => {
             <p>Faites-vous référencer comme il se doit et soyez en première ligne des recherches Google</p>
             <LazyLoadComponent Component={Loupe} />
           </div>
+
         </section>
+  
+        <section className={s.cards} style={{height: "85vh"}}></section>
+
       </div>
     </div>
   );

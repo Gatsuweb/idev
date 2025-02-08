@@ -1,0 +1,56 @@
+
+  .btnContainerPricing {
+      position: relative;
+      z-index: 997;
+      display: inline-block; /* Permet de s'adapter à la taille du bouton */
+      width: 200px;
+      height: 65px;
+      border-radius: 50px;
+      cursor: pointer;
+  
+    }
+  
+    .btnContainerPricing a {
+      text-decoration: none;
+    }
+
+    .btnPricing {
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border: 1px solid var(--colord);
+        clip-path: circle(10% at 110% 25%);
+        transition: clip-path 0.7s ease, background-color 0.5s ease;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        gap: 10px;
+    
+    }
+    .btnPricings {
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--colord);
+        background-color: var(--colord);
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        gap: 10px;
+    }
+
+    .btnContainerPricing:hover .btnPricing {
+        clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */
+        background-color: white;
+      }
+  

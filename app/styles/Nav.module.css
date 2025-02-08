@@ -9,8 +9,22 @@
     top: 3%;
     font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
     font-weight: 500;
-    z-index: 9998;
+    z-index: 998;
+    opacity: 0;
+    animation: navanim 2s ease forwards;
+    animation-delay: 6.5s;
 }
+
+@keyframes navanim {
+    to{ opacity: 1;}
+  }
+
+  .ulAnim {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 .navContainer ul{
     display: flex;
@@ -18,6 +32,46 @@
     gap: 50px;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    height: 22px;
+}
+
+.navContainer ul li {
+    height: 22px;
+    color: var(--colord);
+    text-decoration: none;
+    transform: translateY(0);
+
+    &:hover {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+    }
+}
+
+.navContainer a {
+    color:  var(--colord);
+    text-decoration: none;
+}
+
+
+.navContainer ul li:nth-child(1):before {
+    display: flex;
+    content: 'SERVICES';  
+    color: var(--colorp);
+
+}
+
+.navContainer ul li:nth-child(2):before {
+    display: flex;
+    content: 'PROJETS';  
+    color: var(--colorp);
+
+}
+.navContainer ul li:nth-child(3):before {
+    display: flex;
+    content: 'A PROPOS';  
+    color: var(--colorp);
 
 }
 
@@ -34,7 +88,7 @@
 
 .btnContainer {
     position: relative;
-    z-index: 9998;
+    z-index: 998;
     display: inline-block; /* Permet de s'adapter à la taille du bouton */
     width: 200px;
     height: 65px;
@@ -69,7 +123,7 @@
     width: 100%;
     height: 100%;
     border: 1px solid var(--colord);
-background-color: transparent;
+    background-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
@@ -78,6 +132,7 @@ background-color: transparent;
 
   
   }
+
 
 
   .btnContainer:hover .btnTel {
@@ -93,7 +148,7 @@ background-color: transparent;
     display: none;
     position: fixed;
     justify-content: end;
-    z-index: 9998;
+    z-index: 998;
     align-items: center;
     background-color: var(--background);
     color: rgb(0, 0, 0);
@@ -132,7 +187,7 @@ background-color: transparent;
     border-radius: 50%;
     right: 12%;
     transition: all 1s ease;
-    z-index: 9998;
+    z-index: 998;
 }
 
 .mobileBurger.open {
@@ -190,27 +245,77 @@ transition: all 0.4s ease;
     display: none;
 }
 
+
 .navContainer.open{
+    opacity: 1;
     display: flex;
     position: fixed;
+    top: 0;
     right: -5%;
     height: 100vh;
-    width: 50%;
+    z-index: 998;
+    width: 70%;
     flex-direction: column;
     justify-content: center;
     background-color: black;
     color: white;
-    animation: navmobile 2s ease;
+    animation: navmobile 0.6s ease forwards;
+    border-radius: 50% 0 0 50%;
+
 }
 
 
 .navContainer.open ul{
+    height: 20vh;
     flex-direction: column;
 
 }
+.navContainer.open ul a{
+    height: 10vh;
+    color: white;
+    flex-direction: column;
+
+}
+
+.navContainer.open ul li::before{
+    display: none;
+
+}
+
+.navFirst {
+    display: none;
+}
+
+.ulAnim.open {
+    flex-direction: column;
+}
+
+.btnTels.open {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--colord);
+    background-color: var(--colord);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    gap: 10px;
+  
+  }
 @keyframes navmobile {
-    to {
+    0%{
+        transform: translateX(100%);
+        border-radius: 100% 100%;
+    }
+ 
+    100% {
         transform: translateX(0);
+        border-radius: 0 0 0 0;
     }
 }
 
@@ -245,8 +350,6 @@ transition: all 0.4s ease;
     .mobileMenu {
         width: 14.5%;
         padding: 2.5% 1%;
-    
-    
     }
      .mobileBurger {
         width: clamp(3.2rem, 0.8727rem + 4.8485vw, 3.6rem);
@@ -263,13 +366,18 @@ transition: all 0.4s ease;
 
 @media screen and (max-width: 480px) {
     .navContainer.open{
-        width: 70%;
+        width: 90%;
+    }
+
+    .mobileMenu {
+        width: 14.5%;
+        padding: 2.5% 1%;
     }
     
     .mobileMenu {
    
         padding: 4% 2%;
-        width: 24%;
+        width: 22%;
 
     }
 
@@ -282,7 +390,7 @@ transition: all 0.4s ease;
 
     .mobileBurger {
         width: clamp(2.4rem, 0.6rem + 8vw, 3rem);
-        right: 15%;
+        right: 16.5%;
 
     }
 

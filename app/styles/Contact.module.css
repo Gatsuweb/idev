@@ -2,7 +2,7 @@
     margin-top: 10%;
     padding-left: var(--spacing);
     padding-right: var(--spacing);
-    gap: 5%;
+
 }
 
 .contactContent {
@@ -10,7 +10,7 @@
     justify-content: center;
     border: 1px solid black;
     border-radius: 20px;
-    gap: 5%;
+    gap: 0%;
 }
 
 .contactTel {
@@ -20,20 +20,52 @@
     padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+
     gap: 25px;
     background-color: black;
     color: white;
+}
+.contactTelHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
     align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+.contactTelHeader p {
+    font-size: clamp(1.2rem, 1.0154rem + 0.8205vw, 2rem);}
+
+.contactTelHeader h5{
+    font-weight: 700;
+    font-size: clamp(1.5rem, 0.9231rem + 2.5641vw, 4rem);
+    padding: 0 18%;
+    
+}
+
+.phrase{
+ 
+    display: inline-block;
+
 }
 
 .formContact {
     width: 100%;
     padding: 2%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.formFlex {
+    display: flex;
+    justify-content: center;
 }
 
 
 .formContact h2 {
+    align-items: end;
    text-align: end;
 }
 
@@ -41,7 +73,7 @@
     margin-top: 2%;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
     font-family: var(--font);
 }
 
@@ -68,19 +100,51 @@
     font-family: var(--font);
     display: flex;
     justify-content: space-between;
+    height: 20px;
+    overflow: hidden;
+
 }
 
 .reso a {
-    color: white;
+ 
+    height: 20px;
+    color: var(--colorp);
     text-decoration: none;
+    transform: translateY(0);
+
+    &:hover {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+    }
+}
+
+.resoLink a:nth-child(1):before {
+    display: flex;
+    content: 'Instagram';  
+}
+
+.resoLink a:nth-child(2):before {
+    display: flex;
+    content: 'Linkedin';  
+}
+
+.mailLink:before {
+    display: flex;
+    content: 'Mail';  
+}
+
+.resoLink {
+    display: flex;
+    gap: 25px;
+    
 }
 
 .btnContainerCall {
     position: relative;
-    z-index: 9998;
+    z-index: 998;
     display: inline-block; /* Permet de s'adapter à la taille du bouton */
-    width: 200px;
-    height: 65px;
+    width: 275px;
+    height: 100px;
     border-radius: 50px;
     cursor: pointer;
 
@@ -91,7 +155,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    font-size: clamp(1rem, 0.9308rem + 0.3077vw, 1.3rem);
     width: 100%;
     height: 100%;
     background-color: var(--background);
@@ -101,7 +165,7 @@
     position: relative;
     z-index: 1;
     cursor: pointer;
-    gap: 10px;
+    gap: 20px;
   
   }
   .btnTelsCall {
@@ -109,7 +173,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    font-size: clamp(1rem, 0.9308rem + 0.3077vw, 1.3rem);
     width: 100%;
     height: 100%;
     border: 1px solid var(--colord);
@@ -118,7 +182,7 @@
     top: 0;
     left: 0;
     cursor: pointer;
-    gap: 10px;
+    gap: 20px;
 
   
   }
@@ -131,7 +195,7 @@
 
     .btnContainerSend {
         position: relative;
-        z-index: 9998;
+        z-index: 998;
         display: inline-block; /* Permet de s'adapter à la taille du bouton */
         width: 200px;
         height: 65px;
@@ -183,16 +247,45 @@
           background-color: var(--colord);
         }
 
+    .letter {
+        display: inline-block;
+    }
+
 
 @media screen and (max-width: 1580px) {
-  
+    .contactTelHeader h5{
+        padding: 0 16%;
+        
+    }
 }
 @media screen and (max-width: 1025px) {
     .formContact form {
         width: 100%;
     }
+    .btnContainerCall {
+        width: 250px;
+        height: 100px;
+    
+      }
+      .contactTel { 
+        gap: 25px;
+
+    }
+    .contactTelHeader {
+        gap: 25px;
+    }
+
+    .contactTelHeader h5{
+        padding: 0 10%;
+        
+    }
+
+    
 }
 @media screen and (max-width: 820px) {
+    .contactContainer {
+        margin-top: 15%;
+    }
     .contactContent {
         display: flex;
         flex-direction: column-reverse;
@@ -209,9 +302,26 @@
     }
 }
 @media screen and (max-width: 480px) {
+    .contactContainer {
+        margin-top: 20%;
+    }
     .formContact input, .formContact select {
         height: 25px;
     }
+    .btnContainerCall {
+        width: 200px;
+        height: 75px;
+    
+      }
+      
+    .btnContainerSend {
+
+        width: 125px;
+        height: 45px;
+        border-radius: 50px;
+        cursor: pointer;
+    
+      }
     
     .formContact textarea {
         height: 100px;
@@ -219,4 +329,5 @@
     .formContact form {
         width: 75%;
     }
+
 }

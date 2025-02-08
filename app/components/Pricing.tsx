@@ -1,4 +1,5 @@
 import s from '../styles/Pricing.module.css'
+import { BtnContact } from './BtnContact'
 
 export const Pricing = () => {
 
@@ -6,61 +7,114 @@ export const Pricing = () => {
     <div className={s.pricingContainer}>
       <div className={s.cardsPricing}>
         <div className={s.headerPricing}>
-          <h3>BASIQUE</h3>
-          <h4>Titre : Site Vitrine Basique – Simple, <span>Efficace</span>, Accessible</h4>
+          <h3>ECO</h3>
+          <h4>Site Vitrine Eco – Simple, <span>Efficace</span>, Accessible</h4>
         </div>
         <ul>
-          <li>Convient parfaitement aux petites entreprises ou projets personnels.</li>
-          <li>Jusqu'à 3 pages  ( ex:  Accueil, À propos, Contact).</li>
-          <li>Design professionnel et responsive : Votre site s’adapte à tous les écrans.</li>
-          <li>Inclus : 1 modification gratuite pour affiner les détails de la maquette.</li>
-          <li>Formulaire de contact pour vous connecter facilement avec vos clients.</li>
+        <div className={s.boxList}>
+        <p>•</p>
+          <li>Convient parfaitement aux <span>petites entreprises</span> ou projets personnels.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+          <li><span>Jusqu'à 3 pages</span> ( ex:  Accueil, À propos, Contact).</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Design au choix parmi un <span>catalogue de templates</span> : Votre site est responsif et s&apos;adapte à tous les écrans.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Inclus : <span>1 modification</span> gratuite pour affiner les détails de la maquette.</li>
+            </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Un <span>formulaire de contact simple</span> et efficace pour recevoir des demandes directement depuis votre site.</li>
+          </div>
         </ul>
-        <p>Pourquoi choisir cette offre ?</p>
-        <p>Un site clair et professionnel pour poser les bases de votre présence en ligne. Idéal pour débuter rapidement.</p>
-        <div>
-          <button>CONTACTEZ-MOI</button>
-          <p>A partir de 500€</p>
+        <p className={s.pourquoi}>Pourquoi choisir cette offre ?</p>
+        <p className={s.descPrix}>Un <span>site clair et professionnel</span> pour poser les bases de votre présence en ligne. Idéal pour débuter <span>rapidement</span>.</p>
+        <div className={s.footerPricing}>
+          <BtnContact />
+          <p >A partir de: <span>600€</span></p>
+        <p className={s.prixMaintenance}>Payez en 3 fois</p>
+        <p className={s.prixMaintenance}>Maintenance et support 45€ / mois </p>
         </div>
       </div>
 
       <div className={s.cardsPricing}>
         <div className={s.headerPricing}>
           <h3>STANDARD</h3>
-          <h4>Titre : Site Vitrine Standard – <span>Moderne et Personnalisé</span></h4>
+          <h4>Site Vitrine Standard – <span>Moderne et Personnalisé</span></h4>
         </div>
         <ul>
-          <li>Idéal pour les entreprises souhaitant se démarquer en ligne.</li>
-          <li>Comprend 4 à 6 pages ( ex: Accueil, Services, Galerie, Témoignages, Contact).</li>
-          <li>Design unique et animations modernes pour capter l’attention de vos visiteurs.</li>
-          <li>2 modifications gratuites pour ajuster selon vos besoins.</li>
-          <li>Inclus :  SEO de base ( balises meta, structure)</li>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Idéal pour les <span>entreprises souhaitant se démarquer en ligne.</span></li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>Comprend 4 à 6 pages</span> ( ex: Accueil, Services, Galerie, Témoignages, Contact).</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>Design unique</span> et <span>animations modernes</span> pour capter l&apos;attention de vos visiteurs.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>2 modifications gratuites</span> pour ajuster selon vos besoins.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Inclus :  <span>SEO de base</span> ( balises meta, structure)</li>
+          </div>
         </ul>
-        <p>Pourquoi choisir cette offre ?</p>
-        <p>Pour une image professionnelle et un site qui met pleinement en avant vos compétences et services.</p>
-        <div>
-          <button>CONTACTEZ-MOI</button>
-          <p>A partir de 1200€</p>
+        <p className={s.pourquoi}>Pourquoi choisir cette offre ?</p>
+        <p className={s.descPrix}>Pour une <span>image professionnelle</span> et un site qui met pleinement en avant vos compétences et services.</p>
+        <div className={s.footerPricing}>
+          <BtnContact />
+          <p>A partir de: <span>1500€</span></p>
+          <p className={s.prixMaintenance}>Payez en 3 fois</p>
+
+          <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 1mois offert </p>
         </div>
       </div>
 
       <div className={s.cardsPricing}>
         <div className={s.headerPricing}>
           <h3>PREMIUM</h3>
-          <h4>Titre : Site Vitrine Premium – <span>Sur-mesure</span></h4>
+          <h4>Site Vitrine Premium – <span>Sur-mesure</span></h4>
         </div>
         <ul>
-          <li>Pensé pour les entreprises ayant besoin d’un site complet et 100% personnalisé.</li>
-          <li>7 pages ou plus avec une structure unique adaptée à votre activité.</li>
-          <li>Animations interactives et design haut de gamme pour une expérience utilisateur mémorable.</li>
-          <li>Inclus : 3 modifications gratuites pour perfectionner chaque détail.</li>
-          <li>SEO optimisé pour une meilleure visibilité (balises meta, structure, vitesse, performance mobile).</li>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Pensé pour les entreprises ayant besoin d&apos;un <span>site complet et 100% personnalisé.</span></li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>7 pages ou plus</span> avec une structure unique adaptée à votre activité.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>Animations interactives</span> et <span>design haut de gamme</span> pour une <span>expérience unique</span> et engageante pour vos visiteurs</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li>Inclus : <span>3 modifications</span> gratuites pour perfectionner chaque détail.</li>
+          </div>
+          <div className={s.boxList}>
+            <p>•</p>
+            <li><span>SEO optimisé</span> pour une meilleure visibilité (balises meta, structure, vitesse, performance mobile).</li>
+          </div>
         </ul>
-        <p>Pourquoi choisir cette offre ?</p>
-        <p>Pour les entreprises qui veulent se différencier avec un site élégant, performant, et parfaitement adapté à leurs besoins.</p>
-        <div>
-          <button>CONTACTEZ-MOI</button>
-          <p>A partir de 1800€</p>
+        <p className={s.pourquoi}>Pourquoi choisir cette offre ?</p>
+        <p className={s.descPrix}>Pour les entreprises qui <span>veulent se différencier</span> avec un site <span>élégant, performant</span>, et parfaitement adapté à leurs besoins.</p>
+        <div className={s.footerPricing}>
+          <BtnContact />
+          <p>A partir de: <span>2500€</span></p>
+          <p className={s.prixMaintenance}>Payez en 4 fois</p>
+
+        <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 3mois offerts</p>
         </div>
       </div>
     </div>

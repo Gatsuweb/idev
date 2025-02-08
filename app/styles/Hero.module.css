@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+.heroContainer a {
+    text-decoration: none;
+}
+
 .heroGauche, .heroDroit {
     display: flex;
     flex-direction: column;
@@ -17,6 +21,7 @@
 
 .heroGauche {
     gap: 50px;
+    overflow: hidden;
 }
 
 .heroDroit {
@@ -32,20 +37,38 @@
    font-size: clamp(1rem, 0.8615rem + 0.6154vw, 1.6rem);
     opacity: 1;
     width: 40%;
+    
+    
+}
+
+/* .pAnimHero {
+    overflow: hidden;
+
+} */
+
+.pAnimHero p {
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
 }
 
 .heroDroit p {
     color: var(--colorp);
     font-weight: 500;
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
 }
 
-.heroDroit span {
+.heroDroit p span {
     line-height: 1;
     font-size: clamp(3rem, 2.3077rem + 3.0769vw, 6rem);
     font-family: var(--font);
+    color: black;
     font-weight: 900;
     letter-spacing: -4px;
 }
+
 
 .arrowScroll{
     opacity: 0.5;
@@ -56,11 +79,26 @@
     color: var(--colord);
   
 }
-.nametitle{
 
+.heroTitle {
+    overflow: hidden;
+}
+
+.heroTitle h1 {
+    padding-top: 1.5%;
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
+
+}
+
+.nametitle{
     display: flex;
     gap: 25px;
     align-items: center;
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
 }
 
 #name {
@@ -70,6 +108,10 @@
     align-content: flex-start;
     font-weight: 100;
     font-size: clamp(1rem, 0.7692rem + 1.0256vw, 2rem);
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
+
 }
 
 .btnContactContainer {
@@ -93,12 +135,14 @@
     background-color: var(--colort);
     border: 1px solid var(--colord);
     clip-path: circle(10% at 110% 75%);
-    transition: clip-path 0.7s ease, background-color 0.5s ease;
+    transition: clip-path 0.7s cubic-bezier(0.52, 0, 0, 0.63), background-color 0.5s cubic-bezier(0.52, 0, 0, 0.63);
     position: relative;
     z-index: 1;
     cursor: pointer;
     gap: 5px;
     padding: 2% 2%;
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
 
   }
   .btnContacts {
@@ -116,6 +160,9 @@
     left: 0;
     cursor: pointer;
     gap: 5px;
+    animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+    animation-delay: 6s;
+
   }
 
 
@@ -125,21 +172,36 @@
     }
 
     .arrowHero {
-        transition: all 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.52, 0, 0, 0.63);
     }
 
     .btnContactContainer:hover .arrowHero {
        transform: rotate(45deg);     
-      }
+     }
 
-      .btnContactContainerM {
+    .btnContactContainerM {
         position: relative;
         display: none; /* Permet de s'adapter à la taille du bouton */
         width: 200px;
         height: 65px;
         border-radius: 50px;
         cursor: pointer;
-      }
+    }
+    .afaf {
+        animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63);
+        animation-delay: 6s;
+        object-fit: cover;
+        height: auto;
+        width: 250px;
+        aspect-ratio: auto;
+
+
+    }
+
+    @keyframes apear {
+        from { transform: translateY(250%); opacity: 0.5; transform: rotate(5deg);}
+        to { transform: translateY(0); opacity: 1; transform: rotate(0);}
+    }
 
 
 @media screen and (max-width: 1580px) {
@@ -250,6 +312,7 @@
 }
 @media screen and (max-width: 480px) {
     .heroContainer {
+        margin-top: 0%;
         height: 100dvh;
     }
 
@@ -276,5 +339,8 @@
         width: 210px;
         height: 65px;
         font-size:2rem; /* Permet de s'adapter à la taille du bouton */
+      }
+      .pAnimHero:last-child {
+        margin-top: 5%;
       }
 }

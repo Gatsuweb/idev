@@ -12,27 +12,45 @@ export const Hero = () => {
             <span id={s.name}>DURAN IVAN</span>
           </div>
         </div>
-        <p>J&apos;aide les entreprises à faire grandir leur image de marque en leur proposant un site web <span>sur-mesure</span> et <span>innovant</span></p>
+        <div className={s.pAnimHero}>
+          <p>J&apos;aide les entreprises à faire grandir leur image de marque en leur proposant un site web <span>sur-mesure</span> et <span>innovant</span></p>
+        </div>
         <div className={s.btnContactContainer}>
+        <a href="#contact">
                 <button className={s.btnContact}>CONTACT <Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
+                </a>
+                <a href="#contact">
                 <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-            
+                </a>
             </div>
       </div>
 
       <div className={s.heroDroit}>
-        <p>(Scroll vers le bas <Image src="arrow.svg" alt="icone flèche" width={12} height={12} className={s.arrowScroll}/>)</p>
-        <Image src="/afouIdev.svg" alt="photo auteur" height={300} width={230} className={s.afaf}/>
+        <div className={s.pAnimHero}>
+          <p>(Scrollez vers le bas <Image src="arrow.svg" alt="icone flèche" width={12} height={12} className={s.arrowScroll}/>)</p>
+        </div>
+        <div className={s.pAnimHero}>
+          <Image src="/afou2bis.jpg" alt="photo auteur" height={3000} width={2000} className={s.afaf}/>
+          </div>
         <div className={s.dispo}>
-          <p>Disponible en</p>
-          <span>JANVIER</span>
+          <div className={s.pAnimHero}>
+            <p>Disponible en</p>
+          </div>
+          <div className={s.pAnimHero}>
+
+            <p><span>FÉVRIER</span></p>
+            </div>
+
         </div>
       </div>
       <div className={s.btnContactContainerM}>
-                <button className={s.btnContact}>CONTACT <Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-                <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-            
-            </div>
+          <a href="#contact">
+          <button className={s.btnContact}>CONTACT <Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
+          </a>
+          <a href="#contact">
+          <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
+          </a>
+      </div>
     </div>
   )
 }

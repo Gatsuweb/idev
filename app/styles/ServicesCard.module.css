@@ -5,7 +5,8 @@
     width: 100%;
     padding-left: var(--spacing);
     padding-right: var(--spacing);
-    margin-top: 10%;
+
+   
 }
 
 .servicesContainer h2 {
@@ -20,6 +21,15 @@
     font-size: clamp(1rem, 0.8615rem + 0.6154vw, 1.6rem);
 
 }
+
+.animatedTitle {
+    width: 50%;
+
+}
+.letter {
+    display: inline-block;
+}
+
 
 
 .servicesCardContainer section {
@@ -103,6 +113,7 @@
     .servicesContainer {
        flex-direction: column;
         gap: 50px;
+        margin-top: 15%;
       
     }
 
@@ -150,9 +161,16 @@
     }
 }
 @media screen and (max-width: 770px) {
-
+    .animatedTitle {
+        width: 100%;
+    
+    }
+    
 }
 @media screen and (max-width: 480px) {
+    .servicesContainer {
+         margin-top: 20%;
+     }
 
     .servicesCardContainer section:nth-child(1) {
         height: 15vh;
