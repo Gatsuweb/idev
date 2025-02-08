@@ -21,7 +21,7 @@ const letterVariant = {
   }),
 };
 interface LazyLoadComponentProps {
-  Component: React.ComponentType<any>;
+  Component: React.ComponentType<object>;
 }
 
 

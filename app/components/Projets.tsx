@@ -28,7 +28,7 @@ export const Projets = () => {
     useEffect(() => {
       const cursor = document.getElementById("customCursor");
     
-      const moveCursor = (e:any) => {
+      const moveCursor = (e: MouseEvent) => {
         if (cursor) {
           cursor.style.left = `${e.clientX}px`;
           cursor.style.top = `${e.clientY}px`;

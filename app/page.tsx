@@ -1,6 +1,6 @@
 "use client"
 import Lenis from 'lenis'
-import { useEffect, useRef} from 'react'
+import { useEffect} from 'react'
 import { motion } from 'motion/react';
 import Image from "next/image";
 import { Nav } from "./components/Nav";
