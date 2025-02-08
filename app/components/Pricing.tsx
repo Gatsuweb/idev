@@ -17,7 +17,7 @@ export const Pricing = () => {
           </div>
           <div className={s.boxList}>
             <p>•</p>
-          <li><span>Jusqu'à 3 pages</span> ( ex:  Accueil, À propos, Contact).</li>
+          <li><span>Jusqu&apos;à 3 pages</span> ( ex:  Accueil, À propos, Contact).</li>
           </div>
           <div className={s.boxList}>
             <p>•</p>

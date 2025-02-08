@@ -10,13 +10,13 @@ import s from "../styles/Contact.module.css"
 
 const letterVariant = {
   initial: {
-    y: 50, // Laisse un peu de place pour un effet naturel
+    y: 50, 
     opacity: 0,
   },
   animate: (i:number) => ({
     y: 0,
     opacity: 1,
-    rotate: [15, 0], // Ajoute une rotation qui revient à 0
+    rotate: [15, 0],
     transition: {
       duration: 0.4,
       delay: i * 0.05,
@@ -30,29 +30,12 @@ export const Contact = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    formule: "Premium",
-    budget: "",
-    message: "",
-  });
-
-  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+  const [ , setRootElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     setRootElement(document.getElementById("__next"));
-    setMessageSent(false); // Next.js monte son app dans `__next`
+    setMessageSent(false);
   }, []);
-
-  const handleChange = (e:any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    console.log("Formulaire soumis :", formData);
-  };
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,7 +50,7 @@ export const Contact = () => {
       );
       console.log("SUCCESS!", result.text);
       setMessageSent(true);
-      formRef.current.reset(); // Réinitialise le formulaire après l'envoi
+      formRef.current.reset();
     } catch (error) {
       console.error("FAILED...", error);
       setMessageSent(false);
@@ -83,7 +66,7 @@ export const Contact = () => {
         <div className={s.contactTel}>
           <div></div>
         <div className={s.contactTelHeader}>
-          <p>Besoin d'aide ?</p>
+          <p>Besoin d&apos;aide ?</p>
           <div className={s.btnContainerCall}>
             <button onClick={() => setIsOpen(true)} className={s.btnTelCall}>
               <Image src="iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER

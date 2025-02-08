@@ -74,7 +74,7 @@ export const About = () => {
             ))}
           </h2>
           <p>
-          Je suis <span>Ivan Duran</span>, développeur web et <span>créatif</span> dans l'âme. <br />
+          Je suis <span>Ivan Duran</span>, développeur web et <span>créatif</span> dans l&apos;âme. <br />
           Mon objectif est <span>d&apos;aider les entreprises</span> à donner vie à leur présence en ligne en créant des <span>sites vitrine modernes</span>, fonctionnels et adaptés à leurs besoins.</p>
           <p>Avec une approche centrée sur <span>l&apos;innovation</span> et le design, je mets mon expertise à votre service pour vous offrir un produit final qui saura répondre à vos besoins et <span>renforcer votre image.</span></p>
         </div>

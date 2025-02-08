@@ -1,4 +1,3 @@
-import Image from "next/image"
 import s from "../styles/Btn.module.css"
 
 export const BtnContact = () => {

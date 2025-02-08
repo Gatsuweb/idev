@@ -51,7 +51,7 @@ export const Footer = () => {
             </div>
         </div>
         <div className={s.footerIdev}>
-            <h3>I'DÉVELOPPEMENT</h3>
+            <h3>I&apos;DÉVELOPPEMENT</h3>
             <a href="#hero" className={s.arrowFooter}><Image alt="flèche retour haut de page" src="arrowfooter.svg" height={80} width={80} className={s.imgArrowFooter}/></a>
         </div>
     </footer>
