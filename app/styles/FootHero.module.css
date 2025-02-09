@@ -71,7 +71,7 @@
 }
 @media screen and (max-width: 480px) {
     .footerHeroContainer {
-        margin-top: -10%;
+    margin-top: 15%;
 
     }
 }

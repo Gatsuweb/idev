@@ -257,7 +257,7 @@ transition: all 0.4s ease;
     position: fixed;
     top: 0;
     right: -5%;
-    height: 100vh;
+    height: 100lvh;
     z-index: 998;
     width: 70%;
     flex-direction: column;
@@ -376,16 +376,11 @@ transition: all 0.4s ease;
     .navContainer.open{
         width: 90%;
     }
-
-    .mobileMenu {
-        width: 14.5%;
-        padding: 2.5% 1%;
-    }
     
     .mobileMenu {
    
         padding: 4% 2%;
-        width: 22%;
+        width: 24%;
 
     }
 
@@ -398,7 +393,7 @@ transition: all 0.4s ease;
 
     .mobileBurger {
         width: clamp(2.4rem, 0.6rem + 8vw, 3rem);
-        right: 16.5%;
+        right: 17.5%;
 
     }
 
