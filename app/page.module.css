@@ -1,7 +1,7 @@
 .bgImg{
   position: fixed;
   top: 0;
-  height: 100lvh;
+  height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   z-index: 9999;
@@ -13,5 +13,11 @@
   object-fit: cover;
   height: 100vh;
   width: 100vw;
+}
+
+@media screen and (max-width: 480px) {
+  .bgImg {
+    height: 100dvh;
+  }
 }
 
