@@ -46,6 +46,7 @@ nav {
 
 button {
   background-color: var(--colord);
+  color: black;
   font-family: var(--fontt);
   font-weight: 600;
 }
