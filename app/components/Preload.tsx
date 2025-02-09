@@ -12,7 +12,7 @@ export const Preload = () => {
      </div>
 
     <div className={s.preloadContainers}>
-        <Image src="/afou2bis.jpg" alt="" height={3000} width={2000} className={s.imgPreload}/>
+        <Image src="/afou2bis.webp" alt="" height={3000} width={2000} className={s.imgPreload}/>
  </div>
  </>
   )}

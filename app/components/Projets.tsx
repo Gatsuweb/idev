@@ -70,7 +70,7 @@ export const Projets = () => {
         },
         {
             link:"https://gengo-weld.vercel.app/",
-            name: "GENGO",
+            name: "GENGO(DESKTOP)",
             desc: "Développement de Gengo, une plateforme ludique et gamifiée pour apprendre le français. Une interface interactive et engageante, combinant jeux, défis et récompenses, motive les utilisateurs à progresser tout en s’amusant. Une approche moderne et immersive pour faciliter l’apprentissage à tous les niveaux",
             image: "GENGO.webm"
         },

@@ -28,7 +28,7 @@ export const About = () => {
     {
       titre: "Valkyrink",
       star: 5,
-      desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
+      desc: "Je recommande IDev, pour son professionnalisme, sa créativité et sa rigueur. Je lui ai fait confiance à 100% pour le design et la structure de mon projet, il a cerné mes goûts et mes attentes. Foncez les yeux fermés !"
     },
     {
       titre: "Mael Morlevat",
@@ -79,13 +79,13 @@ export const About = () => {
           <p>Avec une approche centrée sur <span>l&apos;innovation</span> et le design, je mets mon expertise à votre service pour vous offrir un produit final qui saura répondre à vos besoins et <span>renforcer votre image.</span></p>
         </div>
 
-        <Image src="/afou2bis.jpg" alt="Photo auteur" width={2000} height={3000} className={s.imgAfous} />
+        <Image src="/afou2bis.webp" alt="Photo auteur" width={2000} height={3000} className={s.imgAfous} />
 
         <div className={s.carousselAbout}>
           <div className={s.cardAbout}>
             <div className={s.headerAvis}>
               <h4>{avis[currentIndex].titre}</h4>
-              <span>★{avis[currentIndex].star}</span>
+              <p><span>★</span>{avis[currentIndex].star}</p>
             </div>
             <p>{avis[currentIndex].desc}</p>
 
@@ -111,8 +111,8 @@ export const About = () => {
             <div className={s.cardAbout}>
               <div className={s.headerAvis}>
                 <h4>{avis[currentIndex + 1].titre}</h4>
-                <span>★{avis[currentIndex + 1].star}</span>
-              </div>
+                <p><span>★</span>{avis[currentIndex].star}</p>
+                </div>
               <p>{avis[currentIndex + 1].desc}</p>
             </div>
           )}

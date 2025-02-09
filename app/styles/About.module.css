@@ -38,15 +38,14 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 2% 2% 7% 2%;
+    padding: 2% 2% 5% 2%;
     border: 1px solid black;
     border-radius: 20px;
     background-color: white;
     width: 100%;
     max-width: 300px;
     height: auto;
-    font-size: clamp(0.7rem, 0.6308rem + 0.3077vw, 1rem);
-}
+    font-size: clamp(0.6rem, 0.5308rem + 0.3077vw, 0.9rem);}
 
 .arrow {
     cursor: pointer;
@@ -86,6 +85,10 @@ justify-content: space-between;
     font-weight: 500;
     width: 53%;
     font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
+}
+
+.headerAvis span{
+    color: var(--colord);
 }
 
 .footerAbout, .footerAbouts {

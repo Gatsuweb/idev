@@ -30,7 +30,7 @@ export const Hero = () => {
           <p>(Scrollez vers le bas <Image src="arrow.svg" alt="icone flèche" width={12} height={12} className={s.arrowScroll}/>)</p>
         </div>
         <div className={s.pAnimHero}>
-          <Image src="/afou2bis.jpg" alt="photo auteur" height={3000} width={2000} className={s.afaf}/>
+          <Image src="/afou2bis.webp" alt="photo auteur" height={3000} width={2000} className={s.afaf}/>
           </div>
         <div className={s.dispo}>
           <div className={s.pAnimHero}>
