@@ -141,13 +141,18 @@
 
 .btnContainerCall {
     position: relative;
-    z-index: 998;
+    z-index: 997;
     display: inline-block; /* Permet de s'adapter à la taille du bouton */
     width: 275px;
     height: 100px;
     border-radius: 50px;
     cursor: pointer;
 
+  }
+
+  .btnContainerCall a {
+    text-decoration: none;
+    color: black;
   }
 
   .btnTelCall {
@@ -195,13 +200,17 @@
 
     .btnContainerSend {
         position: relative;
-        z-index: 998;
+        z-index: 997;
         display: inline-block; /* Permet de s'adapter à la taille du bouton */
         width: 200px;
         height: 65px;
         border-radius: 50px;
         cursor: pointer;
     
+      }
+      .btnContainerSend a {
+        text-decoration: none;
+        color: black;
       }
     
       .btnTelSend {
@@ -305,6 +314,10 @@
     .contactContainer {
         margin-top: 20%;
     }
+
+    .formContact h2 {
+      margin-top: 5%;
+    }
     .formContact input, .formContact select {
         height: 25px;
     }
@@ -315,7 +328,7 @@
       }
       
     .btnContainerSend {
-
+        margin-top: 5%;
         width: 125px;
         height: 45px;
         border-radius: 50px;

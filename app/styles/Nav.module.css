@@ -96,6 +96,11 @@
     cursor: pointer;
   }
 
+  .btnContainer a {
+    color: black;
+    text-decoration: none;
+  }
+
   .btnTel {
     border-radius: 50px;
     display: flex;
@@ -266,8 +271,11 @@ transition: all 0.4s ease;
 
 
 .navContainer.open ul{
-    height: 20vh;
+    font-size: 1.2rem;
+    height: auto;
     flex-direction: column;
+    justify-content: center;
+    gap: 50px;
 
 }
 .navContainer.open ul a{

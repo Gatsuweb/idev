@@ -312,8 +312,8 @@
 }
 @media screen and (max-width: 480px) {
     .heroContainer {
-        margin-top: 0%;
-        height: 100dvh;
+        margin-top: 5%;
+        height: 100lvh;
     }
 
     .heroContainer h1{
