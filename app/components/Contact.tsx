@@ -67,8 +67,8 @@ export const Contact = () => {
           <div></div>
         <div className={s.contactTelHeader}>
           <p>Besoin d&apos;aide ?</p>
-          <div className={s.btnContainerCall}>
-            <button onClick={() => setIsOpen(true)} className={s.btnTelCall}>
+          <div className={s.btnContainerCall} onClick={() => setIsOpen(true)}>
+            <button className={s.btnTelCall}>
               <Image src="iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
             </button>
             <button className={s.btnTelsCall} >
