@@ -12,8 +12,8 @@ export const generateMetadata = (): Metadata => {
       canonical: "https://idevstudio.fr",
     },
     icons: {
-      icon: '/favicon.ico',
-      apple: '/apple-icon.png',
+      icon: '/logoIDev.svg',
+      apple: '/logoIDev.svg',
     },
     manifest: '/manifest.json',
     openGraph: {
