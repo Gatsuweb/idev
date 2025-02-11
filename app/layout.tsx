@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: "IDEV - Studio de développement web à Brest | Création de sites vitrines",
+    title: "I'Dev - Studio de développement web à Brest | Création de sites vitrines",
     description: "IDEV est un studio de design et développement web basé à Brest (Finistère, 29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
     keywords: "développement web, création de site, site vitrine, web design, marketing, SEO, Brest, Finistère, Bretagne",
     authors: [{ name: "Ivan Duran", url: "https://idevstudio.fr" }],
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
     },
     manifest: '/manifest.json',
     openGraph: {
-      title: "IDEV - Studio de développement web à Brest",
+      title: "I'Dev' - Studio de développement web à Brest",
       description: "Studio de design et développement web basé en Bretagne, spécialisé dans les sites vitrines et marketing.",
       url: "https://idevstudio.fr",
       siteName: "IDEV",
