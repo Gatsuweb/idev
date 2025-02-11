@@ -33,20 +33,21 @@
     z-index: 9999;
     display: flex;
     align-items: center;
- 
     animation: typing 3s steps(28) forwards;
+    animation-delay: 0.3s;
     color: white;
     overflow: hidden;
     height: 35px;
     white-space: nowrap;
     border-right: 3px solid white;
 
+        width: 0;
+
+
 }
 
 @keyframes typing {
-    from{
-        width: 0;
-    }
+ 
     to {
         width: 190px;
     }
@@ -65,7 +66,7 @@
     background-color: transparent; */
     animation: cliploads 0.4s ease-in forwards;
     animation-delay: 6s;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background);
 
     
 }
