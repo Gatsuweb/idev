@@ -3,8 +3,8 @@ import s from "../styles/Hero.module.css"
 
 export const Hero = () => {
   return (
-    <div className={s.heroContainer}>
-      <div className={s.heroGauche}>
+    <header className={s.heroContainer}>
+      <main className={s.heroGauche}>
       <div className={s.heroTitle}>
           <h1>DÉVELOPPEUR</h1>
           <div className={s.nametitle}>
@@ -23,7 +23,7 @@ export const Hero = () => {
                 <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
                 </a>
             </div>
-      </div>
+      </main>
 
       <div className={s.heroDroit}>
         <div className={s.pAnimHero}>
@@ -51,6 +51,6 @@ export const Hero = () => {
           <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
           </a>
       </div>
-    </div>
+    </header>
   )
 }
