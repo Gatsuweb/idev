@@ -95,6 +95,7 @@
     color: white;
 }
 
+
 .footerPricing {
     margin-top: 5%;
     justify-items: center;
@@ -102,10 +103,20 @@
         margin-top: 2%;
         font-weight: bold;
     }
-    & span {
+    & s {
         /* color: var(--colord); */
         font-size: 2rem;
     }
+}
+.offre {
+    font-family: var(--font);
+    font-weight: 800;
+    font-size: 2.4rem;
+}
+
+.bestChoice {
+    display: flex;
+    justify-content: space-between;
 }
 
 

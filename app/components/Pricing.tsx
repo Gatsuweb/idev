@@ -1,5 +1,6 @@
-import s from '../styles/Pricing.module.css'
+import Image from 'next/image'
 import { BtnContact } from './BtnContact'
+import s from '../styles/Pricing.module.css'
 
 export const Pricing = () => {
 
@@ -7,7 +8,10 @@ export const Pricing = () => {
     <div className={s.pricingContainer}>
       <div className={s.cardsPricing}>
         <div className={s.headerPricing}>
+          <div className={s.bestChoice}>
           <h3>ECO</h3>
+          <Image src="/best.png" alt='icone du meilleur choix' height={50} width={50} />
+          </div>
           <h4>Site Vitrine Eco – Simple, <span>Efficace</span>, Accessible</h4>
         </div>
         <ul>
@@ -36,7 +40,8 @@ export const Pricing = () => {
         <p className={s.descPrix}>Un <span>site clair et professionnel</span> pour poser les bases de votre présence en ligne. Idéal pour débuter <span>rapidement</span>.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p >A partir de: <span>600€</span></p>
+          <p >A partir de: <span><s>800€</s></span></p>
+          <span className={s.offre}>600€</span>
         <p className={s.prixMaintenance}>Payez en 3 fois</p>
         <p className={s.prixMaintenance}>Maintenance et support 45€ / mois </p>
         </div>
@@ -73,7 +78,9 @@ export const Pricing = () => {
         <p className={s.descPrix}>Pour une <span>image professionnelle</span> et un site qui met pleinement en avant vos compétences et services.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p>A partir de: <span>1500€</span></p>
+          <p>A partir de: <span><s>1800€</s></span></p>
+          <span className={s.offre}>1500€</span>
+
           <p className={s.prixMaintenance}>Payez en 3 fois</p>
 
           <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 1mois offert </p>
@@ -111,7 +118,8 @@ export const Pricing = () => {
         <p className={s.descPrix}>Pour les entreprises qui <span>veulent se différencier</span> avec un site <span>élégant, performant</span>, et parfaitement adapté à leurs besoins.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p>A partir de: <span>2500€</span></p>
+          <p>A partir de: <span><s>3000€</s></span></p>
+          <span className={s.offre}>2500€</span>
           <p className={s.prixMaintenance}>Payez en 4 fois</p>
 
         <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 3mois offerts</p>

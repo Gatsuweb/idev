@@ -126,7 +126,7 @@ export const Contact = () => {
             <select id="formule" name="user_formule">
               <option value="premium">Premium</option>
               <option value="standard">Standard</option>
-              <option value="basic">Basic</option>
+              <option value="basic">Eco</option>
             </select>
 
             <label htmlFor="budget">Budget</label>

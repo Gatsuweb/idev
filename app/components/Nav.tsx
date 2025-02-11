@@ -25,7 +25,7 @@ export const Nav = () => {
           <ul >
             <li><a href="#services">SERVICES</a></li>
             <li><a href="#projets">PROJETS</a></li>
-            <li><a href="#about">A PROPOS</a></li>
+            <li><a href="#about">À PROPOS</a></li>
           </ul>
             <div className={s.btnContainer} onClick={() => setIsOpen(true)}>
                 <button  className={`${s.btnTel} ${isActive ? s.open : ""}`}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>

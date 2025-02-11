@@ -33,18 +33,18 @@ export const About = () => {
     {
       titre: "Mael Morlevat",
       star: 5,
-      desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
+      desc: "J’ai fais appel à Ivan pour le développement de mon site internet, chose à laquelle il a parfaitement répondu en étant très professionnel et à l’écoute, si vous cherchez quelqu’un pour construire un site de A à Z, n’hésitez pas ! "
     },
-    {
-      titre: "Pattes et compagnie",
-      star: 5,
-      desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
-    },
-    {
-      titre: "CyberViking",
-      star: 5,
-      desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
-    },
+    // {
+    //   titre: "Pattes et compagnie",
+    //   star: 5,
+    //   desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
+    // },
+    // {
+    //   titre: "CyberViking",
+    //   star: 5,
+    //   desc: "Afou le meilleur il m’a fait un site de fou, il est à l’écoute je l’aime trop en fait."
+    // },
   ];
 
   const nextProject = () => {

@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
  
-    animation: typing 3s steps(29) forwards;
+    animation: typing 3s steps(28) forwards;
     color: white;
     overflow: hidden;
     height: 35px;
@@ -48,7 +48,7 @@
         width: 0;
     }
     to {
-        width: 200px;
+        width: 190px;
     }
 }
 

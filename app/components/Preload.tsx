@@ -7,8 +7,6 @@ export const Preload = () => {
     <div className={s.preloadContainer}>
 
             <p className={s.titlePreload}>Bienvenue au studio I&apos;DEV.</p>
-  
-
      </div>
 
     <div className={s.preloadContainers}>
