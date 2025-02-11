@@ -133,6 +133,9 @@
 
         margin-top: 10%;
     }
+    .servicesContainer h2 {
+        height: 10vh;
+    }
 
     .card {
         top: 15%; 
