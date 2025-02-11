@@ -10,7 +10,7 @@ export const Pricing = () => {
         <div className={s.headerPricing}>
           <div className={s.bestChoice}>
           <h3>ECO</h3>
-          <Image src="/best.png" alt='icone du meilleur choix' height={50} width={50} />
+          <Image src="/best.png" alt='icone du meilleur choix' height={50} width={50} className={s.bestIcone} />
           </div>
           <h4>Site Vitrine Eco – Simple, <span>Efficace</span>, Accessible</h4>
         </div>
