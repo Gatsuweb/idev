@@ -249,6 +249,11 @@
     
       
       }
+
+      .successMessage {
+        color: var(--colord);
+        margin: 4% 0 1% 0;
+      }
     
     
       .btnContainerSend:hover .btnTelSend {

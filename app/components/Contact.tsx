@@ -139,8 +139,8 @@ export const Contact = () => {
                   <button className={s.btnTelSend} type="submit">ENVOYER</button>
                   <button className={s.btnTelsSend} >ENVOYER</button>
               </div>
-          </form>
           {messageSent && <p className={s.successMessage}>Votre message a bien été envoyé !</p>}
+          </form>
         </div>
         </div>
       </div>
