@@ -44,7 +44,7 @@ export const Footer = () => {
             <div>
                 <h4>LOCALISATION</h4>
                 <ul>
-                    <li>Brest, Bretagne, France</li>
+                    <li>Brest / Carhaix, Bretagne, France</li>
                     <li>HEURE LOCAL</li>
                     <li>{time.toLocaleTimeString()}</li>
                 </ul>
