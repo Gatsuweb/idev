@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: "I'Dev - Studio de développement web à Brest | Création de sites vitrines",
-    description: "IDEV est un studio de design et développement web basé à Brest (Finistère, 29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
-    keywords: "développement web, création de site, site vitrine, web design, marketing, SEO, Brest, Finistère, Bretagne",
+    title: "I'Dev - Studio de développement web | Création de sites vitrines, marketing",
+    description: "I'DEV est un studio de design et développement web basé à Brest (Finistère, 29) et Carhaix-Plouguer(29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
+    keywords: "développement web, création de site, site vitrine, web design, marketing, SEO, Finistère, Côtes d'armor, Bretagne",
     authors: [{ name: "Ivan Duran", url: "https://idevstudio.fr" }],
     robots: "index, follow",
     alternates: {
@@ -20,7 +20,7 @@ export const generateMetadata = (): Metadata => {
       title: "I'Dev' - Studio de développement web à Brest",
       description: "Studio de design et développement web basé en Bretagne, spécialisé dans les sites vitrines et marketing.",
       url: "https://idevstudio.fr",
-      siteName: "IDEV",
+      siteName: "I'DEV",
       locale: "fr_FR",
       type: "website",
       images: [
@@ -44,7 +44,7 @@ export const generateMetadata = (): Metadata => {
         "description": "Développeur web freelance spécialisé en Next.js, React, 3D et animations web.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Brest",
+          "addressLocality": "Carhaix-Plouguer",
           "addressRegion": "Bretagne",
           "addressCountry": "FR"
         },
@@ -54,7 +54,7 @@ export const generateMetadata = (): Metadata => {
           "https://www.linkedin.com/in/ivandrn/",
           "https://www.instagram.com/_i.d.e.v/"
         ],
-        "knowsAbout": ["Développement Web", "Next.js", "React", "Webflow", "SEO"],
+        "knowsAbout": ["Développement Web", "Web Design","Next.js", "React", "Webflow", "SEO"],
         "alumniOf": {
           "@type": "EducationalOrganization",
           "name": "Wild Code School - Bootcamp Développement Web"
