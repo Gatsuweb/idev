@@ -69,6 +69,12 @@ export const Projets = () => {
             image: "maelmorlevat.webm"
         },
         {
+            link:"",
+            name: "...",
+            desc: "Design d'un site web pour une entreprise familiale de charpente, un design animé et mderne correspondant à l'image de marque. Animations subtiles, visuels percutants et navigation intuitive",
+            image: "carpenter.webm"
+        },
+        {
             link:"https://gengo-weld.vercel.app/",
             name: "GENGO(DESKTOP)",
             desc: "Développement de Gengo, une plateforme ludique et gamifiée pour apprendre le français. Une interface interactive et engageante, combinant jeux, défis et récompenses, motive les utilisateurs à progresser tout en s’amusant. Une approche moderne et immersive pour faciliter l’apprentissage à tous les niveaux",
@@ -77,7 +83,7 @@ export const Projets = () => {
         {
             link:"",
             name: "HAUTELIGNE",
-            desc: "Création d’un site vitrine pour Haute Ligne, une marque de vêtements modernes pour homme. Un design minimaliste et sophistiqué met en avant des collections élégantes à travers une expérience fluide et dynamique. Animations subtiles, visuels percutants et navigation intuitive renforcent l’identité premium de la marque.",
+            desc: "Création d’un design pour Haute Ligne, une marque de vêtements modernes pour homme. Un design minimaliste et sophistiqué met en avant des collections élégantes à travers une expérience fluide et dynamique. Animations subtiles, visuels percutants et navigation intuitive renforcent l’identité premium de la marque.",
             image: "hauteligne.webm"
         },
     ]
