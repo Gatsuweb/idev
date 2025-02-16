@@ -3,10 +3,10 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://idevstudio.fr/",
+      url: "https://idevstudio.fr",
       lastModified: new Date().toISOString(),
-      changeFrequency: 'monthly', // Fréquence de mise à jour
-      priority: 1.0 // Priorité maximale car page unique
+      changeFrequency: 'weekly',
+      priority: 1.0
     }
-  ];
+  ] satisfies MetadataRoute.Sitemap;
 }
