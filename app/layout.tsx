@@ -31,7 +31,6 @@ export const generateMetadata = (): Metadata => {
       icon: '/logoIDev.svg',
       apple: '/logoIDev.svg',
     },
-    manifest: '/manifest.json',
     openGraph: {
       title: "I'Dev - Studio de développement web à Carhaix & Brest",
       description: "Créez votre présence web professionnelle avec I'Dev, studio de développement spécialisé en Next.js & React. Sites web modernes, responsive et optimisés pour le marketing digital en Bretagne.",
