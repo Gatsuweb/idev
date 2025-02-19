@@ -7,8 +7,8 @@ export const generateMetadata = (): Metadata => {
 
   return {
     title: "I'Dev - Développement web à Carhaix & Brest | Sites vitrines & marketing",
-    description: "I'Dev est un studio de design et développement web basé à Brest (Finistère, 29) et Carhaix-Plouguer(29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
-    keywords: "développement web Carhaix, développement web, création de site, site vitrine, web design, marketing, SEO, Finistère, Côtes d'armor, Bretagne",
+    description: "I'Dev est un studio de développement web  et design basé à Brest (Finistère, 29) et Carhaix-Plouguer(29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
+    keywords: "développement web Carhaix, développement web, développeur web, création de site, site vitrine, web design, marketing, SEO, Finistère, Côtes d'armor, Bretagne",
     authors: [{ name: "Ivan Duran", url: baseUrl }],
     robots: {
       index: true,
