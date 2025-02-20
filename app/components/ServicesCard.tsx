@@ -78,7 +78,7 @@ export const ServicesCard = () => {
             <span>(Figma)</span>
           </div>
           <div className={s.canvas}>
-            <p>Créeons ensemble le design attirant que vous désirez</p>
+            <p>Créons ensemble le design attirant que vous désirez</p>
             <LazyLoadComponent Component={Paint} />
           </div>
         </section>
