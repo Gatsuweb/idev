@@ -17,17 +17,17 @@ export const Hero = () => {
         </div>
         <div className={s.btnContactContainer}>
         <a href="#contact">
-                <button className={s.btnContact}>CONTACT <Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
+                <button className={s.btnContact}>CONTACT <Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
                 </a>
                 <a href="#contact">
-                <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
+                <button className={s.btnContacts}>CONTACT<Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
                 </a>
             </div>
       </main>
 
       <div className={s.heroDroit}>
         <div className={s.pAnimHero}>
-          <p>(Scrollez vers le bas <Image src="arrow.svg" alt="icone flèche" width={12} height={12} className={s.arrowScroll}/>)</p>
+          <p>(Scrollez vers le bas <Image src="/arrow.svg" alt="icone flèche" width={12} height={12} className={s.arrowScroll}/>)</p>
         </div>
         <div className={s.pAnimHero}>
           <Image src="/afou2bis.webp" alt="photo auteur" height={3000} width={2000} className={s.afaf}/>
