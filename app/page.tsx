@@ -46,7 +46,6 @@ export default function Home() {
   return (
     
     <div className={styles.page}>
-      <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div>
      <Preload />
      <Nav />
      <div id="hero">
@@ -73,6 +72,7 @@ export default function Home() {
     <motion.div variants={footerView} whileInView="animate" initial= "initial">
         <Footer />
     </motion.div>
+      <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div>
     </div>
   );
 }
