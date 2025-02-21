@@ -1,14 +1,4 @@
-.preload {
-    display: block;
-    animation: displayPreload 0.2s forwards;
-    animation-delay: 6.1s;
-}
 
-@keyframes displayPreload {
-    to {
-        display: none;
-    }
-}
  .preloadContainer {
     position: fixed;
     z-index: 9999;

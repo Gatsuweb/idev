@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import s from "../styles/Preload.module.css"
 // import { useEffect } from "react";
@@ -13,7 +12,7 @@ export const Preload = () => {
   //   return () => clearTimeout(timer);
   // }, [router]);
   return (
-    <div className={s.preload}>
+    <>
       <div className={s.preloadContainer}>
 
               <p className={s.titlePreload}>Bienvenue au studio I&apos;DEV.</p>
@@ -21,6 +20,6 @@ export const Preload = () => {
 
       <div className={s.preloadContainers}>
           <Image src="/afou2bis.webp" alt="" height={3000} width={2000} className={s.imgPreload} priority />
-  </div>
- </div>
+    </div>
+ </>
   )}
