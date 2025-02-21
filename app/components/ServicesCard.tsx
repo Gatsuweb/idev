@@ -79,7 +79,9 @@ export const ServicesCard = () => {
           </div>
           <div className={s.canvas}>
             <p>Créons ensemble le design attirant que vous désirez</p>
+            <div className={s.paint}>
             <LazyLoadComponent Component={Paint} />
+            </div>
           </div>
         </section>
 

@@ -125,13 +125,18 @@
         height: 5vh;
    }
 
+   .canvas {
+    overflow: hidden;
+   }
+
     .canvas p{
         width: 90%;
     }
 
-    .canvas canvas{
-
-        margin-top: 10%;
+    .paint{
+        overflow: hidden;
+        margin-top: 15%;
+        height: 50%;
     }
     .servicesContainer h2 {
         height: 10vh;
