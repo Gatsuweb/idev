@@ -9,6 +9,8 @@
     animation-delay: 6.5s;
     margin-bottom: 10%;
     height: 21px;
+    position: relative;
+    z-index: 1001;
 
 }
 .footerHeroContainer a{
