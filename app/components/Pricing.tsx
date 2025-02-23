@@ -73,7 +73,8 @@ export const Pricing = () => {
           </div>
           <div className={s.boxList}>
             <p>•</p>
-            <li>Inclus :  <span>SEO de base</span> ( balises meta, structure)</li>
+            {/* <li>Inclus :  <span>SEO de base</span> ( balises meta, structure)</li> */}
+            <li> <span>3 fonctionnalités maximum</span> ( formulaire, réservation, blog )</li>
           </div>
         </ul>
         <p className={s.pourquoi}>Pourquoi choisir cette offre ?</p>
@@ -86,7 +87,7 @@ export const Pricing = () => {
           <p className={s.prixMaintenance}>Payez en 3 fois</p>
 
           {/* <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 1mois offert </p> */}
-          <p className={s.prixMaintenance}> Option: Maintenance, SEO et support : 1 mois offerts</p>
+          <p className={s.prixMaintenance}> Option: Maintenance, SEO et support : 1 mois offert</p>
 
         </div>
       </div>
@@ -115,7 +116,8 @@ export const Pricing = () => {
           </div>
           <div className={s.boxList}>
             <p>•</p>
-            <li><span>SEO optimisé</span> pour une meilleure visibilité (balises meta, structure, vitesse, performance mobile).</li>
+            {/* <li><span>SEO optimisé</span> pour une meilleure visibilité (balises meta, structure, vitesse, performance mobile).</li> */}
+            <li><span>Fonctionnalité au choix</span> pour un meilleur service client.</li>
           </div>
         </ul>
         <p className={s.pourquoi}>Pourquoi choisir cette offre ?</p>

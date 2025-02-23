@@ -13,7 +13,7 @@ export const Hero = () => {
           </div>
         </div>
         <div className={s.pAnimHero}>
-          <p>J&apos;aide les entreprises à faire grandir leur image de marque en leur proposant un site web <span>sur-mesure</span> et <span>innovant</span></p>
+        <p>Développeur web freelance basé à Carhaix, j&apos;aide les entreprises à renforcer leur image de marque en les accompagnant dans la création de sites web <span>sur-mesure</span> et <span>performants</span>.</p>
         </div>
         <div className={s.btnContactContainer}>
         <a href="#contact">
