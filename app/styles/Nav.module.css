@@ -9,7 +9,7 @@
     top: 3%;
     font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
     font-weight: 500;
-    z-index: 998;
+    z-index: 1000;
     opacity: 0;
     animation: navanim 2s ease forwards;
     animation-delay: 6.5s;
@@ -88,7 +88,7 @@
 
 .btnContainer {
     position: relative;
-    z-index: 998;
+    z-index: 1000;
     display: inline-block; /* Permet de s'adapter à la taille du bouton */
     width: 200px;
     height: 65px;
@@ -192,7 +192,7 @@
     border-radius: 50%;
     right: 12%;
     transition: all 1s ease;
-    z-index: 998;
+    z-index: 1000;
 }
 
 .mobileBurger.open {
@@ -258,7 +258,7 @@ transition: all 0.4s ease;
     top: 0;
     right: -5%;
     height: 100lvh;
-    z-index: 998;
+    z-index: 1000;
     width: 70%;
     flex-direction: column;
     justify-content: center;
