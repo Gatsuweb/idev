@@ -7,6 +7,8 @@
     padding-right: var(--spacing);
     margin-top: 2%;
     overflow: hidden;
+    position: relative;
+    z-index: 1000;
 }
 
 .heroContainer a {

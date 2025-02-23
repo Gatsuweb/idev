@@ -4,14 +4,10 @@
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  z-index: 9998;
-  pointer-events: none;
-  
+  z-index: 999;
+  /* pointer-events: none; */
 }
-#hero {
-  position: absolute;
-  z-index: 9999;
-}
+
 .texture {
   object-fit: cover;
   height: 100vh;
