@@ -43,7 +43,9 @@ export const Pricing = () => {
           <p >A partir de: <span><s>800€</s></span></p>
           <span className={s.offre}>600€</span>
         <p className={s.prixMaintenance}>Payez en 3 fois</p>
-        <p className={s.prixMaintenance}>Maintenance et support 45€ / mois </p>
+        {/* <p className={s.prixMaintenance}>Maintenance et support 45€ / mois </p> */}
+        <p className={s.prixMaintenance}> Option: Maintenance, SEO et support</p>
+
         </div>
       </div>
 
@@ -83,7 +85,9 @@ export const Pricing = () => {
 
           <p className={s.prixMaintenance}>Payez en 3 fois</p>
 
-          <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 1mois offert </p>
+          {/* <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 1mois offert </p> */}
+          <p className={s.prixMaintenance}> Option: Maintenance, SEO et support : 1 mois offerts</p>
+
         </div>
       </div>
 
@@ -122,7 +126,8 @@ export const Pricing = () => {
           <span className={s.offre}>2500€</span>
           <p className={s.prixMaintenance}>Payez en 4 fois</p>
 
-        <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 3mois offerts</p>
+        {/* <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 3mois offerts</p> */}
+          <p className={s.prixMaintenance}> Option: Maintenance, SEO et support : 3 mois offerts</p>
         </div>
       </div>
     </div>
