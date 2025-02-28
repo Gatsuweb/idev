@@ -57,6 +57,12 @@ export const Projets = () => {
             image: "Valkyrink.webm"
         },
         {
+            link:"https://coregym.netlify.app/",
+            name: "Core Gym",
+            desc: "Création d’un site vitrine pour une salon de tatouage. L’objectif est de présenter les services de la salle, faciliter l’accès aux informations clés et proposer une gestion simplifiée des abonnements et du planning des cours.",
+            image: "coregym.webm"
+        },
+        {
             link:"",
             name: "LATIA",
             desc: "Développement d’un site vitrine pour une agence de graphic design moderne et créative. Enrichi d’animations dynamiques et d'interraction 3D, permettant de mettre en valeur les réalisations de l’agence et son identité visuelle. L’expérience utilisateur est pensée pour captiver et inspirer dès la première interaction.",
