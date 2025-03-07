@@ -1,0 +1,283 @@
+.aboutContainer {
+    height: auto;
+    margin-top: 10%;
+    display: flex;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    gap: 50px;
+}
+
+.aboutContent {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.aboutContainer ul {
+    display: flex;
+    list-style: none;
+}
+
+.headerAbout {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.headerAbout span{
+    color: var(--colord);
+    font-weight: 600;
+}
+
+.carousselAbout {
+    display: flex;
+    gap: 25px;
+    max-width: 700px;
+    position: relative;
+}
+
+.cardAbout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2% 2% 5% 2%;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    font-size: clamp(0.6rem, 0.5308rem + 0.3077vw, 0.9rem);}
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    
+    &:nth-child(4) {
+        left: -8%;
+    }
+    &:nth-child(3) {
+        right: 2%;
+    }
+}
+.cardAbout h4 {
+    font-family: var(--fontd);
+    font-weight: 600;
+}
+.cardAbout p {
+    
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--colorp);
+}
+
+.letter {
+    display: inline-block;
+}
+
+.headerAvis {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerAbout p{
+    font-family: var(--font);
+    color: var(--colorp);
+    font-weight: 500;
+    width: 53%;
+    font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
+}
+
+.headerAvis span{
+    color: var(--colord);
+}
+
+.footerAbout, .footerAbouts {
+    display: flex;
+    gap: 50px;
+    font-family: var(--font);
+    font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
+}
+
+.footerAbout li {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1% 4%;
+    font-weight: 500;
+}
+
+.footerAbouts li {
+    display: none;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1% 4%;
+    font-weight: 500;
+  }
+
+  
+  .imgAfous {
+    display: none;
+}
+.imgAfou{
+    object-fit: cover;
+    width: 450px;
+    height: auto;
+    aspect-ratio: auto;
+    filter: grayscale(1);
+}
+
+.afouContainer {
+    position: relative;
+    z-index: 997;
+    width: 950px;
+    height: auto;
+   aspect-ratio: auto;
+    object-fit: cover;
+  }
+
+  .imgAfousss {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    clip-path: circle(10% at -20% 120%);
+    transition: clip-path 1s ease, background-color 0.5s ease;
+    position: relative;
+    z-index: 1;
+
+  
+  }
+  .imgAfouss {
+    filter: grayscale(1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+  }
+
+  .afouContainer:hover  .imgAfousss{
+      clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */
+      filter: grayscale(0);
+    }
+@media screen and (max-width: 1580px) {
+    .headerAbout p{
+        width: 60%;
+    }
+  
+}
+@media screen and (max-width: 1025px) {
+    .imgAfou, .imgAfous {
+        object-fit: cover;
+        width: 300px;
+        height: auto;
+        aspect-ratio: auto;
+    } 
+
+    .afouContainer {
+display: none;
+      }
+
+    .headerAbout p{
+        width: 80%;
+    }
+
+    
+    .arrow {
+        top: 40%;
+        
+        &:nth-child(4) {
+            left: -8%
+        }
+        &:nth-child(3) {
+            right: -8%;
+        }
+    }
+}
+@media screen and (max-width: 820px) {
+    .aboutContainer {
+        margin-top: 15%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutContent {
+        align-items: center;
+        gap: 50px;
+    }
+
+    .headerAbout p{
+        width: 70%;
+    }
+
+    .carousselAbout {
+      justify-content: center;
+    }
+
+    .footerAbout, .footerAbouts {
+        justify-content: center;
+    }
+
+    .footerAbout li {
+      display: none;
+    }
+    .footerAbouts li {
+      display: flex;
+    }
+
+    .imgAfous {
+        display: flex;
+    }
+    .imgAfou {
+        display: none;
+    }
+
+
+}
+@media screen and (max-width: 480px) {
+    .aboutContainer {
+        margin-top: 20%;
+        gap: 15px;
+    }
+    .aboutContent {
+        gap: 25px;
+    }
+    .headerAbout p{
+        width: 100%;
+    }
+
+    .imgAfou, .imgAfous {
+        width: 100%;
+        height: auto;
+    }
+
+    .footerAbout, .footerAbouts {
+        margin-top: 5%;
+        gap: 25px;
+   
+    }
+
+    .carousselAbout {
+        gap: 5px;
+    }
+
+    .cardAbout {
+        padding: 4% 3% 7% 3%;
+        gap: 8px;
+    }
+
+    .cardAbout p{
+        font-size: 0.6rem;
+    }
+
+    .arrow {
+        top: 100%;
+        
+        &:nth-child(4) {
+            left: 70%;
+        }
+        &:nth-child(3) {
+            right: 0%;
+        }
+    }
+}
+

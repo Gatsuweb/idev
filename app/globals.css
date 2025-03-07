@@ -1,42 +1,96 @@
+@font-face {
+  font-family: "Condensed";
+  src: url("./font/RobotoCondensed-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./font/Roboto-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("./font/Outfit-VariableFont_wght.ttf");
+}
 :root {
-  --background: #ffffff;
+  --background: #fff8ec;
   --foreground: #171717;
+  --font: "Outfit";
+  --fontd: "Roboto";
+  --fontt: "Condensed";
+  --color: black;
+  --colord: #FD6F11;
+  --colort: #FDF4E8;
+  --colorp: #868686;
+  --spacing: 5%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--background);
 
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+nav {
+  font-family: var(--fontt);
+  font-weight: 600;
+}
+
+button {
+  background-color: var(--colord);
+  color: black;
+  font-family: var(--fontt);
+  font-weight: 600;
+}
+
+button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+h1 {
+  font-size: clamp(2.5rem, 1.4615rem + 4.6154vw, 7rem);
+    font-weight: 900;
+  font-family: var(--font);
+  line-height: 1;
+}
+
+h2 {
+font-size: clamp(2rem, 1.0769rem + 4.1026vw, 6rem);  
+font-weight: 900;
+  font-family: var(--font);
+  line-height: 0.7;
+}
+h3 {
+  font-size: clamp(2rem, 1.5385rem + 2.0513vw, 4rem);
+  font-family: var(--fontt);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+p {
+  font-family: var(--fontd);
+
+}
+
+@media screen and (max-width: 1580px) {
+  
+}
+@media screen and (max-width: 1025px) {
+
+}
+@media screen and (max-width: 770px) {
+
+}
+@media screen and (max-width: 480px) {
+
 }

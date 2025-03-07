@@ -1,0 +1,79 @@
+.footerHeroContainer {
+    margin-top: -4%;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+    animation: apear 2s ease-in-out forwards;
+    animation-delay: 6.5s;
+    margin-bottom: 10%;
+    height: 21px;
+    position: relative;
+    z-index: 1001;
+
+}
+.footerHeroContainer a{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--colord);
+    font-family: var(--fontt);
+    margin-right: 5%;
+    text-decoration: none;
+    transform: translateY(0);
+    height: 21px;
+    &:hover {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+    }
+
+}
+
+.footerHeroContainer a:nth-child(1):before {
+    display: flex;
+    content: 'Instagram';  
+    color: var(--colorp);
+
+}
+
+.footerHeroContainer a:nth-child(2):before {
+    display: flex;
+    content: 'Mail';  
+    color: var(--colorp);
+
+}
+.footerHeroContainer a:nth-child(3):before {
+    display: flex;
+    content: 'Linkedin';  
+    color: var(--colorp);
+
+}
+
+@keyframes apear {
+    to { opacity: 1;}
+}
+
+@media screen and (max-width: 1580px) {
+    .footerHeroContainer {
+        margin-top: -3%;
+
+    }
+   
+  
+}
+@media screen and (max-width: 1025px) {
+    .footerHeroContainer {
+        margin-top: -5%;
+
+    }
+
+}
+@media screen and (max-width: 770px) {
+
+}
+@media screen and (max-width: 480px) {
+    .footerHeroContainer {
+    margin-top: 15%;
+
+    }
+}
