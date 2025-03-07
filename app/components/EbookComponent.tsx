@@ -28,7 +28,7 @@ export default function EbookComponent() {
           setStatus('error');
         }
       } catch (error) {
-        setStatus('error');
+        console.log("error")
       }
     };
     

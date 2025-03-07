@@ -3,6 +3,7 @@ import Image from "next/image"
 import s from "../styles/NavEbook.module.css"
 import React, { useState } from 'react'
 import { PopupModal } from "react-calendly"
+import Link from "next/link"
 
 export const NavEbook = () => {
     const [isActive, setIsActive] = useState(false)
@@ -16,9 +17,9 @@ export const NavEbook = () => {
     <>
       <nav className={`${s.navContainer}  ${isActive ? s.open : ""}`}>
         <div className={`${s.navFirst} ${isActive ? s.open : ""}`}>
-          <a href="/">
+          <Link href="/">
             <Image src="logoIDev.svg" alt="Logo auteur" id={s.logo} height={80} width={80} />
-            </a>
+            </Link>
             <p>&#123;DESIGN & DEVELOPPEMENT&#125;</p>
         </div>
         <div className={`${s.ulAnim} ${isActive ? s.open : ""}`}>
