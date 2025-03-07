@@ -47,7 +47,8 @@ export const Footer = () => {
                     <ul>
                         <li>Carhaix, Finistère, Bretagne</li>
                         <li>HEURE LOCAL</li>
-                        <li>{time ? time : "Chargement..."}</li> {/* Éviter le mismatch SSR/CSR */}
+                        <li>{time ? time : "Chargement..."}</li>
+                         <li><a href="/ebook">Checklist</a></li>
                     </ul>
                 </div>
             </div>

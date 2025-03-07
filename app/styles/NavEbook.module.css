@@ -1,0 +1,418 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    position: fixed;
+    width: 100%;
+    top: 3%;
+    font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
+    font-weight: 500;
+    z-index: 1001;
+    opacity: 0;
+    animation: navanim 2s ease forwards;
+}
+
+@keyframes navanim {
+    to{ opacity: 1;}
+  }
+
+  .ulAnim {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.navContainer ul{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    height: 22px;
+}
+
+.navContainer ul li {
+    height: 22px;
+    color: var(--colord);
+    text-decoration: none;
+    transform: translateY(0);
+
+    &:hover {
+        transition: all 0.3s ease;
+        transform: translateY(-100%);
+    }
+}
+
+.navContainer a {
+    color:  var(--colord);
+    text-decoration: none;
+}
+
+
+.navContainer ul li:nth-child(1):before {
+    display: flex;
+    content: 'SERVICES';  
+    color: var(--colorp);
+
+}
+
+.navContainer ul li:nth-child(2):before {
+    display: flex;
+    content: 'PROJETS';  
+    color: var(--colorp);
+
+}
+.navContainer ul li:nth-child(3):before {
+    display: flex;
+    content: 'A PROPOS';  
+    color: var(--colorp);
+
+}
+
+.navFirst {
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    gap: 20px;
+}
+
+.navFirst p{
+  opacity: 0.5;
+}
+
+.btnContainer {
+    position: relative;
+z-index: 1001;
+    display: inline-block; /* Permet de s'adapter à la taille du bouton */
+    width: 200px;
+    height: 65px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  .btnContainer a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .btnTel {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    width: 100%;
+    height: 100%;
+    background-color: var(--colord);
+    border: 1px solid var(--colord);
+    clip-path: circle(10% at 110% 75%);
+    transition: clip-path 0.7s ease, background-color 0.5s ease;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    gap: 10px;
+  
+  }
+  .btnTels {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--colord);
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    gap: 10px;
+
+  
+  }
+
+
+
+  .btnContainer:hover .btnTel {
+      clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */
+      background-color: var(--colord);
+    }
+
+
+
+.mobileMenu {
+    font-weight: 600;
+    font-family: var(--font);
+    display: none;
+    position: fixed;
+    justify-content: end;
+    z-index: 1001;
+    align-items: center;
+    background-color: var(--background);
+    color: rgb(0, 0, 0);
+    top: 3%;
+    right: 5%;
+    border-radius: 50px;
+    padding: 2.5% 2%;
+    width: 13.5%;
+
+    transition: all 1s ease;
+    overflow: hidden;
+
+}
+
+
+
+.mobileMenu p {
+    font-size: clamp(0.6rem, 0.5308rem + 0.3077vw, 0.9rem);
+
+    text-align: end;
+}
+
+.mobileBurger {
+    
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: clamp(3.6rem, -0.7951rem + 7.8049vw, 4.2rem);
+    height: auto;
+    aspect-ratio: 1;
+    border: none;
+    background-color: var(--colord);
+    padding: 2% 2%;
+    border-radius: 50%;
+    right: 12%;
+    transition: all 1s ease;
+z-index: 1001;
+}
+
+.mobileBurger.open {
+
+    right: 5%;
+    transition: all 0.8s ease;
+}
+
+.mobileBurger::before {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: clamp(0.6rem, 0.5308rem + 0.3077vw, 0.9rem);
+   content: 'CLOSE';
+   transform: translateX(100%);
+   opacity: 0;
+   right: 12.5%;
+   position: fixed;
+   transition: all 0.8s ease;
+
+}
+
+.mobileBurger.open::before {
+    transform: translateX(0%);
+    opacity: 1;
+ 
+ }
+
+
+
+
+.line {
+    border: 1px solid rgb(0, 0, 0);
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.line.open {
+transition: all 0.4s ease;
+}
+
+.line.open:first-child {
+    transform: rotate(45deg) translate(4px, 4px);
+    transform-origin: center; 
+}
+.line.open:last-child {
+    transform: rotate(-45deg) translate(3px, -3px);
+    transform-origin: center; /* Ou top left, bottom right, etc. */
+}
+
+@media screen and (max-width: 1580px) {
+  
+}
+@media screen and (max-width: 1025px) {
+.navContainer {
+    display: none;
+}
+
+
+.navContainer.open{
+    opacity: 1;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -5%;
+    height: 100lvh;
+z-index: 1001;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    animation: navmobile 0.6s ease forwards;
+    border-radius: 50% 0 0 50%;
+
+}
+
+
+.navContainer.open ul{
+    font-size: 1.2rem;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+
+}
+.navContainer.open ul a{
+    height: 10vh;
+    color: white;
+    flex-direction: column;
+
+}
+
+.navContainer.open ul li::before{
+    display: none;
+
+}
+
+.navFirst {
+    display: none;
+}
+
+.ulAnim.open {
+    flex-direction: column;
+}
+
+.btnTels.open {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 0.7538rem + 0.2051vw, 1rem);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--colord);
+    background-color: var(--colord);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    gap: 10px;
+  
+  }
+@keyframes navmobile {
+    0%{
+        transform: translateX(100%);
+        border-radius: 100% 100%;
+    }
+ 
+    100% {
+        transform: translateX(0);
+        border-radius: 0 0 0 0;
+    }
+}
+
+.mobileMenu {
+    display: flex;
+}
+    #logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    @keyframes navpop {
+        to {transform: translateX(0);}
+    }
+}
+/* @media screen and (max-width: 900px) {
+    .mobileMenu {
+        width: 1%;
+        padding: 2.8% 1%;
+    
+    
+    }
+    .mobileBurger {
+        width: 4rem;
+    }
+    .mobileBurger::before {
+       right: 13.5%;
+    }
+
+} */
+@media screen and (max-width: 900px) {
+    .mobileMenu {
+        width: 14.5%;
+        padding: 2.5% 1%;
+    }
+     .mobileBurger {
+        width: clamp(3.2rem, 0.8727rem + 4.8485vw, 3.6rem);
+    } 
+    .mobileBurger::before {
+
+    right: 12.5%;
+
+
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+    .navContainer.open{
+        width: 90%;
+    }
+    
+    .mobileMenu {
+   
+        padding: 4% 2%;
+        width: 24%;
+
+    }
+
+       
+    .mobileMenu p{
+   
+        font-weight: 800;
+
+    }
+
+    .mobileBurger {
+        width: clamp(2.4rem, 0.6rem + 8vw, 3rem);
+        right: 17.5%;
+
+    }
+
+    .mobileBurger.open {
+
+        right: 5%;
+        transition: all 0.8s ease;
+    }
+
+    .mobileBurger::before {
+        font-weight: 800;
+    content: 'CLOSE';
+    transform: translateX(100%);
+    opacity: 0;
+    right: 17.5%;
+    position: fixed;
+    transition: all 0.8s ease;
+
+    }
+
+
+
+}
