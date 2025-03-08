@@ -42,7 +42,7 @@ export default function EbookComponent() {
   
       <div className={styles.container}>
         <Head>
-          <title>Téléchargez votre Ebook Gratuit</title>
+          <title>Téléchargez votre Ebook Gratuitement</title>
           <meta name="description" content="Obtenez votre checklist gratuite en vous inscrivant" />
         </Head>
   
