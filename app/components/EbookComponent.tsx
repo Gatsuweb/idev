@@ -47,9 +47,9 @@ export default function EbookComponent() {
         </Head>
   
         <main className={styles.main}>
-          <h1 className={styles.title}>Obtenez votre <span>Checklist SEO</span> Gratuitement</h1>
+          <h1 className={styles.title}>Obtenez votre <span>Ebook SEO</span> Gratuitement</h1>
           <p className={styles.description}>
-            Inscrivez-vous pour recevoir votre Checklist directement dans votre boîte mail
+            Inscrivez-vous pour recevoir votre Ebook et Checklist SEO directement dans votre boîte mail
           </p>
   
           <form onSubmit={handleSubmit} className={styles.form}>
@@ -63,13 +63,13 @@ export default function EbookComponent() {
       onChange={(e) => setEmail(e.target.value)}
     />
             <button type="submit" className={styles.button}>
-              Recevoir la checklist
+              Recevoir l&apos;Ebook
             </button>
           </form>
   
           {status === 'success' && (
             <p className={styles.success}>
-              Merci ! Vérifiez votre boîte mail pour télécharger votre ebook.
+              Merci ! Vérifiez votre boîte mail pour télécharger votre Ebook.
             </p>
           )}
           {status === 'error' && (
