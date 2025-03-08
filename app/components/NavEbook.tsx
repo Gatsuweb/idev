@@ -15,30 +15,24 @@ export const NavEbook = () => {
     
   return (
     <>
-      <nav className={`${s.navContainer}  ${isActive ? s.open : ""}`}>
-        <div className={`${s.navFirst} ${isActive ? s.open : ""}`}>
+      <nav className={s.navContainer}  >
+        <div className={s.navFirst} >
           <Link href="/">
             <Image src="logoIDev.svg" alt="Logo auteur" id={s.logo} height={80} width={80} />
             </Link>
             <p>&#123;DESIGN & DEVELOPPEMENT&#125;</p>
         </div>
-        <div className={`${s.ulAnim} ${isActive ? s.open : ""}`}>
+        <div className={s.ulAnim}>
             <div className={s.btnContainer} onClick={() => setIsOpen(true)}>
-                <button  className={`${s.btnTel} ${isActive ? s.open : ""}`}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>
-                <button className={`${s.btnTels} ${isActive ? s.open : ""}`}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>
+                <button  className={s.btnTel}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>
+                <button className={s.btnTels}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>
             
             </div>
         </div>
 
       </nav>
       
-        <div onClick={toggleMenu} className={`${s.mobileMenu} ${isActive ? s.open : ""}`}>
-                <button className={`${s.mobileBurger} ${isActive ? s.open : ""}`} >
-                    <div className={`${s.line} ${isActive ? s.open : ""}`}></div>
-                    <div className={`${s.line} ${isActive ? s.open : ""}`}></div>
-                </button>
-            <p>MENU</p>
-          </div>
+   
           {isOpen && (
             <PopupModal
               open={isOpen}
