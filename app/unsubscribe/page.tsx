@@ -50,7 +50,7 @@ export default function UnsubscribePage() {
 
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>Se désinscrire du<span>Ebook SEO</span></h1>
+          <h1 className={styles.title}>Se désinscrire du <span>Ebook SEO</span></h1>
           <p className={styles.description}>
             Désolé de vous voir partir. Veuillez confirmer votre adresse email pour vous désinscrire.
           </p>
