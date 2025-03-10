@@ -2,6 +2,7 @@
 import { useState, FormEvent } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Ebook.module.css'; // Assurez-vous que le chemin est correct
+import { NavEbook } from '../components/NavEbook';
 
 export default function UnsubscribePage() {
   const [email, setEmail] = useState('');
@@ -35,6 +36,7 @@ export default function UnsubscribePage() {
 
   return (
     <>
+    <NavEbook />
       <div className={styles.bgImg}>
         <Image 
           src="/sand.jpg" 
