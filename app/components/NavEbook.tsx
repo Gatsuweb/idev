@@ -6,12 +6,7 @@ import { PopupModal } from "react-calendly"
 import Link from "next/link"
 
 export const NavEbook = () => {
-    const [isActive, setIsActive] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
-
-    const toggleMenu = () => {
-      setIsActive(!isActive);
-    };
     
   return (
     <>
