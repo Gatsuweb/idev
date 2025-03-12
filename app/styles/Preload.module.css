@@ -12,7 +12,7 @@
     background-color: transparent; */
     animation: clipload 0.4s ease-in forwards;
     animation-delay: 4s;
-    background-color: black;
+    background-color: var(--background);
     font-size: 1rem;
     
 }
@@ -24,34 +24,20 @@
     aspect-ratio: auto;
 }
 
-.typingContainer {
-    display: inline-block;
-
-}
 
 .preloadContainer p {
     position: absolute;
     z-index: 9999;
     display: flex;
     align-items: center;
-    animation: typing 3s steps(28) forwards;
-    animation-delay: 0.3s;
+
     color: white;
     overflow: hidden;
     height: 35px;
     white-space: nowrap;
-    border-right: 3px solid white;
-
-        width: 0;
 
 
-}
 
-@keyframes typing {
- 
-    to {
-        width: 190px;
-    }
 }
 
 .preloadContainers {
@@ -67,8 +53,7 @@
     background-color: transparent; */
     animation: cliploads 0.4s ease-in forwards;
     animation-delay: 6s;
-    background-color: var(--background);
-
+    background-color: black;
     
 }
 
