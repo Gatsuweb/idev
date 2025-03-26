@@ -40,7 +40,6 @@ export const Footer = () => {
                     <ul>
                         <li><a href="tel:+33634670782">Téléphone</a></li>
                         <li><a href="mailto:ivandevelopment@outlook.com">Mail</a></li>
-                         <li><a href="/ebook">Newsletter</a></li>
                     </ul>
                 </div>
                 <div>
