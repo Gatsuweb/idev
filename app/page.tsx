@@ -13,7 +13,6 @@ import { Projets } from './components/Projets';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
-import { Preload } from './components/Preload';
 
 export default function Home() {
 
@@ -47,7 +46,6 @@ export default function Home() {
     
     <div className={styles.page}>
       <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div>
-     {/* <Preload /> */}
      <Nav />
      <div id="hero">
       <Hero />
