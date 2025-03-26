@@ -12,7 +12,7 @@
 z-index: 1001;
     opacity: 0;
     animation: navanim 2s ease forwards;
-    animation-delay: 6.5s;
+    animation-delay: 2.8s;
 }
 
 @keyframes navanim {

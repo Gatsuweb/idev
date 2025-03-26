@@ -13,12 +13,6 @@ export const Preload = () => {
   // }, [router]);
   return (
     <>
-      <div className={s.preloadContainer}>
-      <Image src="/logoIDev.svg" alt="" height={300} width={200} className={s.imgPreload} priority />
-
-              {/* <p className={s.titlePreload}>Bienvenue au studio I&apos;DEV.</p> */}
-      </div>
-
       <div className={s.preloadContainers}>
           <Image src="/afou2bis.webp" alt="" height={3000} width={2000} className={s.imgPreload} priority />
     </div>

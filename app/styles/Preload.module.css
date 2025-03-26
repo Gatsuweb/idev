@@ -1,5 +1,5 @@
 
- .preloadContainer {
+ /* .preloadContainer {
     position: fixed;
     z-index: 9999;
     display: flex;
@@ -8,36 +8,19 @@
     width: 100%;
     height: 120vh;
     top: -10%;
-    /* animation: clipload 4s ease forwards;
-    background-color: transparent; */
+
     animation: clipload 0.4s ease-in forwards;
     animation-delay: 4s;
     background-color: var(--background);
     font-size: 1rem;
     
-}
+} */
 
 .imgPreload {
     object-fit: cover;
     height: auto;
     width: 250px;
     aspect-ratio: auto;
-}
-
-
-.preloadContainer p {
-    position: absolute;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-
-    color: white;
-    overflow: hidden;
-    height: 35px;
-    white-space: nowrap;
-
-
-
 }
 
 .preloadContainers {
@@ -52,7 +35,7 @@
     /* animation: clipload 4s ease forwards;
     background-color: transparent; */
     animation: cliploads 0.4s ease-in forwards;
-    animation-delay: 6s;
+    animation-delay: 3s;
     background-color: black;
     
 }
