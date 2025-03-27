@@ -46,6 +46,12 @@ export const generateMetadata = (): Metadata => {
           height: 630,
           alt: "Aperçu du site I'Dev",
         },
+        {
+          url: `${baseUrl}/preview-mobile.jpg`,  // Image optimisée pour mobile
+          width: 600,
+          height: 315,
+          alt: "Aperçu mobile du site I'Dev",
+        },
       ],
     },
     verification: {

@@ -30,22 +30,29 @@ export default function Home() {
   }
  }
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-    
-    lenis.on('scroll', (e) => {
-      console.log(e);
-    });
-  }, [])
+ useEffect(() => {
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+  });
+
+  function raf(time: number) {  // ✅ Typage ajouté
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  return () => {
+    lenis.destroy();
+  };
+}, []);
 
   
 
   return (
     
     <div className={styles.page}>
-      <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div>
+      {/* <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div> */}
      <Nav />
      <div id="hero">
       <Hero />
