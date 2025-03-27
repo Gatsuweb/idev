@@ -52,7 +52,7 @@ export default function Home() {
   return (
     
     <div className={styles.page}>
-      {/* <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div> */}
+      <div className={styles.bgImg}><Image src="/sand.jpg" alt="texture" className={styles.texture} width={3500} height={2500} style={{opacity: 0.1}}/></div>
      <Nav />
      <div id="hero">
       <Hero />
