@@ -1,34 +1,33 @@
 // "use client"
 // import Lenis from 'lenis'
 // import { useEffect} from 'react'
-import { motion } from 'motion/react';
 import Image from "next/image";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { FootHero } from "./components/FootHero";
 import { ServicesCard } from "./components/ServicesCard";
-import styles from "./page.module.css";
 import { Pricing } from './components/Pricing';
 import { Projets } from './components/Projets';
 import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
+import styles from "./page.module.css";
 
 export default function Home() {
 
- const footerView = {
-  initial: {
-    y: 50,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-    }
-  }
- }
+//  const footerView = {
+//   initial: {
+//     y: 50,
+//     opacity: 0,
+//   },
+//   animate: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       duration: 0.4,
+//     }
+//   }
+//  }
 
 //  useEffect(() => {
 //   const lenis = new Lenis({
@@ -75,9 +74,10 @@ export default function Home() {
       <div id="contact">
         <Contact />
       </div>
-    <motion.div variants={footerView} whileInView="animate" initial= "initial">
+    {/* <div variants={footerView} whileInView="animate" initial= "initial"> */}
+    <div>
         <Footer />
-    </motion.div>
+    </div>
     </div>
   );
 }
