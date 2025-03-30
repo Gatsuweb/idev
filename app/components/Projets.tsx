@@ -1,4 +1,3 @@
-
 "use client"
 import Image from "next/image"
 import s from "../styles/Projets.module.css"
@@ -25,8 +24,26 @@ const letterVariant = {
 export const Projets = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
+
+    // Détection du dispositif mobile
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // Ajustez le seuil selon vos besoins
+      };
+      
+      // Vérifier au chargement
+      checkMobile();
+      
+      // Écouter les changements de taille d'écran
+      window.addEventListener('resize', checkMobile);
+      
+      return () => {
+        window.removeEventListener('resize', checkMobile);
+      };
+    }, []);
 
     useEffect(() => {
       const cursor = document.getElementById("customCursor");
@@ -45,15 +62,30 @@ export const Projets = () => {
       };
     }, []);
 
-    // Observer pour détecter quand la section devient visible
+    // Observer avec gestion des erreurs et optimisation mobile
     useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
+      // S'assurer que IntersectionObserver est supporté
+      if (!('IntersectionObserver' in window)) {
+        // Fallback pour les navigateurs sans support
+        setIsVisible(true);
+        return;
+      }
+      
+      const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+        try {
           const [entry] = entries;
           setIsVisible(entry.isIntersecting);
-        },
-        { threshold: 0.2 } // La vidéo commence à se charger quand 10% de la section est visible
-      );
+        } catch (error) {
+          console.error("Error in intersection observer:", error);
+          // Fallback en cas d'erreur
+          setIsVisible(true);
+        }
+      };
+      
+      const observer = new IntersectionObserver(handleIntersection, { 
+        threshold: isMobile ? 0.05 : 0.1, // Seuil plus bas sur mobile
+        rootMargin: "50px" // Marge pour déclencher plus tôt
+      });
       
       if (sectionRef.current) {
         observer.observe(sectionRef.current);
@@ -61,20 +93,57 @@ export const Projets = () => {
       
       return () => {
         if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
+          try {
+            observer.unobserve(sectionRef.current);
+          } catch (error) {
+            console.error("Error unobserving section:", error);
+          }
         }
       };
-    }, []);
+    }, [isMobile]);
 
-    // Effet pour gérer le chargement de la vidéo quand la section est visible
+    // Gestion optimisée du chargement vidéo
     useEffect(() => {
-      if (isVisible && videoRef.current) {
-        // Chargement dynamique de la source vidéo
-        videoRef.current.src = projet[currentIndex].image;
-        videoRef.current.load();
-        videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+      if (!isVisible || !videoRef.current) return;
+      
+      try {
+        // Prévenir les chargements multiples
+        if (videoRef.current.src === "" || videoRef.current.src !== projet[currentIndex].image) {
+          const videoSrc = projet[currentIndex].image;
+          
+          // Pour mobile, baisser la qualité ou utiliser une image statique
+          if (isMobile) {
+            // Option 1: On charge la vidéo mais avec des paramètres adaptés
+            videoRef.current.src = videoSrc;
+            videoRef.current.load();
+            
+            // Réduire la qualité de lecture sur mobile
+            videoRef.current.setAttribute('playsinline', '');
+            videoRef.current.muted = true;
+            videoRef.current.controls = false;
+            
+            // Lecture avec gestion d'erreur
+            videoRef.current.play().catch(e => {
+              console.log("Autoplay prevented:", e);
+              // Sur erreur, on peut désactiver la vidéo et afficher une image à la place
+              // videoRef.current.style.display = 'none';
+              // Afficher une image alternative si nécessaire
+            });
+          } else {
+            // Sur desktop, comportement normal
+            videoRef.current.src = videoSrc;
+            videoRef.current.load();
+            videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+          }
+        }
+      } catch (error) {
+        console.error("Error loading video:", error);
+        // Fallback en cas d'erreur
+        if (videoRef.current) {
+          videoRef.current.poster = "placeholder-image.jpg"; // Ajoutez une image placeholder
+        }
       }
-    }, [isVisible, currentIndex]);
+    }, [isVisible, currentIndex, isMobile]);
 
     const nextProject = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projet.length);
@@ -155,19 +224,46 @@ export const Projets = () => {
           </div>
           <div className={s.caroussel}>
             <a href={projet[currentIndex].link} target="blank">
-              <video
-                ref={videoRef}
-                width={1200}
-                height={700}
-                className={s.imgProjet}
-                autoPlay={isVisible}
-                loop 
-                muted 
-                playsInline 
-                preload="none"
-                onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
-                onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
-              />
+              {isMobile ? (
+                // Pour les mobiles, utiliser une approche simplifiée avec un élément de sauvegarde
+                <div className={s.mobileVideoContainer}>
+                  <video
+                    ref={videoRef}
+                    width={1200}
+                    height={700}
+                    className={s.imgProjet}
+                    autoPlay={false} // Désactiver l'autoplay sur mobile
+                    loop 
+                    muted 
+                    playsInline 
+                    preload="none"
+                    poster={`${projet[currentIndex].image.split('.')[0]}.jpg`} // Utiliser une image poster (à créer)
+                    onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+                    onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+                    onError={(e) => {
+                      // En cas d'erreur, on masque la vidéo
+                      const target = e.target as HTMLVideoElement;
+                      target.style.display = 'none';
+                      console.error("Video error:", e);
+                    }}
+                  />
+                </div>
+              ) : (
+                // Pour desktop, garder l'approche originale
+                <video
+                  ref={videoRef}
+                  width={1200}
+                  height={700}
+                  className={s.imgProjet}
+                  autoPlay={isVisible}
+                  loop 
+                  muted 
+                  playsInline 
+                  preload="none"
+                  onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+                  onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+                />
+              )}
             </a>
             <Image
               src="arrowCarousselG.svg"
