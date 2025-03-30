@@ -108,49 +108,49 @@ export const Projets = () => {
             name: "VALKYRINK",
             desc: "Création d'un site vitrine interactif pour un salon de tatouage, alliant design immersif et animations fluides pour une expérience unique. Le site met en avant les œuvres du tatoueur, ses services et ses inspirations, avec une navigation intuitive.",
             image: "Valkyrink.webm",
-            images: "/valkyrinks.png"
+            images: "valkyrinks.png"
         },
         {
             link:"https://coregym.netlify.app/",
             name: "Core Gym",
             desc: "Création d'un site vitrine pour une salon de tatouage. L'objectif est de présenter les services de la salle, faciliter l'accès aux informations clés et proposer une gestion simplifiée des abonnements et du planning des cours.",
             image: "coregym.webm",
-            images: "/coregyms.png"
+            images: "coregyms.png"
         },
         {
             link:"",
             name: "LATIA",
             desc: "Développement d'un site vitrine pour une agence de graphic design moderne et créative. Enrichi d'animations dynamiques et d'interraction 3D, permettant de mettre en valeur les réalisations de l'agence et son identité visuelle. L'expérience utilisateur est pensée pour captiver et inspirer dès la première interaction.",
             image: "latia.webm",
-            images: "/latias.png"
+            images: "latias.png"
         },
         {
             link:"https://maelmorlevat.fr/",
             name: "MAEL MORLEVAT",
             desc: "Conception d'un site vitrine élégant pour un chef cuisinier à domicile. Une mise en page raffinée et animée met en avant ses prestations, son savoir-faire et ses créations culinaires, avec une galerie très visuels et appétissants pour séduire les visiteurs.",
             image: "maelmorlevat.webm",
-            images: "/maelmorlevats.png"
+            images: "maelmorlevats.png"
         },
         {
             link:"",
             name: "...",
             desc: "Design d'un site web pour une entreprise familiale de charpente, un design animé et mderne correspondant à l'image de marque. Animations subtiles, visuels percutants et navigation intuitive",
             image: "carpenter.webm",
-            images: "/carpenters.png"
+            images: "carpenters.png"
         },
         {
             link:"https://gengo-weld.vercel.app/",
             name: "GENGO(DESKTOP)",
             desc: "Développement de Gengo, une plateforme ludique et gamifiée pour apprendre le français. Une interface interactive et engageante, combinant jeux, défis et récompenses, motive les utilisateurs à progresser tout en s'amusant. Une approche moderne et immersive pour faciliter l'apprentissage à tous les niveaux",
             image: "GENGO.webm",
-            images: "/gengos.png"
+            images: "gengos.png"
         },
         {
             link:"",
             name: "HAUTELIGNE",
             desc: "Création d'un design pour Haute Ligne, une marque de vêtements modernes pour homme. Un design minimaliste et sophistiqué met en avant des collections élégantes à travers une expérience fluide et dynamique. Animations subtiles, visuels percutants et navigation intuitive renforcent l'identité premium de la marque.",
             image: "hauteligne.webm",
-            images: "/fallwinters.png"
+            images: "fallwinters.png"
         },
     ]
 
