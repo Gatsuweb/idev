@@ -1,4 +1,3 @@
-
 "use client"
 import Image from "next/image"
 import s from "../styles/Projets.module.css"
@@ -23,77 +22,77 @@ const letterVariant = {
 };
 
 export const Projets = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    // Vérifier si on est sur mobile
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // 768px est une valeur courante pour mobile
-    };
-    
-    // Vérifier au chargement
-    checkIfMobile();
-    
-    // Écouter les changements de taille
-    window.addEventListener('resize', checkIfMobile);
-    
-    return () => {
-      window.removeEventListener('resize', checkIfMobile);
-    };
-  }, []);
+    // Check if device is mobile
+    useEffect(() => {
+      const checkIfMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // You can adjust this breakpoint
+      };
+      
+      // Initial check
+      checkIfMobile();
+      
+      // Add event listener for window resize
+      window.addEventListener('resize', checkIfMobile);
+      
+      // Cleanup
+      return () => {
+        window.removeEventListener('resize', checkIfMobile);
+      };
+    }, []);
 
-  useEffect(() => {
-    const cursor = document.getElementById("customCursor");
-  
-    const moveCursor = (e: MouseEvent) => {
-      if (cursor) {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-      }
-    };
-  
-    document.addEventListener("mousemove", moveCursor);
-  
-    return () => {
-      document.removeEventListener("mousemove", moveCursor);
-    };
-  }, []);
+    useEffect(() => {
+      const cursor = document.getElementById("customCursor");
+    
+      const moveCursor = (e: MouseEvent) => {
+        if (cursor) {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        }
+      };
+    
+      document.addEventListener("mousemove", moveCursor);
+    
+      return () => {
+        document.removeEventListener("mousemove", moveCursor);
+      };
+    }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
+    // Observer pour détecter quand la section devient visible
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          setIsVisible(entry.isIntersecting);
+        },
+        { threshold: 0.1 } // La vidéo commence à se charger quand 10% de la section est visible
+      );
+      
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        observer.observe(sectionRef.current);
       }
-    };
-  }, []);
+      
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, []);
 
-  useEffect(() => {
-    if (isVisible && videoRef.current) {
-      videoRef.current.src = projet[currentIndex].image;
-      videoRef.current.load();
-      // Ne jouer que si ce n'est pas un mobile
-      if (!isMobile) {
+    // Effet pour gérer le chargement de la vidéo quand la section est visible
+    useEffect(() => {
+      if (isVisible && videoRef.current && !isMobile) {
+        // Chargement dynamique de la source vidéo seulement sur desktop
+        videoRef.current.src = projet[currentIndex].image;
+        videoRef.current.load();
         videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
       }
-    }
-  }, [isVisible, currentIndex, isMobile]);
-
+    }, [isVisible, currentIndex, isMobile]);
 
     const nextProject = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projet.length);
@@ -108,43 +107,50 @@ export const Projets = () => {
             link:"https://valkyrink-tattoo.com/",
             name: "VALKYRINK",
             desc: "Création d'un site vitrine interactif pour un salon de tatouage, alliant design immersif et animations fluides pour une expérience unique. Le site met en avant les œuvres du tatoueur, ses services et ses inspirations, avec une navigation intuitive.",
-            image: "Valkyrink.webm"
+            image: "Valkyrink.webm",
+            images: "/valkyrinks.png"
         },
         {
             link:"https://coregym.netlify.app/",
             name: "Core Gym",
             desc: "Création d'un site vitrine pour une salon de tatouage. L'objectif est de présenter les services de la salle, faciliter l'accès aux informations clés et proposer une gestion simplifiée des abonnements et du planning des cours.",
-            image: "coregym.webm"
+            image: "coregym.webm",
+            images: "/coregyms.png"
         },
         {
             link:"",
             name: "LATIA",
             desc: "Développement d'un site vitrine pour une agence de graphic design moderne et créative. Enrichi d'animations dynamiques et d'interraction 3D, permettant de mettre en valeur les réalisations de l'agence et son identité visuelle. L'expérience utilisateur est pensée pour captiver et inspirer dès la première interaction.",
-            image: "latia.webm"
+            image: "latia.webm",
+            images: "/latias.png"
         },
         {
             link:"https://maelmorlevat.fr/",
             name: "MAEL MORLEVAT",
             desc: "Conception d'un site vitrine élégant pour un chef cuisinier à domicile. Une mise en page raffinée et animée met en avant ses prestations, son savoir-faire et ses créations culinaires, avec une galerie très visuels et appétissants pour séduire les visiteurs.",
-            image: "maelmorlevat.webm"
+            image: "maelmorlevat.webm",
+            images: "/maelmorlevats.png"
         },
         {
             link:"",
             name: "...",
             desc: "Design d'un site web pour une entreprise familiale de charpente, un design animé et mderne correspondant à l'image de marque. Animations subtiles, visuels percutants et navigation intuitive",
-            image: "carpenter.webm"
+            image: "carpenter.webm",
+            images: "/carpenters.png"
         },
         {
             link:"https://gengo-weld.vercel.app/",
             name: "GENGO(DESKTOP)",
             desc: "Développement de Gengo, une plateforme ludique et gamifiée pour apprendre le français. Une interface interactive et engageante, combinant jeux, défis et récompenses, motive les utilisateurs à progresser tout en s'amusant. Une approche moderne et immersive pour faciliter l'apprentissage à tous les niveaux",
-            image: "GENGO.webm"
+            image: "GENGO.webm",
+            images: "/gengos.png"
         },
         {
             link:"",
             name: "HAUTELIGNE",
             desc: "Création d'un design pour Haute Ligne, une marque de vêtements modernes pour homme. Un design minimaliste et sophistiqué met en avant des collections élégantes à travers une expérience fluide et dynamique. Animations subtiles, visuels percutants et navigation intuitive renforcent l'identité premium de la marque.",
-            image: "hauteligne.webm"
+            image: "hauteligne.webm",
+            images: "/fallwinters.png"
         },
     ]
 
@@ -173,20 +179,34 @@ export const Projets = () => {
             </div>
           </div>
           <div className={s.caroussel}>
-          <a href={projet[currentIndex].link} target="blank">
-              <video
-                ref={videoRef}
-                width={1200}
-                height={700}
-                className={s.imgProjet}
-                autoPlay={!isMobile && isVisible} // Désactivé sur mobile
-                loop 
-                muted 
-                playsInline 
-                preload="none"
-                onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
-                onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
-              />
+            <a href={projet[currentIndex].link} target="blank">
+              {isMobile ? (
+                // Afficher l'image statique sur mobile
+                <Image
+                  src={projet[currentIndex].images}
+                  alt={`${projet[currentIndex].name} preview`}
+                  width={1200}
+                  height={700}
+                  className={s.imgProjet}
+                  onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+                  onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+                />
+              ) : (
+                // Afficher la vidéo sur desktop
+                <video
+                  ref={videoRef}
+                  width={1200}
+                  height={700}
+                  className={s.imgProjet}
+                  autoPlay={isVisible}
+                  loop 
+                  muted 
+                  playsInline 
+                  preload="none"
+                  onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+                  onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+                />
+              )}
             </a>
             <Image
               src="arrowCarousselG.svg"
