@@ -1,3 +1,4 @@
+
 "use client"
 import Image from "next/image"
 import s from "../styles/Projets.module.css"
@@ -22,128 +23,77 @@ const letterVariant = {
 };
 
 export const Projets = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-    // Détection du dispositif mobile
-    useEffect(() => {
-      const checkMobile = () => {
-        setIsMobile(window.innerWidth <= 768); // Ajustez le seuil selon vos besoins
-      };
-      
-      // Vérifier au chargement
-      checkMobile();
-      
-      // Écouter les changements de taille d'écran
-      window.addEventListener('resize', checkMobile);
-      
-      return () => {
-        window.removeEventListener('resize', checkMobile);
-      };
-    }, []);
+  useEffect(() => {
+    // Vérifier si on est sur mobile
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // 768px est une valeur courante pour mobile
+    };
+    
+    // Vérifier au chargement
+    checkIfMobile();
+    
+    // Écouter les changements de taille
+    window.addEventListener('resize', checkIfMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
-    useEffect(() => {
-      const cursor = document.getElementById("customCursor");
-    
-      const moveCursor = (e: MouseEvent) => {
-        if (cursor) {
-          cursor.style.left = `${e.clientX}px`;
-          cursor.style.top = `${e.clientY}px`;
-        }
-      };
-    
-      document.addEventListener("mousemove", moveCursor);
-    
-      return () => {
-        document.removeEventListener("mousemove", moveCursor);
-      };
-    }, []);
-
-    // Observer avec gestion des erreurs et optimisation mobile
-    useEffect(() => {
-      // S'assurer que IntersectionObserver est supporté
-      if (!('IntersectionObserver' in window)) {
-        // Fallback pour les navigateurs sans support
-        setIsVisible(true);
-        return;
+  useEffect(() => {
+    const cursor = document.getElementById("customCursor");
+  
+    const moveCursor = (e: MouseEvent) => {
+      if (cursor) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
       }
-      
-      const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-        try {
-          const [entry] = entries;
-          setIsVisible(entry.isIntersecting);
-        } catch (error) {
-          console.error("Error in intersection observer:", error);
-          // Fallback en cas d'erreur
-          setIsVisible(true);
-        }
-      };
-      
-      const observer = new IntersectionObserver(handleIntersection, { 
-        threshold: isMobile ? 0.05 : 0.1, // Seuil plus bas sur mobile
-        rootMargin: "50px" // Marge pour déclencher plus tôt
-      });
-      
+    };
+  
+    document.addEventListener("mousemove", moveCursor);
+  
+    return () => {
+      document.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
       if (sectionRef.current) {
-        observer.observe(sectionRef.current);
+        observer.unobserve(sectionRef.current);
       }
-      
-      return () => {
-        if (sectionRef.current) {
-          try {
-            observer.unobserve(sectionRef.current);
-          } catch (error) {
-            console.error("Error unobserving section:", error);
-          }
-        }
-      };
-    }, [isMobile]);
+    };
+  }, []);
 
-    // Gestion optimisée du chargement vidéo
-    useEffect(() => {
-      if (!isVisible || !videoRef.current) return;
-      
-      try {
-        // Prévenir les chargements multiples
-        if (videoRef.current.src === "" || videoRef.current.src !== projet[currentIndex].image) {
-          const videoSrc = projet[currentIndex].image;
-          
-          // Pour mobile, baisser la qualité ou utiliser une image statique
-          if (isMobile) {
-            // Option 1: On charge la vidéo mais avec des paramètres adaptés
-            videoRef.current.src = videoSrc;
-            videoRef.current.load();
-            
-            // Réduire la qualité de lecture sur mobile
-            videoRef.current.setAttribute('playsinline', '');
-            videoRef.current.muted = true;
-            videoRef.current.controls = false;
-            
-            // Lecture avec gestion d'erreur
-            videoRef.current.play().catch(e => {
-              console.log("Autoplay prevented:", e);
-              // Sur erreur, on peut désactiver la vidéo et afficher une image à la place
-              // videoRef.current.style.display = 'none';
-              // Afficher une image alternative si nécessaire
-            });
-          } else {
-            // Sur desktop, comportement normal
-            videoRef.current.src = videoSrc;
-            videoRef.current.load();
-            videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
-          }
-        }
-      } catch (error) {
-        console.error("Error loading video:", error);
-        // Fallback en cas d'erreur
-        if (videoRef.current) {
-          videoRef.current.poster = "placeholder-image.jpg"; // Ajoutez une image placeholder
-        }
+  useEffect(() => {
+    if (isVisible && videoRef.current) {
+      videoRef.current.src = projet[currentIndex].image;
+      videoRef.current.load();
+      // Ne jouer que si ce n'est pas un mobile
+      if (!isMobile) {
+        videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
       }
-    }, [isVisible, currentIndex, isMobile]);
+    }
+  }, [isVisible, currentIndex, isMobile]);
+
 
     const nextProject = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projet.length);
@@ -223,47 +173,20 @@ export const Projets = () => {
             </div>
           </div>
           <div className={s.caroussel}>
-            <a href={projet[currentIndex].link} target="blank">
-              {isMobile ? (
-                // Pour les mobiles, utiliser une approche simplifiée avec un élément de sauvegarde
-                <div className={s.mobileVideoContainer}>
-                  <video
-                    ref={videoRef}
-                    width={1200}
-                    height={700}
-                    className={s.imgProjet}
-                    autoPlay={false} // Désactiver l'autoplay sur mobile
-                    loop 
-                    muted 
-                    playsInline 
-                    preload="none"
-                    poster={`${projet[currentIndex].image.split('.')[0]}.jpg`} // Utiliser une image poster (à créer)
-                    onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
-                    onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
-                    onError={(e) => {
-                      // En cas d'erreur, on masque la vidéo
-                      const target = e.target as HTMLVideoElement;
-                      target.style.display = 'none';
-                      console.error("Video error:", e);
-                    }}
-                  />
-                </div>
-              ) : (
-                // Pour desktop, garder l'approche originale
-                <video
-                  ref={videoRef}
-                  width={1200}
-                  height={700}
-                  className={s.imgProjet}
-                  autoPlay={isVisible}
-                  loop 
-                  muted 
-                  playsInline 
-                  preload="none"
-                  onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
-                  onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
-                />
-              )}
+          <a href={projet[currentIndex].link} target="blank">
+              <video
+                ref={videoRef}
+                width={1200}
+                height={700}
+                className={s.imgProjet}
+                autoPlay={!isMobile && isVisible} // Désactivé sur mobile
+                loop 
+                muted 
+                playsInline 
+                preload="none"
+                onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
+                onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+              />
             </a>
             <Image
               src="arrowCarousselG.svg"
