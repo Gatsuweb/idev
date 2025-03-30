@@ -182,14 +182,11 @@ export const Projets = () => {
             <a href={projet[currentIndex].link} target="blank">
               {isMobile ? (
                 // Afficher l'image statique sur mobile
-                <Image
+                <img
                   src={projet[currentIndex].images}
                   alt={`${projet[currentIndex].name} preview`}
-                  width={1200}
-                  height={700}
                   className={s.imgProjet}
-                  onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(s.active)}
-                  onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(s.active)}
+                  style={{ width: '100%', height: 'auto' }}
                 />
               ) : (
                 // Afficher la vidéo sur desktop
