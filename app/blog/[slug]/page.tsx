@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '../../../lib/mdx';
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
-// import styles from '../../styles/post.module.css';
+import styles from '@/app/styles/Post.module.css'
 
 // Définir les paramètres statiques pour les routes
 export async function generateStaticParams() {
