@@ -40,6 +40,7 @@ export default function ProjetCreatif() {
         {/* Project 1 */}
         <div className={styles.projetCreatifCard}>
           <div className={styles.projetCreatifImgWrapper}>
+            <a href="https://valkyrink-tattoo.com/" target="_blank" rel="noopener noreferrer">
             <Image
               src="/imagesblog/g2.png"
               alt="Quivo Logistics"
@@ -50,6 +51,7 @@ export default function ProjetCreatif() {
               onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(styles.active)}
               onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(styles.active)}
             />
+            </a>
           </div>
           <div className={styles.projetCreatifInfo}>
             <h3>Valkyrink | Tatouage artistique</h3>
@@ -59,6 +61,7 @@ export default function ProjetCreatif() {
         {/* Project 2 */}
         <div className={styles.projetCreatifCard}>
           <div className={styles.projetCreatifImgWrapper}>
+            <a href="https://maelmorlevat.fr/" target="_blank" rel="noopener noreferrer">
             <Image
               src="/imagesblog/g1.png"
               alt="Ascon Systems"
@@ -69,6 +72,7 @@ export default function ProjetCreatif() {
               onMouseEnter={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.add(styles.active)}
               onMouseLeave={() => (document.querySelector("#customCursor") as HTMLElement)?.classList.remove(styles.active)}
             />
+            </a>
           </div>
           <div className={styles.projetCreatifInfo}>
             <h3>Mael Morlevat | Chef cuisinier à domicile</h3>
@@ -89,7 +93,7 @@ export default function ProjetCreatif() {
             />
           </div>
           <div className={styles.projetCreatifInfo}>
-          <h3>Mel'ink | Tatouage artistique</h3>
+          <h3>Mel ink | Tatouage artistique</h3>
           <p>SEO – identité visuelle – Site web</p>
           </div>
         </div>

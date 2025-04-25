@@ -41,7 +41,7 @@ export default function FaqCreatif() {
     <section className={styles.faqSection}>
       <div className={styles.faqHeader}>
         <h2>Questions <span>fréquentes</span></h2>
-        <p>Tout ce que vous devez savoir sur l'importance d'un site web pour les créatifs</p>
+        <p>Tout ce que vous devez savoir sur l&apos;importance d&apos;un site web pour les créatifs</p>
       </div>
       
       <div className={styles.faqContainer}>
