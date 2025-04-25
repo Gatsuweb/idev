@@ -1,6 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-
 import { getPostBySlug, getAllPosts } from '../../../lib/mdx';
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
@@ -38,12 +37,20 @@ export async function generateMetadata({
     },
   };
 }
+
+// Définition des types pour les props des composants MDX
+type MDXComponentProps = {
+  children?: React.ReactNode;
+  className?: string;
+  [key: string]: unknown;
+}
+
 // Composants que vous pouvez utiliser dans vos fichiers MDX
 const components = {
-  h1: (props: any) => <h1 {...props} />,
-  h2: (props: any) => <h2 {...props} />,
+  h1: (props: MDXComponentProps) => <h1 {...props} />,
+  h2: (props: MDXComponentProps) => <h2 {...props} />,
   Image,
-  div: (props: any) => {
+  div: (props: MDXComponentProps) => {
     // Pour le composant personnalisé dans votre exemple MDX
     if (props.className === 'bg-blue-100 p-4 rounded-lg') {
       return <div className={styles.customComponent} {...props} />;
