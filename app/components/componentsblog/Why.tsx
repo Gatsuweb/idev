@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import styles from "@/app/site-web-pour-creatifs/siteCreatif.module.css";
 
 export const Why = () => {

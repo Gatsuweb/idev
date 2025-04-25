@@ -1,10 +1,10 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-import { Metadata } from 'next';
+
 import { getPostBySlug, getAllPosts } from '../../../lib/mdx';
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
-import styles from '../../styles/post.module.css';
+// import styles from '../../styles/post.module.css';
 
 // Définir les paramètres statiques pour les routes
 export async function generateStaticParams() {
