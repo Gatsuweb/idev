@@ -168,7 +168,18 @@ animation-delay: 1.5s;
 opacity: 0;
 
   }
+ .btnContactContainer:hover .btnContact {
+      clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */
+      background-color: var(--colort);
+    }
 
+    .arrowHero {
+        transition: all 0.4s cubic-bezier(0.52, 0, 0, 0.63);
+    }
+
+    .btnContactContainer:hover .arrowHero {
+       transform: rotate(45deg);     
+     }
 
   .btnContactContainer:hover .btnContact {
       clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */

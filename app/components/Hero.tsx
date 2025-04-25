@@ -38,7 +38,7 @@ export const Hero = () => {
           </div>
           <div className={s.pAnimHero}>
 
-            <p><span>MARS</span></p>
+            <p><span>AVRIL</span></p>
             </div>
 
         </div>

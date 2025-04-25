@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import s from "../styles/Footer.module.css"
+import Link from "next/link";
 
 export const Footer = () => {
     const [time, setTime] = useState<string | null>(null);
@@ -21,10 +22,9 @@ export const Footer = () => {
                 <div>
                     <h4>MENU</h4>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projets">Projets</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><Link href="/">Accueil</Link></li>
+                        <li><Link href="/blog">Blog</Link></li>
+                        
                     </ul>
                 </div>
                 <div>

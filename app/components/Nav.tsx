@@ -16,7 +16,7 @@ export const Nav = () => {
     <>
       <nav className={`${s.navContainer}  ${isActive ? s.open : ""}`}>
         <div className={`${s.navFirst} ${isActive ? s.open : ""}`}>
-          <a href="#hero">
+          <a href="/">
             <Image src="logoIDev.svg" alt="Logo auteur" id={s.logo} height={80} width={80} />
             </a>
             <p>&#123;DESIGN & DEVELOPPEMENT&#125;</p>
