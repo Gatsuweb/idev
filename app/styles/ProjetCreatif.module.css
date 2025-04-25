@@ -109,4 +109,22 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .projetCreatifP {
+    justify-items: left;
+    font-size: 1rem;
+  
+    font-weight: 500;
+    & p {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .projetCreatifSection {
+    padding: 8rem 0 0 0;
+  }
+
+  
 }
