@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import LenisScroll from "./components/LenisScroll";
 
 export const generateMetadata = (): Metadata => {
   const baseUrl = "https://idevstudio.fr";
@@ -144,7 +145,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
+      <LenisScroll>
         {children}
+        </LenisScroll>
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-0KCZRHLBMV"

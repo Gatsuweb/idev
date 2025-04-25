@@ -1,0 +1,44 @@
+/* tags.module.css */
+.tagsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .tagsGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .tagsGrid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  .tagCard {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .tagCard:hover {
+    background-color: #f9fafb;
+  }
+  
+  .tagName {
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+  
+  .tagCount {
+    margin-left: 0.5rem;
+    background-color: #e5e7eb;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+  }

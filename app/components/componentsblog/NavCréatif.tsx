@@ -1,11 +1,10 @@
 "use client"
 import Image from "next/image"
-import s from "../styles/Nav.module.css"
+import s from "../../styles/Nav.module.css"
 import React, { useState } from 'react'
 import { PopupModal } from "react-calendly"
-import Link from "next/link"
 
-export const Nav = () => {
+export const NavCreatif = () => {
     const [isActive, setIsActive] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
 
@@ -17,17 +16,13 @@ export const Nav = () => {
     <>
       <nav className={`${s.navContainer}  ${isActive ? s.open : ""}`}>
         <div className={`${s.navFirst} ${isActive ? s.open : ""}`}>
-          <Link href="/">
+          <a href="/">
             <Image src="logoIDev.svg" alt="Logo auteur" id={s.logo} height={80} width={80} />
-            </Link>
+            </a>
             <p>&#123;DESIGN & DEVELOPPEMENT&#125;</p>
         </div>
         <div className={`${s.ulAnim} ${isActive ? s.open : ""}`}>
-          <ul >
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#projets">PROJETS</a></li>
-            <li><a href="#about">À PROPOS</a></li>
-          </ul>
+        
             <div className={s.btnContainer} onClick={() => setIsOpen(true)}>
                 <button  className={`${s.btnTel} ${isActive ? s.open : ""}`}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>
                 <button className={`${s.btnTels} ${isActive ? s.open : ""}`}><Image src="iconeTel.svg" alt="Icone téléphone" height={40} width={40} />RESERVER</button>

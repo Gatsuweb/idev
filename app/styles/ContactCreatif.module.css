@@ -1,0 +1,84 @@
+.contactCreatifSection {
+  background: #fcf7ef;
+
+  border-radius: 16px;
+  & a {
+    text-decoration: none;
+  }
+  & h2 {
+    line-height: 1;
+    font-weight: 600;
+  }
+}
+
+.contactCreatifGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Make left card larger */
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.contactCard {
+  border-radius: 8px;
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.contactCardDark {
+  background: #232323;
+  color: #fff;
+  & a {
+    color: #fff;
+  }
+}
+
+.contactCardPink {
+  background: var(--colord);
+  color: #181818;
+  & a {
+    color: #181818;
+  }
+}
+
+.contactCardTop {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.contactCardTop strong {
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.contactCardTop p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  width: 75%;
+}
+
+.contactCardBottom {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.contactCardBottom:hover .arrowHero {
+    transition: rotate 0.3s ease-in-out;
+    rotate: 45deg;
+}
+
+@media (max-width: 900px) {
+  .contactCreatifGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .contactCardBottom {
+    font-size: 2rem;
+  }
+}

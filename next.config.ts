@@ -3,6 +3,7 @@
 const nextConfig = {
   // Votre configuration actuelle
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  
 
   async headers() {
     return [

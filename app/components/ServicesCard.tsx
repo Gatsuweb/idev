@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import s from "../styles/ServicesCard.module.css";
+import Link from "next/link";
 
 const letterVariant = {
   initial: {
@@ -68,7 +69,7 @@ export const ServicesCard = () => {
       <div className={s.servicesCardContainer}>
         <section className={s.card}>
           <p>
-          Je transforme vos idées en expériences web uniques, <br /> alliant votre univers à ma touche <span>créativité</span> et <span>immersive</span>
+          Je transforme vos idées en expériences web uniques, <br /> alliant votre univers à ma touche <Link href="/site-web-pour-creatifs" style={{color: "gray",}}><span>créative</span> et <span>immersive</span></Link>
           </p>
         </section>
 

@@ -1,0 +1,509 @@
+.containerBlog {
+  position: relative;
+  scroll-behavior: smooth;
+
+}
+
+.splitScreen {
+  position: sticky;
+  top: 0;
+  width: 100%;
+   height: 100vh;
+   cursor: none !important;
+
+}
+.pSticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+   height: 100vh; /* Or your section background */
+}
+
+.projets{
+
+  border-radius: 30px 30px 0 0;
+  background-color: var(--background);
+}
+
+.headerBlog {
+  min-height: 100vh;
+  justify-items: center;
+  align-content: center;
+  & p {
+    text-align: right;
+    max-width: 55vw;
+    font-weight: 500;
+    padding-left: 30rem;
+    word-spacing: 8px;
+    color: var(--colorp);
+    font-weight: 500;
+  }
+  & span {
+    color: var(--colord);
+    font-weight: 600;
+  }
+}
+
+.titleBlog {
+
+  text-align: center;
+  font-weight: 600;
+  line-height: 1;
+  max-width: 60vw;
+  margin: 6rem;
+  & span {
+    color: var(--colord);
+  }
+
+}
+ /* section why */
+.whySection {
+  border-radius: 30px 30px 0 0;
+
+  background: #1c1c1c;
+  padding: 48px 0;
+  min-height: 100vh;
+  color: white;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 40px;
+  margin: 0 auto;
+  align-items: flex-start;
+  padding: 0 24px;
+}
+
+.whyLeft {
+  border-top: 2px solid #e7e0d3;
+  padding-top: 18px;
+}
+
+.whyWhen h2{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.whyDesc {
+  font-size: 1.35rem;
+  color: white;
+  font-family: var(--fontd, 'Inter', Arial, sans-serif);
+  margin-bottom: 0;
+  padding-right: 1.6rem;
+  line-height: 1.6;
+}
+
+.whyCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.whyCard {
+  border-top: 2px solid #e7e0d3;
+  border-radius: 10px;
+  padding: 28px 24px 32px 24px;
+  box-shadow: none;
+  position: relative;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.whyCardTitle h3{
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: var(--fontp, 'Inter', Arial, sans-serif);
+}
+
+.whyCardText {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--fontd, 'Inter', Arial, sans-serif);
+}
+
+.whyCard {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.whyCard:hover, .whyCard:hover {
+  background: pink;
+  color: black;
+}
+
+.whyCard:first-child:hover, .whyCard:last-child:hover {
+  background: var(--colord);
+}
+
+.aboutApproach {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: pink;
+  color: black;
+  border-radius: 30px 30px 0 0;
+
+}
+
+.aboutApproachContainer {
+  background-color: #e7e0d3;
+}
+
+ .aboutContent {
+  margin-bottom: 1rem;
+ 
+} 
+.aboutContent h2 {
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+
+  font-size: 10rem;
+  text-transform: uppercase
+ ;
+  line-height: 1;
+  font-weight: 900;
+  & span {
+    color: var(--colord);
+  }
+}
+
+
+.aboutApproachText {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1.8rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 1rem 10rem;
+  transition: background-color 0.5s cubic-bezier(0.52, 0, 0, 0.63);
+
+  & p {
+    width: 30%;
+  }
+}
+
+.aboutApproachText:nth-child(2) {
+
+  border-top: 0px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+
+}
+
+.aboutApproachText:hover {
+  background: black;
+  color: pink;
+}
+
+.btnApproach {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+
+.btnContactContainer {
+  position: relative;
+  display: inline-block; /* Permet de s'adapter à la taille du bouton */
+  width: 200px;
+  height: 65px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 2rem;
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.btnContact {
+  border-radius: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.9rem, 0.8308rem + 0.3077vw, 1.2rem);
+   width: 100%;
+  height: 100%;
+  background: pink;
+  border: 1px solid var(--colord);
+  clip-path: circle(10% at 110% 75%);
+  transition: clip-path 0.7s cubic-bezier(0.52, 0, 0, 0.63), background-color 0.5s cubic-bezier(0.52, 0, 0, 0.63);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  gap: 5px;
+  padding: 2% 2%;
+  animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63) forwards;
+animation-delay: 1.5s;
+opacity: 0;
+}
+
+.btnContacts {
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.9rem, 0.8308rem + 0.3077vw, 1.2rem);
+   width: 100%;
+  height: 100%;
+  border: 1px solid var(--colord);
+  background-color: var(--colord);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  gap: 5px;
+  animation: apear 0.6s cubic-bezier(0.52, 0, 0, 0.63) forwards;
+animation-delay: 1.5s;
+
+
+}
+
+.btnContactContainer:hover .btnContact {
+  clip-path: circle(150% at 50% 50%); /* Déclenché par le hover sur le conteneur */
+  background: pink;
+}
+
+
+    .arrowHero {
+        transition: all 0.4s cubic-bezier(0.52, 0, 0, 0.63);
+    }
+
+    .btnContactContainer:hover .arrowHero {
+       transform: rotate(45deg);     
+     }
+
+    .btnContactContainerM {
+        position: relative;
+        display: none; /* Permet de s'adapter à la taille du bouton */
+        width: 200px;
+        height: 65px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    @keyframes apear {
+      from { transform: translateY(250%); opacity: 0; transform: rotate(5deg);}
+      to { transform: translateY(0); opacity: 1; transform: rotate(0);}
+  }
+
+@media (max-width: 900px) {
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .whyCards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .whyDesc {
+    font-size: 1.2rem;
+    padding-right: 0;
+  }
+  
+  .whyCardTitle h3 {
+    font-size: 2rem;
+  }
+  
+  .whySection {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .whyCardTitle h3 {
+    font-size: 1.8rem;
+  }
+  
+  .whyDesc {
+    font-size: 1.1rem;
+  }
+  
+  .whyCard {
+    padding: 20px 16px 24px 16px;
+    min-height: 140px;
+  }
+  
+  .whyWhen h2 {
+    font-size: 0.9rem;
+  }
+}
+.customOrangeCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: orange;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  transition: background 0.2s, transform 0.08s;
+  box-shadow: 0 2px 16px 0 rgba(255,140,0,0.15);
+}
+
+@media (max-width: 1200px) {
+  .headerBlog p {
+    padding-left: 15rem;
+    max-width: 80vw;
+  }
+  
+  .titleBlog {
+    max-width: 80vw;
+    margin: 4rem auto;
+  }
+  
+  .aboutContent h2 {
+    font-size: 7rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .aboutApproachText {
+    padding: 1rem 5rem;
+    & p {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .headerBlog {
+    padding: 0 1rem;
+    
+    & p {
+      padding-left: 0;
+      text-align: center;
+      max-width: 100%;
+      word-spacing: normal;
+    }
+  }
+  
+  .titleBlog {
+    max-width: 100%;
+    margin: 3rem auto;
+    font-size: 2.5rem;
+  }
+  
+  .projetCreatifTitle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .projetCreatifP {
+    justify-items: start;
+    
+    & p {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .projetCreatifGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 1rem;
+  }
+  
+  .projetCreatifSection {
+    margin: 3rem 1rem;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pSticky:nth-child(2) {
+    height: 150vh;
+    top: -40%;
+  }
+  .titleBlog {
+    font-size: 2rem;
+    margin: 2rem auto;
+  }
+  
+  .headerBlog p {
+    font-size: 1rem;
+  }
+  
+  .aboutContent h2 {
+    font-size: 4rem;
+    padding: 1rem;
+    margin-right: 0;
+  }
+  
+  .aboutApproachText {
+    padding: 1rem 2rem;
+    align-items: center;
+    & p {
+      width: 80%;
+      text-align: center;
+    }
+  }
+  
+  .btnApproach {
+    margin-top: 1rem;
+  }
+  
+  .btnContactContainer {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleBlog {
+    font-size: 2.5rem;
+  }
+  
+  .aboutContent h2 {
+    font-size: 2.5rem;
+  }
+  
+  .projetCreatifTitle h2 {
+    font-size: 2.5rem;
+  }
+  
+  .projetCreatifP p {
+    width: 50%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleBlog {
+    font-size: 2rem;
+    margin: 2rem auto;
+  }
+  
+  .headerBlog p {
+    font-size: 1rem;
+  }
+  
+  .aboutContent h2 {
+    font-size: 4rem;
+    padding: 1rem;
+    margin-right: 0;
+  }
+  
+  .aboutApproachText {
+    padding: 1rem;
+    font-size: 1rem;
+    & p {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+  }
+}
