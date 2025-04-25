@@ -24,7 +24,7 @@ export default function ContactCreatif() {
               <p>On discute de ton projet par ici</p>
             </div>
             <div className={styles.contactCardBottom}  onClick={() => setIsOpen(true)}>
-            <h2>Contact</h2>
+            <h2>Contact<Image src="/arrow-w.png" alt="icone flèche" width={50} height={50} className={styles.arrowHero}/></h2>
               
             </div>
          
