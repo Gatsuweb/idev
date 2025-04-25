@@ -10,7 +10,7 @@ export const AboutApproach = () => {
         </div>
         <div className={styles.approachGridRow}>
             <div className={styles.aboutApproachText}>
-                <p>Mon site est peut être beau admettons (dit qu'il est beau, dit le !), une présence en ligne ça se travaille. Le référencement c'est un métier, et un beau site mérite d'être vu.</p>
+                <p>Mon site est peut être beau admettons (dit qu&apos;il est beau, dit le !), une présence en ligne ça se travaille. Le référencement c&apos;est un métier, et un beau site mérite d&apos;être vu.</p>
              
             </div>
             <div className={styles.aboutApproachText}>
@@ -27,7 +27,7 @@ export const AboutApproach = () => {
                     <button className={styles.btnContact}>CONTACT MOI<Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={styles.arrowHero}/></button>
                     </a>
                     <a href="#contact">
-                    <button className={styles.btnContacts}>À L'AIDE<Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={styles.arrowHero}/></button>
+                    <button className={styles.btnContacts}>À L&apos;AIDE<Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={styles.arrowHero}/></button>
                     </a>
                 </div>
             </div>

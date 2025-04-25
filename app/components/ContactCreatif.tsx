@@ -6,13 +6,9 @@ import { useState } from "react";
 
 
 export default function ContactCreatif() {
-  const [isActive, setIsActive] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setIsActive(!isActive);
-  };
-  
+
   return (
     <section className={styles.contactCreatifSection}>
       <div className={styles.contactCreatifGrid}>
