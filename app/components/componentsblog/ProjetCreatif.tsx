@@ -75,7 +75,7 @@ export default function ProjetCreatif() {
             </a>
           </div>
           <div className={styles.projetCreatifInfo}>
-            <h3>Mael Morlevat | Chef cuisinier à domicile</h3>
+            <h3>Mael Morlevat | Chef à domicile</h3>
             <p>SEO – identité visuelle – Site web</p>
           </div>
         </div>
