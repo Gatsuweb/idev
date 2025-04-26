@@ -296,6 +296,12 @@ animation-delay: 1.5s;
       from { transform: translateY(250%); opacity: 0; transform: rotate(5deg);}
       to { transform: translateY(0); opacity: 1; transform: rotate(0);}
   }
+  @media (max-width: 1580px) {
+    .aboutContent h2 {
+      font-size: 8rem;
+    }
+
+  }
 
 @media (max-width: 900px) {
   .whyGrid {
@@ -335,7 +341,7 @@ animation-delay: 1.5s;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
   .headerBlog {
     padding: 0 1rem;
     
@@ -345,6 +351,9 @@ animation-delay: 1.5s;
       max-width: 100%;
       word-spacing: normal;
     }
+  }
+  .customOrangeCursor {
+    display: none;
   }
   
   .titleBlog {
