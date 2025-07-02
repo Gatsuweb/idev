@@ -40,8 +40,8 @@ export const Pricing = () => {
         <p className={s.descPrix}>Un <span>site clair et professionnel</span> pour poser les bases de votre présence en ligne. Idéal pour débuter <span>rapidement</span>.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p >A partir de: <span><s>800€</s></span></p>
-          <span className={s.offre}>600€</span>
+          <p >DEVIS <span><s>SUR-MESURE</s></span></p>
+          {/* <span className={s.offre}>600€</span> */}
         <p className={s.prixMaintenance}>Payez en 3 fois</p>
         {/* <p className={s.prixMaintenance}>Maintenance et support 45€ / mois </p> */}
         <p className={s.prixMaintenance}> Option: Maintenance, SEO et support</p>
@@ -81,8 +81,8 @@ export const Pricing = () => {
         <p className={s.descPrix}>Pour une <span>image professionnelle</span> et un site qui met pleinement en avant vos compétences et services.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p>A partir de: <span><s>1800€</s></span></p>
-          <span className={s.offre}>1500€</span>
+          <p >DEVIS <span><s>SUR-MESURE</s></span></p>
+          {/* <span className={s.offre}>1500€</span> */}
 
           <p className={s.prixMaintenance}>Payez en 3 fois</p>
 
@@ -124,8 +124,9 @@ export const Pricing = () => {
         <p className={s.descPrix}>Pour les entreprises qui <span>veulent se différencier</span> avec un site <span>élégant, performant</span>, et parfaitement adapté à leurs besoins.</p>
         <div className={s.footerPricing}>
           <BtnContact />
-          <p>A partir de: <span><s>3000€</s></span></p>
-          <span className={s.offre}>2500€</span>
+          <p >DEVIS <span><s>SUR-MESURE</s></span></p>
+          {/* <p>A partir de: <span><s>3000€</s></span></p> */}
+          {/* <span className={s.offre}>2500€</span> */}
           <p className={s.prixMaintenance}>Payez en 4 fois</p>
 
         {/* <p className={s.prixMaintenance}> Maintenance et support 45€ / mois + 3mois offerts</p> */}
