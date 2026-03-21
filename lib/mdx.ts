@@ -29,6 +29,9 @@ export function getAllPosts() {
 
 export function getPostBySlug(slug: string) {
   const filePath = path.join(contentDirectory, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
   

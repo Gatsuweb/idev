@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import s from "../styles/ServicesCard.module.css";
-import Link from "next/link";
 
 const letterVariant = {
   initial: {
@@ -25,8 +24,6 @@ interface LazyLoadComponentProps {
   Component: React.ComponentType<object>;
 }
 
-
-const Fusee = dynamic(() => import("./Fusee"), { ssr: false });
 const Loupe = dynamic(() => import("./Loupe"), { ssr: false });
 const Ordi = dynamic(() => import("./Ordi"), { ssr: false });
 const Paint = dynamic(() => import("./Paint"), { ssr: false });
@@ -69,7 +66,7 @@ export const ServicesCard = () => {
       <div className={s.servicesCardContainer}>
         <section className={s.card}>
           <p>
-          Je transforme vos idées en expériences web uniques, <br /> alliant votre univers à ma touche <Link href="/site-web-pour-creatifs" style={{color: "gray",}}><span>créative</span> et <span>immersive</span></Link>
+          Pour les <span>entreprises</span> et les <span>artisans</span> : je crée des sites web clairs et performants qui génèrent des demandes (devis en ligne, photos de chantier, référencement local).
           </p>
         </section>
 
@@ -99,12 +96,11 @@ export const ServicesCard = () => {
 
         <section className={s.cards}>
           <div className={s.contentCards}>
-            <p>DESIGN 3D</p>
-            <span>(Spline)</span>
+            <p>RÉALISATIONS</p>
+            <span>(Photos)</span>
           </div>
           <div className={s.canvas}>
-            <p>Sur demande, je crée et intègre des éléments 3D, avec la possibilité de les animer pour rendre votre site web interactif et immersif.</p>
-            <LazyLoadComponent Component={Fusee} />
+            <p>Valorisez votre savoir-faire avec une galerie de chantiers : avant/après, détails, finitions, avis clients.</p>
           </div>
         </section>
 

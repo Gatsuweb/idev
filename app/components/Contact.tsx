@@ -29,6 +29,7 @@ export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const [ , setRootElement] = useState<HTMLElement | null>(null);
 
@@ -40,7 +41,10 @@ export const Contact = () => {
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
+    if (isSending) return;
 
+    setIsSending(true);
+    setMessageSent(false);
     try {
       const result = await emailjs.sendForm(
         "service_g0xm5xm",
@@ -54,6 +58,8 @@ export const Contact = () => {
     } catch (error) {
       console.error("FAILED...", error);
       setMessageSent(false);
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -69,10 +75,10 @@ export const Contact = () => {
           <p>Besoin d&apos;aide ?</p>
           <div className={s.btnContainerCall} onClick={() => setIsOpen(true)}>
             <button className={s.btnTelCall}>
-              <Image src="iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
+              <Image src="/iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
             </button>
             <button className={s.btnTelsCall} >
-              <Image src="iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
+              <Image src="/iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
             </button>
           </div>
           <h5>
@@ -124,9 +130,21 @@ export const Contact = () => {
 
             <label htmlFor="formule">Formule</label>
             <select id="formule" name="user_formule">
-              <option value="premium">Premium</option>
-              <option value="standard">Standard</option>
-              <option value="basic">Eco</option>
+              <optgroup label="Artisans (site web)">
+                <option value="artisan_essentiel">Essentiel — 1 200 €</option>
+                <option value="artisan_pro">Pro — 2 200 €</option>
+                <option value="artisan_sur_mesure">Sur-mesure — 3 500 €+</option>
+              </optgroup>
+              <optgroup label="Artisans (maintenance)">
+                <option value="maintenance_starter">Pack sérénité Starter — 49 €/mois</option>
+                <option value="maintenance_pro">Pack sérénité Pro — 89 €/mois</option>
+                <option value="maintenance_premium">Pack sérénité Premium — 149 €/mois</option>
+              </optgroup>
+              <optgroup label="Autres">
+                <option value="premium">Premium</option>
+                <option value="standard">Standard</option>
+                <option value="basic">Eco</option>
+              </optgroup>
             </select>
 
             <label htmlFor="budget">Budget</label>
@@ -136,9 +154,14 @@ export const Contact = () => {
             <textarea id="message" name="message" required></textarea>
 
             <div className={s.btnContainerSend}>
-                  <button className={s.btnTelSend} type="submit">ENVOYER</button>
-                  <button className={s.btnTelsSend} >ENVOYER</button>
+                  <button className={s.btnTelSend} type="submit" disabled={isSending}>
+                    {isSending ? "ENVOI..." : "ENVOYER"}
+                  </button>
+                  <button className={s.btnTelsSend} type="button" disabled={isSending} aria-hidden="true">
+                    {isSending ? "ENVOI..." : "ENVOYER"}
+                  </button>
               </div>
+          {isSending && <p className={s.sendingMessage}>Envoi en cours...</p>}
           {messageSent && <p className={s.successMessage}>Votre message a bien été envoyé !</p>}
           </form>
         </div>

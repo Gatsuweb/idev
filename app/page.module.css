@@ -14,9 +14,89 @@
   width: 100vw;
 }
 
+.artisanCta {
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+  margin-top: 6%;
+}
+
+.artisanCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  padding: 2.2rem 2.5rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  background: white;
+  text-decoration: none;
+  color: black;
+}
+
+.artisanCard:hover {
+  transition: transform 0.35s ease, background-color 0.35s ease;
+  transform: translateY(-4px);
+  background: var(--colort);
+}
+
+.artisanCardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 60rem;
+}
+
+.artisanKicker {
+  font-family: var(--fontt);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--colorp);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.artisanTitle {
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: clamp(1.6rem, 1.3692rem + 1.0256vw, 2.6rem);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.artisanText {
+  font-family: var(--fontd);
+  color: var(--colorp);
+  font-weight: 500;
+  font-size: clamp(1rem, 0.9538rem + 0.2051vw, 1.2rem);
+}
+
+.artisanCardRight {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--colord);
+  background: var(--colord);
+}
+
+.artisanCtaText {
+  font-family: var(--fontt);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
 @media screen and (max-width: 480px) {
   .bgImg {
     height: 150dvh;
   }
-}
 
+  .artisanCard {
+    padding: 1.4rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artisanCardRight {
+    width: 100%;
+    text-align: center;
+  }
+}

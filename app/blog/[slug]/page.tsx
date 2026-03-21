@@ -4,6 +4,11 @@ import { getPostBySlug, getAllPosts } from '../../../lib/mdx';
 import Image from "next/image";
 import remarkGfm from 'remark-gfm';
 import styles from '@/app/styles/Post.module.css'
+import pageStyles from "@/app/page.module.css";
+import { Nav } from "@/app/components/Nav";
+import { Footer } from "@/app/components/Footer";
+import { Contact } from "@/app/components/Contact";
+import { notFound } from "next/navigation";
 
 // Définir les paramètres statiques pour les routes
 export async function generateStaticParams() {
@@ -66,44 +71,81 @@ export default async function BlogPost({
     params: Promise<{ slug: string }>
   }) {
     const { slug } = await params
-    const { frontmatter, content } = getPostBySlug(slug);
+    const post = getPostBySlug(slug);
+    if (!post) notFound();
+    const { frontmatter, content } = post;
+    const relatedPosts = getAllPosts().filter((p) => p.slug !== slug).slice(0, 3);
   
   return (
-    <div className={styles.container}>
-      <article>
-        <div className={styles.header}>
-          <h1 className={styles.title}>{frontmatter.title}</h1>
-          <p className={styles.date}>
-            {new Date(frontmatter.date).toLocaleDateString()}
-          </p>
+    <>
+      <div className={pageStyles.bgImg}>
+        <Image
+          src="/sand.jpg"
+          alt="texture"
+          className={pageStyles.texture}
+          width={3500}
+          height={2500}
+          style={{ opacity: 0.1 }}
+        />
+      </div>
+      <Nav />
+      <div className={styles.container}>
+        <article>
+          <div className={styles.header}>
+            <h1 className={styles.title}>{frontmatter.title}</h1>
+            <p className={styles.date}>
+              {new Date(frontmatter.date).toLocaleDateString()}
+            </p>
+            
+            {frontmatter.tags && (
+              <div className={styles.tags}>
+                {frontmatter.tags.map((tag: string) => (
+                  <Link 
+                    key={tag}
+                    href={`/blog/tag/${tag}`}
+                    className={styles.tag}
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           
-          {frontmatter.tags && (
-            <div className={styles.tags}>
-              {frontmatter.tags.map((tag: string) => (
-                <Link 
-                  key={tag}
-                  href={`/blog/tag/${tag}`}
-                  className={styles.tag}
-                >
-                  {tag}
+          <div className={styles.content}>
+            <MDXRemote
+              source={content}
+              components={components}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }}
+            />
+          </div>
+        </article>
+
+        {relatedPosts.length > 0 && (
+          <section className={styles.relatedSection}>
+            <h2 className={styles.relatedTitle}>Lire aussi</h2>
+            <div className={styles.relatedGrid}>
+              {relatedPosts.map((p) => (
+                <Link key={p.slug} href={`/blog/${p.slug}`} className={styles.relatedCard}>
+                  <p className={styles.relatedCardTitle}>{p.frontmatter.title}</p>
+                  {p.frontmatter.excerpt && (
+                    <p className={styles.relatedCardExcerpt}>{p.frontmatter.excerpt}</p>
+                  )}
                 </Link>
               ))}
             </div>
-          )}
-        </div>
-        
-        <div className={styles.content}>
-          <MDXRemote
-            source={content}
-            components={components}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-              },
-            }}
-          />
-        </div>
-      </article>
-    </div>
+          </section>
+        )}
+      </div>
+
+      <div className={styles.postContact} id="contact">
+        <Contact />
+      </div>
+      <Footer />
+    </>
   );
 }

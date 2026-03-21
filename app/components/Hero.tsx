@@ -13,7 +13,7 @@ export const Hero = () => {
           </div>
         </div>
         <div className={s.pAnimHero}>
-        <p>Développeur web freelance basé à Carhaix, j&apos;aide les entreprises à renforcer leur image de marque en les accompagnant dans la création de sites web <span>sur-mesure</span> et <span>performants</span>.</p>
+        <p>Basé à Plévin, à la frontière des Côtes-d&apos;Armor et du Finistère, j&apos;interviens sur tout le Centre-Bretagne pour les entreprises et artisans qui veulent une présence en ligne <span>sérieuse</span> : site vitrine, devis en ligne, photos de chantier et référencement local.</p>
         </div>
         <div className={s.btnContactContainer}>
         <a href="#contact">
@@ -38,7 +38,7 @@ export const Hero = () => {
           </div>
           <div className={s.pAnimHero}>
 
-            <p><span>AOÛT</span></p>
+            <p><span>AVRIL</span></p>
             </div>
 
         </div>

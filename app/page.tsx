@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { FootHero } from "./components/FootHero";
@@ -43,6 +44,20 @@ export default function Home() {
         <div >
           <Pricing />
         </div>
+      </div>
+      <div className={styles.artisanCta}>
+        <Link href="/site-web-artisans-bretagne" className={styles.artisanCard}>
+          <div className={styles.artisanCardLeft}>
+            <p className={styles.artisanKicker}>Landing dédiée</p>
+            <p className={styles.artisanTitle}>Site web artisans Bretagne</p>
+            <p className={styles.artisanText}>
+              Offres, exemple Carpenter, structure SEO local et devis en ligne.
+            </p>
+          </div>
+          <div className={styles.artisanCardRight}>
+            <span className={styles.artisanCtaText}>Découvrir</span>
+          </div>
+        </Link>
       </div>
       <div id="projets">
         <Projets />

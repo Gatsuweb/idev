@@ -8,9 +8,9 @@ export const generateMetadata = (): Metadata => {
   const businessName = "I'Dev";
 
   return {
-    title: "I'Dev - Développement web à Carhaix & Brest | Sites vitrines & marketing",
-    description: "I'Dev est un studio de développement web  et design basé à Brest (Finistère, 29) et Carhaix-Plouguer(29). Création de sites vitrines modernes et optimisés pour le marketing digital.",
-    keywords: "développement web Carhaix, développement web, développeur web, création de site, site vitrine, web design, marketing, SEO, Finistère, Côtes d'armor, Bretagne",
+    title: "I'Dev - Développement web en Centre-Bretagne | Sites vitrines & SEO local",
+    description: "I'Dev est un studio de développement web et design basé à Plévin (22340), à la frontière des Côtes-d'Armor (22) et du Finistère (29). Création de sites vitrines modernes, devis en ligne, galerie photos et référencement local.",
+    keywords: "développement web Plévin, développeur web, création de site, site vitrine, site web artisan, devis en ligne, photos de chantier, référencement local, web design, SEO, Centre-Bretagne, Côtes-d'Armor, Finistère, Bretagne",
     authors: [{ name: "Ivan Duran", url: baseUrl }],
     robots: {
       index: true,
@@ -34,8 +34,8 @@ export const generateMetadata = (): Metadata => {
       apple: '/logoIDev.svg',
     },
     openGraph: {
-      title: "I'Dev - Studio de développement web à Carhaix & Brest",
-      description: "Créez votre présence web professionnelle avec I'Dev, studio de développement spécialisé en Next.js & React. Sites web modernes, responsive et optimisés pour le marketing digital en Bretagne.",
+      title: "I'Dev - Développement web en Centre-Bretagne (Plévin 22/29)",
+      description: "Créez une présence web sérieuse avec I'Dev, studio basé à Plévin. Sites web modernes, devis en ligne, galerie photos et SEO local pour artisans et entreprises en Centre-Bretagne.",
       url: baseUrl,
       siteName: businessName,
       locale: "fr_FR",
@@ -67,17 +67,17 @@ export const generateMetadata = (): Metadata => {
           "jobTitle": "Développeur Web Freelance",
           "url": baseUrl,
           "image": `${baseUrl}/afou2bis.jpg`,
-          "description": "Développeur web freelance spécialisé en Next.js, React, 3D et animations web.",
+          "description": "Développeur web freelance spécialisé en Next.js, React, SEO local et performance web.",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Carhaix-Plouguer",
+            "addressLocality": "Plévin",
             "addressRegion": "Bretagne",
             "addressCountry": "FR"
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "48.2763",
-            "longitude": "-3.5725"
+            "latitude": "48.2264",
+            "longitude": "-3.504"
           },
           "email": "ivandevelopment@outlook.com",
           "telephone": "+33634670782",
@@ -85,8 +85,8 @@ export const generateMetadata = (): Metadata => {
             "https://www.linkedin.com/in/ivandrn/",
             "https://www.instagram.com/_i.d.e.v/"
           ],
-          "areaServed": ["Carhaix-Plouguer", "Brest", "Finistère", "Bretagne"],
-          "knowsAbout": ["Développement Web", "Web Design", "Next.js", "React", "Webflow", "SEO", "Animations 3D Web"],
+          "areaServed": ["Plévin", "Centre-Bretagne", "Côtes-d'Armor", "Finistère", "Bretagne"],
+          "knowsAbout": ["Développement Web", "Web Design", "Next.js", "React", "Webflow", "SEO", "SEO local", "Performance web"],
           "founder": {
             "@type": "Person",
             "name": "Ivan Duran",

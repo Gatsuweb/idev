@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import Image from "next/image";
 import { getAllPosts, getAllTags } from '../../lib/mdx';
 import styles from '@/app/styles/Blog.module.css';
+import pageStyles from "@/app/page.module.css";
 import { Nav } from '../components/Nav';
+import { Footer } from "../components/Footer";
 
 export default function BlogIndex() {
   const posts = getAllPosts();
@@ -9,8 +12,18 @@ export default function BlogIndex() {
   
   return (
     <>
-             <Nav />
-    <div className={styles.container}>
+      <div className={pageStyles.bgImg}>
+        <Image
+          src="/sand.jpg"
+          alt="texture"
+          className={pageStyles.texture}
+          width={3500}
+          height={2500}
+          style={{ opacity: 0.1 }}
+        />
+      </div>
+      <Nav />
+      <div className={styles.container}>
         
       <div className={styles.header}>
         <h1 className={styles.title}>Blog I&apos;Dev studio</h1>
@@ -70,6 +83,7 @@ export default function BlogIndex() {
         ))}
       </div>
     </div>
+    <Footer />
     </>
   );
 }

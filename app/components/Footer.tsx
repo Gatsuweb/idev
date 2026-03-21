@@ -24,6 +24,7 @@ export const Footer = () => {
                     <ul>
                         <li><Link href="/">Accueil</Link></li>
                         <li><Link href="/blog">Blog</Link></li>
+                        <li><Link href="/site-web-artisans-bretagne">Artisan</Link></li>
                         
                     </ul>
                 </div>
@@ -45,7 +46,7 @@ export const Footer = () => {
                 <div>
                     <h4>LOCALISATION</h4>
                     <ul>
-                        <li>Carhaix, Finistère, Bretagne</li>
+                        <li>Plévin, Centre-Bretagne (22/29)</li>
                         <li>HEURE LOCAL</li>
                         <li>{time ? time : "Chargement..."}</li>
                     </ul>

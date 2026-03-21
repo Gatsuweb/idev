@@ -254,6 +254,17 @@
         color: var(--colord);
         margin: 4% 0 1% 0;
       }
+
+      .sendingMessage {
+        color: var(--colorp);
+        margin: 4% 0 1% 0;
+      }
+
+      .btnTelSend:disabled,
+      .btnTelsSend:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
     
     
       .btnContainerSend:hover .btnTelSend {
