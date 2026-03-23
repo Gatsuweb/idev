@@ -674,6 +674,11 @@
 }
 
 @media screen and (max-width: 900px) {
+  .landingContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .relatedGrid {
     grid-template-columns: 1fr;
   }

@@ -23,8 +23,9 @@ const letterVariant = {
 interface LazyLoadComponentProps {
   Component: React.ComponentType<object>;
 }
-
+  
 const Loupe = dynamic(() => import("./Loupe"), { ssr: false });
+const Fusee = dynamic(() => import("./Fusee"), { ssr: false });
 const Ordi = dynamic(() => import("./Ordi"), { ssr: false });
 const Paint = dynamic(() => import("./Paint"), { ssr: false });
 
@@ -96,11 +97,14 @@ export const ServicesCard = () => {
 
         <section className={s.cards}>
           <div className={s.contentCards}>
-            <p>RÉALISATIONS</p>
-            <span>(Photos)</span>
+            <p>Lancement</p>
+            <span>(Vercel)</span>
           </div>
           <div className={s.canvas}>
-            <p>Valorisez votre savoir-faire avec une galerie de chantiers : avant/après, détails, finitions, avis clients.</p>
+            <p>Votre site est en ligne, plus qu&apos;à être référencé !</p>
+            <div className={s.loupe}>
+            <LazyLoadComponent Component={Fusee} />
+            </div>
           </div>
         </section>
 

@@ -10,7 +10,7 @@ export const generateMetadata = (): Metadata => {
   return {
     title: "I'Dev - Développement web en Centre-Bretagne | Sites vitrines & SEO local",
     description: "I'Dev est un studio de développement web et design basé à Plévin (22340), à la frontière des Côtes-d'Armor (22) et du Finistère (29). Création de sites vitrines modernes, devis en ligne, galerie photos et référencement local.",
-    keywords: "développement web Plévin, développeur web, création de site, site vitrine, site web artisan, devis en ligne, photos de chantier, référencement local, web design, SEO, Centre-Bretagne, Côtes-d'Armor, Finistère, Bretagne",
+    keywords: "site web, développeur web, création de site, site vitrine, site web artisan, devis en ligne, photos de chantier, référencement local, web design, SEO, Centre-Bretagne, Côtes-d'Armor, Finistère, Bretagne",
     authors: [{ name: "Ivan Duran", url: baseUrl }],
     robots: {
       index: true,
