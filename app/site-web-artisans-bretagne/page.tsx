@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { Projets } from "../components/Projets";
 import styles from "@/app/styles/Post.module.css";
 import pageStyles from "@/app/page.module.css";
 import { Contact } from "../components/Contact";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "Site web pour artisans en Bretagne | Devis en ligne, photos de chantier, SEO local",
   description:
     "Basé à Plévin (22340), à la frontière 22/29, j’accompagne les artisans en Bretagne avec des sites web clairs : devis en ligne, galerie chantiers, référencement local.",
+  alternates: { canonical: "/site-web-artisans-bretagne" },
   keywords: [
     "site web artisan Bretagne",
     "création site internet artisan Bretagne",
@@ -102,8 +104,7 @@ export default function ArtisansBretagnePage() {
               <div className={styles.card}>
                 <h3 className={styles.cardTitle}>Du SEO local</h3>
                 <p className={styles.cardText}>
-                  Pages services + zones : être visible sur “artisan + ville”
-                  (ex. Saint-Brieuc, Carhaix, Morlaix, Quimper…).
+                  Pages de prestations et zone réellement desservie : répondre aux recherches locales qui concernent votre métier.
                 </p>
               </div>
             </div>
@@ -189,10 +190,10 @@ export default function ArtisansBretagnePage() {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Pages SEO “Bretagne” + départements</h2>
+            <h2 className={styles.sectionTitle}>Des pages locales utiles, selon vos prestations</h2>
             <p className={styles.sectionLead}>
-              Plutôt qu’une seule page trop vague, on crée une page chapeau + des
-              pages départementales pour capter des recherches plus précises.
+              Une page locale doit apporter des informations propres à votre zone et à vos chantiers.
+              Les pages de prestations répondent, elles, aux questions de vos clients.
             </p>
             <div className={styles.linkCards}>
               <Link className={styles.linkCard} href="/site-web-artisans-cotes-armor">
@@ -272,9 +273,7 @@ export default function ArtisansBretagnePage() {
               <div className={styles.faqItem}>
                 <p className={styles.faqQ}>Le SEO local, ça marche quand ?</p>
                 <p className={styles.faqA}>
-                  Dès que la structure est bonne et que les pages ciblent vos
-                  services + villes, vous commencez à capter des recherches
-                  locales. Le blog accélère sur la durée.
+                  La visibilité progresse avec des pages utiles, une fiche d’établissement complète et des preuves de votre activité. Le délai dépend de la concurrence et de la qualité des contenus.
                 </p>
               </div>
             </div>
@@ -315,7 +314,7 @@ export default function ArtisansBretagnePage() {
               </div>
 
               <div className={`${styles.priceCard} ${styles.priceCardFeatured}`}>
-                <div className={styles.priceBadge}>Le plus choisi</div>
+                <div className={styles.priceBadge}>Offre Pro</div>
                 <div className={styles.priceHeader}>
                   <p className={styles.priceName}>Pro</p>
                   <p className={styles.priceDesc}>Convaincre et générer des appels qualifiés</p>
@@ -368,7 +367,7 @@ export default function ArtisansBretagnePage() {
             <div className={styles.maintenance}>
               <p className={styles.maintenanceKicker}>Maintenance mensuelle optionnelle — Pack sérénité</p>
               <p className={styles.maintenanceLead}>
-                À proposer systématiquement après chaque projet. Revenu fixe chaque mois, site toujours à jour.
+                Si vous souhaitez déléguer les mises à jour après la mise en ligne, choisissez un suivi adapté à vos besoins.
               </p>
               <div className={styles.maintenanceGrid}>
                 <div className={styles.maintenanceCard}>
@@ -390,6 +389,7 @@ export default function ArtisansBretagnePage() {
             </div>
           </section>
 
+          <Projets />
           <section className={styles.finalCta}>
             <h2 className={styles.finalTitle}>On construit votre site “artisan” ?</h2>
             <Contact />

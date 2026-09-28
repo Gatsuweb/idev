@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { Projets } from "../components/Projets";
 import styles from "@/app/styles/Post.module.css";
 import pageStyles from "@/app/page.module.css";
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "Site web artisan Côtes-d'Armor (22) | Devis en ligne & SEO local",
   description:
     "Création de sites web pour artisans dans les Côtes-d'Armor (22) : devis en ligne, galerie chantiers, pages services, référencement local. Basé à Plévin, frontière 22/29.",
+  alternates: { canonical: "/site-web-artisans-cotes-armor" },
   keywords: [
     "site web artisan Côtes-d'Armor",
     "site internet artisan 22",

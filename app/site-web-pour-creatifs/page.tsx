@@ -9,6 +9,7 @@ import FaqCreatif from "../components/componentsblog/FaqCreatif";
 
 import ContactCreatif from "../components/ContactCreatif";
 import { Footer } from "../components/Footer";
+import { Projets } from "../components/Projets";
 import { NavCreatif } from "../components/componentsblog/NavCréatif";
 import styles from "./siteCreatif.module.css";
 
@@ -66,6 +67,7 @@ export default function SiteWebPourCreatifs() {
       <div className={styles.faqContainer}>
         <FaqCreatif />
       </div>
+      <Projets />
       <ContactCreatif />
       <Footer />
     </>

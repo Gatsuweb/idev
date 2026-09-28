@@ -6,23 +6,19 @@ export const Hero = () => {
     <header className={s.heroContainer}>
       <main className={s.heroGauche}>
       <div className={s.heroTitle}>
-          <h1>DÉVELOPPEUR</h1>
-          <div className={s.nametitle}>
-            <h1>WEB</h1>
-            <span id={s.name}>DURAN IVAN</span>
-          </div>
+          <h1>SITES WEB
+            <span className={s.nametitle}>CARHAIX <span id={s.name}>IVAN DURAN</span></span>
+          </h1>
         </div>
         <div className={s.pAnimHero}>
-        <p>Basé à Plévin, à la frontière des Côtes-d&apos;Armor et du Finistère, j&apos;interviens sur tout le Centre-Bretagne pour les entreprises et artisans qui veulent une présence en ligne <span>sérieuse</span> : site vitrine, devis en ligne, photos de chantier et référencement local.</p>
+        <p>Basé à Plévin près de Carhaix, je crée des sites web pour les <span>artisans</span>, les artistes et les associations du Poher : vos réalisations, vos activités et un moyen clair de vous contacter.</p>
         </div>
         <div className={s.btnContactContainer}>
-        <a href="#contact">
-                <button className={s.btnContact}>CONTACT <Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-                </a>
-                <a href="#contact">
-                <button className={s.btnContacts}>CONTACT<Image src="/arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-                </a>
-            </div>
+          <a className={s.callLink} href="tel:+33634670782" aria-label="Appeler Ivan Duran au 06 34 67 07 82">
+            <span className={s.btnContacts} aria-hidden="true">APPELER <Image src="/iconeTel.svg" alt="" width={25} height={25} /></span>
+            <span className={s.btnContact} aria-hidden="true">APPELER <Image src="/iconeTel.svg" alt="" width={25} height={25} /></span>
+          </a>
+        </div>
       </main>
 
       <div className={s.heroDroit}>
@@ -34,23 +30,21 @@ export const Hero = () => {
           </div>
         <div className={s.dispo}>
           <div className={s.pAnimHero}>
-            <p>Disponible en</p>
+            <p>Développeur</p>
           </div>
           <div className={s.pAnimHero}>
 
-            <p><span>AVRIL</span></p>
+            <p><span>Centre-Bretagne</span></p>
             </div>
 
         </div>
       </div>
       <div className={s.btnContactContainerM}>
-          <a href="#contact">
-          <button className={s.btnContact}>CONTACT <Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-          </a>
-          <a href="#contact">
-          <button className={s.btnContacts}>CONTACT<Image src="arrow.svg" alt="icone flèche" width={25} height={25} className={s.arrowHero}/></button>
-          </a>
+        <a className={s.callLink} href="tel:+33634670782" aria-label="Appeler Ivan Duran au 06 34 67 07 82">
+          <span className={s.btnContacts} aria-hidden="true">APPELER <Image src="/iconeTel.svg" alt="" width={25} height={25} /></span>
+          <span className={s.btnContact} aria-hidden="true">APPELER <Image src="/iconeTel.svg" alt="" width={25} height={25} /></span>
+        </a>
       </div>
     </header>
   )
-}
+}

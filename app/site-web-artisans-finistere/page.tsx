@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Site web artisan Finistère (29) | Référencement local & demandes de devis",
   description:
     "Création de sites web pour artisans dans le Finistère (29) : devis en ligne, photos de chantier, pages services, SEO local. Basé à Plévin, frontière 22/29.",
+  alternates: { canonical: "/site-web-artisans-finistere" },
   keywords: [
     "site web artisan Finistère",
     "site internet artisan 29",
@@ -46,9 +47,7 @@ export default function ArtisansFinisterePage() {
 
         <div className={styles.content}>
           <p>
-            Dans le Finistère, la concurrence est forte : si votre entreprise
-            n&apos;apparaît pas quand on cherche “artisan + ville”, vous laissez des
-            chantiers à d&apos;autres.
+            Dans le Finistère, un client veut voir vos prestations, vos réalisations et votre secteur avant de demander un devis.
           </p>
 
           <p>

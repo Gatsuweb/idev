@@ -2,167 +2,56 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import LenisScroll from "./components/LenisScroll";
+import { siteUrl } from "@/lib/site";
 
-export const generateMetadata = (): Metadata => {
-  const baseUrl = "https://idevstudio.fr";
-  const businessName = "I'Dev";
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: { default: "Création de site internet à Carhaix | I’Dev", template: "%s | I’Dev" },
+  description:
+    "Création de sites internet pour artisans, artistes et associations autour de Carhaix. Ivan Duran, développeur web basé à Plévin, en Centre-Bretagne.",
+  robots: { index: true, follow: true },
+  icons: { icon: "/logoIDev.svg", apple: "/logoIDev.svg" },
+  openGraph: {
+    siteName: "I’Dev",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "/preview.jpg", width: 1200, height: 630, alt: "I’Dev, création de sites web en Centre-Bretagne" }],
+  },
+  verification: { google: "dfD6w7_1LKONuFgUVg6JrfsNW6jlIbLjdH0OEKzDai0" },
+};
 
-  return {
-    title: "I'Dev - Développement web en Centre-Bretagne | Sites vitrines & SEO local",
-    description: "I'Dev est un studio de développement web et design basé à Plévin (22340), à la frontière des Côtes-d'Armor (22) et du Finistère (29). Création de sites vitrines modernes, devis en ligne, galerie photos et référencement local.",
-    keywords: "site web, développeur web, création de site, site vitrine, site web artisan, devis en ligne, photos de chantier, référencement local, web design, SEO, Centre-Bretagne, Côtes-d'Armor, Finistère, Bretagne",
-    authors: [{ name: "Ivan Duran", url: baseUrl }],
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-    alternates: {
-      canonical: baseUrl,
-      languages: {
-        'fr-FR': baseUrl
-      }
-    },
-    icons: {
-      icon: '/logoIDev.svg',
-      apple: '/logoIDev.svg',
-    },
-    openGraph: {
-      title: "I'Dev - Développement web en Centre-Bretagne (Plévin 22/29)",
-      description: "Créez une présence web sérieuse avec I'Dev, studio basé à Plévin. Sites web modernes, devis en ligne, galerie photos et SEO local pour artisans et entreprises en Centre-Bretagne.",
-      url: baseUrl,
-      siteName: businessName,
-      locale: "fr_FR",
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/preview.jpg`,
-          width: 1200,
-          height: 630,
-          alt: "Aperçu du site I'Dev",
-        },
-        {
-          url: `${baseUrl}/preview-mobile.jpg`,  // Image optimisée pour mobile
-          width: 600,
-          height: 315,
-          alt: "Aperçu mobile du site I'Dev",
-        },
-      ],
-    },
-    verification: {
-      google: "dfD6w7_1LKONuFgUVg6JrfsNW6jlIbLjdH0OEKzDai0",
-    },
-    other: {
-      'application/ld+json': JSON.stringify([
-        {
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Ivan Duran",
-          "jobTitle": "Développeur Web Freelance",
-          "url": baseUrl,
-          "image": `${baseUrl}/afou2bis.jpg`,
-          "description": "Développeur web freelance spécialisé en Next.js, React, SEO local et performance web.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Plévin",
-            "addressRegion": "Bretagne",
-            "addressCountry": "FR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "48.2264",
-            "longitude": "-3.504"
-          },
-          "email": "ivandevelopment@outlook.com",
-          "telephone": "+33634670782",
-          "sameAs": [
-            "https://www.linkedin.com/in/ivandrn/",
-            "https://www.instagram.com/_i.d.e.v/"
-          ],
-          "areaServed": ["Plévin", "Centre-Bretagne", "Côtes-d'Armor", "Finistère", "Bretagne"],
-          "knowsAbout": ["Développement Web", "Web Design", "Next.js", "React", "Webflow", "SEO", "SEO local", "Performance web"],
-          "founder": {
-            "@type": "Person",
-            "name": "Ivan Duran",
-            "jobTitle": "Développeur Web Freelance",
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Wild Code School"
-            }
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Services de développement web",
-            "itemListElement": [
-              {
-                "@type": "Service",
-                "name": "Développement de sites web",
-                "description": "Création de sites web professionnels avec Next.js et React"
-              },
-              {
-                "@type": "Service",
-                "name": "Web Design",
-                "description": "Conception d'interfaces modernes et responsives"
-              },
-              {
-                "@type": "Service",
-                "name": "SEO",
-                "description": "Optimisation pour les moteurs de recherche"
-              }
-            ]
-          }
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "url": baseUrl,
-          "name": businessName,
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": `${baseUrl}/search?q={search_term_string}`
-            },
-            "query-input": "required name=search_term_string"
-          }
-        }
-      ])
-    }
-  }
-}
+const business = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#entreprise`,
+  name: "I’Dev",
+  alternateName: "Ivan Duran",
+  url: siteUrl,
+  image: `${siteUrl}/afou2bis.jpg`,
+  description: "Création de sites internet pour artisans, artistes et associations autour de Carhaix.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Plévin",
+    postalCode: "22340",
+    addressCountry: "FR",
+  },
+  email: "ivandevelopment@outlook.com",
+  telephone: "+33634670782",
+  areaServed: ["Carhaix-Plouguer", "Plévin", "Maël-Carhaix", "Cléden-Poher", "Poullaouen", "Centre-Bretagne"],
+  sameAs: ["https://www.linkedin.com/in/ivandrn/", "https://www.instagram.com/_i.d.e.v/"],
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
       <body>
-      <LenisScroll>
-        {children}
-        </LenisScroll>
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-0KCZRHLBMV"
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(business) }} />
+        <LenisScroll>{children}</LenisScroll>
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0KCZRHLBMV" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-0KCZRHLBMV');
-            `,
-          }}
+          dangerouslySetInnerHTML={{ __html: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0KCZRHLBMV');" }}
         />
       </body>
     </html>

@@ -1,42 +1,24 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/mdx";
+import { siteUrl } from "@/lib/site";
+
+const paths = [
+  "/",
+  "/creation-site-internet-carhaix",
+  "/site-web-artistes-carhaix",
+  "/site-web-association-carhaix",
+  "/site-web-artisans-bretagne",
+  "/site-web-artisans-finistere",
+  "/site-web-artisans-cotes-armor",
+  "/site-web-pour-creatifs",
+  "/blog",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://idevstudio.fr",
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'weekly',
-      priority: 1.0
-    },
-    {
-      url: "https://idevstudio.fr/site-web-artisans-bretagne",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "monthly",
-      priority: 0.9
-    },
-    {
-      url: "https://idevstudio.fr/site-web-artisans-cotes-armor",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "monthly",
-      priority: 0.9
-    },
-    {
-      url: "https://idevstudio.fr/site-web-artisans-finistere",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "monthly",
-      priority: 0.9
-    },
-    {
-      url: "https://idevstudio.fr/blog",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
-      priority: 0.7
-    },
-    {
-      url: "https://idevstudio.fr/site-web-pour-creatifs",
-      lastModified: new Date().toISOString(),
-      changeFrequency: "monthly",
-      priority: 0.5
-    }
-  ] satisfies MetadataRoute.Sitemap;
+  const pages = paths.map((path) => ({ url: siteUrl + path }));
+  const posts = getAllPosts().map((post) => ({
+    url: siteUrl + "/blog/" + post.slug,
+    lastModified: new Date(post.frontmatter.date),
+  }));
+  return [...pages, ...posts];
 }

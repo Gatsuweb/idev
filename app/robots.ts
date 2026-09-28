@@ -1,17 +1,9 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
     return {
-        rules: [
-          {
-            userAgent: '*',
-            allow: '/',
-          },
-          {
-            userAgent: '*',
-            allow: 'https://www.gstatic.com/draco/versioned/decoders/1.5.2/draco_decoder.wasm',
-          }
-        ],
-        sitemap: 'https://idevstudio.fr/sitemap.xml'
+        rules: { userAgent: '*', allow: '/' },
+        sitemap: siteUrl + '/sitemap.xml'
       }
     }

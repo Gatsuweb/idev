@@ -140,6 +140,8 @@
 }
 
 .btnContainerCall {
+    color: black;
+    text-decoration: none;
     position: relative;
     z-index: 997;
     display: inline-block; /* Permet de s'adapter à la taille du bouton */
@@ -359,4 +361,4 @@
         width: 75%;
     }
 
-}
+}

@@ -1,4 +1,4 @@
-"use client"
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "./components/Nav";
@@ -11,6 +11,13 @@ import { Contact } from './components/Contact';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Création de sites internet à Carhaix pour artisans, artistes et associations",
+  description: "I’Dev crée des sites internet pour artisans, artistes et associations autour de Carhaix. Basé à Plévin : réalisations, demandes de devis, portfolio et offre association à 200 €.",
+  alternates: { canonical: "/" },
+  openGraph: { title: "Sites internet à Carhaix pour artisans, artistes et associations", url: "/" },
+};
 
 export default function Home() {
 //  const footerView = {
@@ -45,17 +52,33 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.artisanCta}>
-        <Link href="/site-web-artisans-bretagne" className={styles.artisanCard}>
+        <Link href="/creation-site-internet-carhaix" className={styles.artisanCard}>
           <div className={styles.artisanCardLeft}>
-            <p className={styles.artisanKicker}>Landing dédiée</p>
-            <p className={styles.artisanTitle}>Site web artisans Bretagne</p>
+            <p className={styles.artisanKicker}>Artisans du Poher</p>
+            <p className={styles.artisanTitle}>Création de site internet à Carhaix</p>
             <p className={styles.artisanText}>
-              Offres, exemple Carpenter, structure SEO local et devis en ligne.
+              Montrez vos chantiers, expliquez vos prestations et recevez des demandes de devis dans votre secteur.
             </p>
           </div>
           <div className={styles.artisanCardRight}>
             <span className={styles.artisanCtaText}>Découvrir</span>
           </div>
+        </Link>
+        <Link href="/site-web-artistes-carhaix" className={styles.artisanCard}>
+          <div className={styles.artisanCardLeft}>
+            <p className={styles.artisanKicker}>Artistes et créateurs</p>
+            <p className={styles.artisanTitle}>Un portfolio pour montrer votre travail</p>
+            <p className={styles.artisanText}>Œuvres, dates, commandes et contact professionnel sur un site à votre image.</p>
+          </div>
+          <div className={styles.artisanCardRight}><span className={styles.artisanCtaText}>Découvrir</span></div>
+        </Link>
+        <Link href="/site-web-association-carhaix" className={styles.artisanCard}>
+          <div className={styles.artisanCardLeft}>
+            <p className={styles.artisanKicker}>Associations locales</p>
+            <p className={styles.artisanTitle}>Un site associatif au forfait unique de 200 €</p>
+            <p className={styles.artisanText}>Présentez vos activités et facilitez les adhésions avec plusieurs pages simples.</p>
+          </div>
+          <div className={styles.artisanCardRight}><span className={styles.artisanCtaText}>Voir l’offre</span></div>
         </Link>
       </div>
       <div id="projets">

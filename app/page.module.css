@@ -18,6 +18,8 @@
   padding-left: var(--spacing);
   padding-right: var(--spacing);
   margin-top: 6%;
+  display: grid;
+  gap: 1rem;
 }
 
 .artisanCard {

@@ -86,7 +86,7 @@ export const Projets = () => {
 
     // Effet pour gérer le chargement de la vidéo quand la section est visible
     useEffect(() => {
-      if (isVisible && videoRef.current && !isMobile) {
+      if (isVisible && videoRef.current && !isMobile && projet[currentIndex].image) {
         // Chargement dynamique de la source vidéo seulement sur desktop
         videoRef.current.src = projet[currentIndex].image;
         videoRef.current.load();
@@ -104,51 +104,100 @@ export const Projets = () => {
 
     const projet = [
         {
-            link:"https://valkyrink-tattoo.com/",
+            link: "https://www.atelier-chokoku.com/",
+            name: "CHOKOKU",
+            desc: "Boutique en ligne de miroirs gravés à la main et personnalisables. Un univers visuel immersif pour montrer les pièces, raconter le savoir-faire et faciliter la commande.",
+            image: "",
+            images: "/images/chokoku-site.webp"
+        },
+        {
+            link: "https://www.hendricx-peinture.com/",
+            name: "HENDRICX PEINTURE",
+            desc: "Site vitrine pour un artisan peintre basé à Paule, près de Carhaix : peinture intérieure et extérieure, rénovation, fresques murales et réalisations.",
+            image: "",
+            images: "/images/hendricx-peinture.webp"
+        },
+        {
+            link: "https://www.ocapri.fr/",
+            name: "O’CAPRI",
+            desc: "Site créatif pour un bar à tiramisu à Brest : univers gourmand, carte et parcours pour composer son dessert selon ses goûts.",
+            image: "",
+            images: "/images/ocapri-site.webp"
+        },
+        {
+            link: "https://www.melinktattoo.com/",
+            name: "MEL INK",
+            desc: "Site portfolio pour une tatoueuse à Mellac, près de Quimperlé : tatouages fineline, floraux et ornementaux, galerie, avis et chèques cadeaux.",
+            image: "",
+            images: "/images/melink-site.webp"
+        },
+        {
+            link: "https://valkyrink-tattoo.com/",
             name: "VALKYRINK",
-            desc: "Création d'un site vitrine interactif pour un salon de tatouage, alliant design immersif et animations fluides pour une expérience unique. Le site met en avant les œuvres du tatoueur, ses services et ses inspirations, avec une navigation intuitive.",
+            desc: "Site vitrine immersif pour une tatoueuse à Plévin : univers artistique, réalisations et informations pour prendre contact.",
             image: "Valkyrink.webm",
             images: "/images/valkyrinks.png"
         },
         {
-            link:"https://coregym.netlify.app/",
-            name: "Core Gym",
-            desc: "Création d'un site vitrine pour une salon de tatouage. L'objectif est de présenter les services de la salle, faciliter l'accès aux informations clés et proposer une gestion simplifiée des abonnements et du planning des cours.",
-            image: "coregym.webm",
-            images: "/images/coregyms.png"
+            link: "https://www.lafermedekerloury.fr/",
+            name: "LA FERME DE KERLOURY",
+            desc: "Site pour les gîtes et l’écolieu de la Ferme de Kerloury, près de Paimpol : hébergements, camping, réceptions et découverte du lieu.",
+            image: "",
+            images: "/images/kerloury-site.webp"
         },
         {
-            link:"",
-            name: "LATIA",
-            desc: "Développement d'un site vitrine pour une agence de graphic design moderne et créative. Enrichi d'animations dynamiques et d'interraction 3D, permettant de mettre en valeur les réalisations de l'agence et son identité visuelle. L'expérience utilisateur est pensée pour captiver et inspirer dès la première interaction.",
-            image: "latia.webm",
-            images: "/images/latias.png"
+            link: "https://nomadia-tan.vercel.app/",
+            name: "NOMADIA",
+            desc: "Boutique de décoration intérieure et extérieure près de Paimpol. Un catalogue visuel qui met les objets et les matières au premier plan.",
+            image: "",
+            images: "/images/nomadia-site.webp"
         },
         {
-            link:"https://maelmorlevat.fr/",
-            name: "MAEL MORLEVAT",
-            desc: "Conception d'un site vitrine élégant pour un chef cuisinier à domicile. Une mise en page raffinée et animée met en avant ses prestations, son savoir-faire et ses créations culinaires, avec une galerie très visuels et appétissants pour séduire les visiteurs.",
+            link: "https://perlezenn.vercel.app/",
+            name: "PERLEZENN",
+            desc: "Site de marque pour une sauce à l’huître bio produite en Bretagne : présentation du produit, de son univers et du savoir-faire artisanal.",
+            image: "",
+            images: "/images/perlezenn-site.webp"
+        },
+        {
+            link: "https://maelmorlevat.fr/",
+            name: "MAËL MORLEVAT",
+            desc: "Site vitrine pour un chef cuisinier à domicile à Paimpol : prestations, savoir-faire et créations culinaires dans une présentation soignée.",
             image: "maelmorlevat.webm",
             images: "/images/maelmorlevats.png"
         },
         {
-            link:"",
-            name: "...",
-            desc: "Design d'un site web pour une entreprise familiale de charpente, un design animé et mderne correspondant à l'image de marque. Animations subtiles, visuels percutants et navigation intuitive",
-            image: "carpenter.webm",
-            images: "/images/carpenters.png"
+            link: "https://obscura-gold-two.vercel.app/",
+            name: "OBSCURA — CONCEPT",
+            desc: "Projet personnel, non commandé : concept de site immersif pour un studio de tatouage, imaginé pour explorer une direction artistique sombre et haut de gamme.",
+            image: "",
+            images: "/images/obscura-site.webp"
         },
         {
-            link:"https://gengo-weld.vercel.app/",
-            name: "GENGO(DESKTOP)",
-            desc: "Développement de Gengo, une plateforme ludique et gamifiée pour apprendre le français. Une interface interactive et engageante, combinant jeux, défis et récompenses, motive les utilisateurs à progresser tout en s'amusant. Une approche moderne et immersive pour faciliter l'apprentissage à tous les niveaux",
+            link: "https://coregym.netlify.app/",
+            name: "CORE GYM",
+            desc: "Site vitrine pour une salle de sport : services, informations pratiques, abonnements et planning des cours.",
+            image: "coregym.webm",
+            images: "/images/coregyms.png"
+        },
+        {
+            link: "",
+            name: "LATIA",
+            desc: "Concept de site vitrine pour une agence de design graphique, avec animations et interactions 3D.",
+            image: "latia.webm",
+            images: "/images/latias.png"
+        },
+        {
+            link: "https://gengo-weld.vercel.app/",
+            name: "GENGO (DESKTOP)",
+            desc: "Plateforme ludique pour apprendre le français avec jeux, défis et récompenses.",
             image: "GENGO.webm",
             images: "/images/gengos.png"
         },
         {
-            link:"",
-            name: "HAUTELIGNE",
-            desc: "Création d'un design pour Haute Ligne, une marque de vêtements modernes pour homme. Un design minimaliste et sophistiqué met en avant des collections élégantes à travers une expérience fluide et dynamique. Animations subtiles, visuels percutants et navigation intuitive renforcent l'identité premium de la marque.",
+            link: "",
+            name: "HAUTE LIGNE",
+            desc: "Concept de boutique de vêtements pour homme, avec une direction visuelle minimaliste et des animations subtiles.",
             image: "hauteligne.webm",
             images: "/images/fallwinters.png"
         },
@@ -158,7 +207,7 @@ export const Projets = () => {
         <div className={s.projetContainer} ref={sectionRef}>
           <div className={s.headerProjet}>
             <div>
-              <a href={projet[currentIndex].link} className={s.linkProjet} target="blank">{projet[currentIndex].name}<Image src="arrow.svg" alt="icone flèche" width={24} height={24} className={s.arrowProjet}/></a>
+              <a href={projet[currentIndex].link} className={s.linkProjet} target="_blank" rel="noopener noreferrer">{projet[currentIndex].name}<Image src="arrow.svg" alt="icone flèche" width={24} height={24} className={s.arrowProjet}/></a>
             </div>
             <div className={s.projetContent}>
                 <h2 className={s.animatedTitle}>
@@ -179,12 +228,12 @@ export const Projets = () => {
             </div>
           </div>
           <div className={s.caroussel}>
-            <a href={projet[currentIndex].link} target="blank">
-              {isMobile ? (
+            <a href={projet[currentIndex].link} target="_blank" rel="noopener noreferrer">
+              {isMobile || !projet[currentIndex].image ? (
                 // Afficher l'image statique sur mobile
                 <Image
                   src={projet[currentIndex].images}
-                  alt={`${projet[currentIndex].name} preview`}
+                  alt={projet[currentIndex].name === "HENDRICX PEINTURE" ? "Fresque murale présentée sur le site Hendricx Peinture" : `Aperçu du projet ${projet[currentIndex].name}`}
                   width={1200}
                   height={700}
                   className={s.imgProjet}
@@ -228,4 +277,4 @@ export const Projets = () => {
           <div className={s.customCursor} id="customCursor">OUVRIR</div>
         </div>
       );
-};
+};

@@ -245,7 +245,7 @@ transition: all 0.4s ease;
 @media screen and (max-width: 1580px) {
   
 }
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1200px) {
 .navContainer {
     display: none;
 }
@@ -417,3 +417,89 @@ z-index: 1001;
 
 
 }
+/* The two visible labels come from the link itself, so hover and focus stay in sync. */
+.navContainer .ulAnim,
+.navContainer ul {
+  gap: clamp(1rem, 1.8vw, 2.25rem);
+}
+
+.navContainer ul {
+  height: auto;
+  overflow: visible;
+}
+
+.navContainer ul li {
+  height: 1.35em;
+  overflow: hidden;
+  transform: none;
+  white-space: nowrap;
+  flex: none;
+}
+
+.navContainer ul li:hover {
+  transform: none;
+}
+
+.navContainer ul li::before {
+  display: none !important;
+  content: none !important;
+}
+
+.navContainer .navLink {
+  display: flex;
+  flex-direction: column;
+  height: 2.7em;
+  line-height: 1.35em;
+  transition: transform 0.3s ease;
+}
+
+.navContainer .navLabel {
+  display: block;
+  height: 1.35em;
+  color: var(--colorp);
+}
+
+.navContainer .navLabelHover {
+  display: block;
+  height: 1.35em;
+  color: var(--colord);
+}
+
+.navContainer ul li:hover .navLink,
+.navContainer ul li:focus-within .navLink {
+  transform: translateY(-50%);
+}
+
+.navContainer .btnContainer {
+  color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  .navContainer.open ul {
+    height: auto;
+    overflow: visible;
+  }
+
+  .navContainer.open ul li {
+    height: auto;
+    overflow: visible;
+  }
+
+  .navContainer.open .navLink,
+  .navContainer.open ul li:hover .navLink,
+  .navContainer.open ul li:focus-within .navLink {
+    display: block;
+    height: auto;
+    transform: none;
+  }
+
+  .navContainer.open .navLabel {
+    height: auto;
+    color: white;
+  }
+
+  .navContainer.open .navLabelHover {
+    display: none;
+  }
+}
+

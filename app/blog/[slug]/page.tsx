@@ -7,6 +7,7 @@ import styles from '@/app/styles/Post.module.css'
 import pageStyles from "@/app/page.module.css";
 import { Nav } from "@/app/components/Nav";
 import { Footer } from "@/app/components/Footer";
+import { Projets } from "@/app/components/Projets";
 import { Contact } from "@/app/components/Contact";
 import { notFound } from "next/navigation";
 
@@ -30,15 +31,15 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    metadataBase: new URL('https://idevstudio.fr'),
-    title: `${post.frontmatter.title} | Nom de votre blog`,
-    description: post.frontmatter.description || 'Découvrez cet article sur notre blog.',
+    title: post.frontmatter.title,
+    description: post.frontmatter.description || post.frontmatter.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.frontmatter.title,
-      description: post.frontmatter.description || 'Découvrez cet article sur notre blog.',
-      images: post.frontmatter.image ? [post.frontmatter.image] : ['/default-image.jpg'],
+      description: post.frontmatter.description || post.frontmatter.excerpt,
+      images: post.frontmatter.image ? [post.frontmatter.image] : ['/preview.jpg'],
       type: 'article',
-      publishedTime: post.frontmatter.date || new Date().toISOString(),
+      publishedTime: post.frontmatter.date,
     },
   };
 }
@@ -102,7 +103,7 @@ export default async function BlogPost({
                 {frontmatter.tags.map((tag: string) => (
                   <Link 
                     key={tag}
-                    href={`/blog/tag/${tag}`}
+                    href={`/blog/tag/${encodeURIComponent(tag)}`}
                     className={styles.tag}
                   >
                     {tag}
@@ -142,6 +143,7 @@ export default async function BlogPost({
         )}
       </div>
 
+      <Projets />
       <div className={styles.postContact} id="contact">
         <Contact />
       </div>

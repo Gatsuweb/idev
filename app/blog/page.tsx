@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from "next/image";
 import { getAllPosts, getAllTags } from '../../lib/mdx';
@@ -5,6 +6,12 @@ import styles from '@/app/styles/Blog.module.css';
 import pageStyles from "@/app/page.module.css";
 import { Nav } from '../components/Nav';
 import { Footer } from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Conseils site web et visibilité locale pour artisans et créatifs",
+  description: "Conseils pour rendre votre activité visible en ligne autour de Carhaix : site d’artisan, réalisations, référencement local et projets créatifs.",
+  alternates: { canonical: "/blog" },
+};
 
 export default function BlogIndex() {
   const posts = getAllPosts();
@@ -36,7 +43,7 @@ export default function BlogIndex() {
           {tags.map(tag => (
             <Link 
               key={tag}
-              href={`/blog/tag/${tag}`}
+              href={`/blog/tag/${encodeURIComponent(tag)}`}
               className={styles.tagLink}
             >
               {tag}
@@ -64,7 +71,7 @@ export default function BlogIndex() {
                 {post.frontmatter.tags.map((tag: string) => (
                   <Link 
                     key={tag}
-                    href={`/blog/tag/${tag}`}
+                    href={`/blog/tag/${encodeURIComponent(tag)}`}
                     className={styles.postTag}
                   >
                     {tag}

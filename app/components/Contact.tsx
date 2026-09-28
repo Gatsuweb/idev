@@ -1,8 +1,7 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { PopupModal } from "react-calendly";
 import emailjs from '@emailjs/browser';
 import s from "../styles/Contact.module.css"
 
@@ -27,16 +26,8 @@ const letterVariant = {
 
 export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
-
-  const [ , setRootElement] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    setRootElement(document.getElementById("__next"));
-    setMessageSent(false);
-  }, []);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -73,14 +64,14 @@ export const Contact = () => {
           <div></div>
         <div className={s.contactTelHeader}>
           <p>Besoin d&apos;aide ?</p>
-          <div className={s.btnContainerCall} onClick={() => setIsOpen(true)}>
-            <button className={s.btnTelCall}>
-              <Image src="/iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
-            </button>
-            <button className={s.btnTelsCall} >
-              <Image src="/iconeTel.svg" alt="Icone téléphone" height={50} width={50} />RESERVER
-            </button>
-          </div>
+          <a className={s.btnContainerCall} href="tel:+33634670782" aria-label="Appeler Ivan Duran au 06 34 67 07 82">
+            <span className={s.btnTelsCall} aria-hidden="true">
+              <Image src="/iconeTel.svg" alt="" height={50} width={50} />APPELER
+            </span>
+            <span className={s.btnTelCall} aria-hidden="true">
+              <Image src="/iconeTel.svg" alt="" height={50} width={50} />APPELER
+            </span>
+          </a>
           <h5>
           {"DISCUTONS DE VOTRE PROJET".split("").map((phrase, i) => (
               <motion.div
@@ -129,7 +120,8 @@ export const Contact = () => {
             <input type="email" id="email" name="user_email" required />
 
             <label htmlFor="formule">Formule</label>
-            <select id="formule" name="user_formule">
+            <select id="formule" name="user_formule" defaultValue="" required>
+              <option value="" disabled>Choisir une formule</option>
               <optgroup label="Artisans (site web)">
                 <option value="artisan_essentiel">Essentiel — 1 200 €</option>
                 <option value="artisan_pro">Pro — 2 200 €</option>
@@ -141,6 +133,8 @@ export const Contact = () => {
                 <option value="maintenance_premium">Pack sérénité Premium — 149 €/mois</option>
               </optgroup>
               <optgroup label="Autres">
+                <option value="association_200">Association — site 3 pages, 200 €</option>
+                <option value="artiste">Artiste / portfolio — devis personnalisé</option>
                 <option value="premium">Premium</option>
                 <option value="standard">Standard</option>
                 <option value="basic">Eco</option>
@@ -167,14 +161,6 @@ export const Contact = () => {
         </div>
         </div>
       </div>
-      {isOpen && (
-        <PopupModal
-          open={isOpen}
-          url="https://calendly.com/ivanduran2397"
-          onModalClose={() => setIsOpen(false)}
-          rootElement={document.body}
-        />
-      )}
     </div>
   )
 }
