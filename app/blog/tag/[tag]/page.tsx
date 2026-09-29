@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllTags, getPostsByTag } from "@/lib/mdx";
 import { Nav } from "@/app/components/Nav";
 import { Footer } from "@/app/components/Footer";
+import { Projets } from "@/app/components/Projets";
 import styles from "@/app/styles/Post.module.css";
 
 export function generateStaticParams() {
@@ -36,6 +37,7 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
           ))}
         </div>
       </main>
+      <Projets />
       <Footer />
     </>
   );

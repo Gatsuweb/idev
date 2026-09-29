@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import s from "../styles/Projets.module.css"
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useMemo } from "react"
 import { motion } from "framer-motion";
 
 const letterVariant = {
@@ -73,26 +73,17 @@ export const Projets = () => {
         { threshold: 0.1 } // La vidéo commence à se charger quand 10% de la section est visible
       );
       
-      if (sectionRef.current) {
-        observer.observe(sectionRef.current);
+      const section = sectionRef.current;
+      if (section) {
+        observer.observe(section);
       }
       
       return () => {
-        if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
+        if (section) {
+          observer.unobserve(section);
         }
       };
     }, []);
-
-    // Effet pour gérer le chargement de la vidéo quand la section est visible
-    useEffect(() => {
-      if (isVisible && videoRef.current && !isMobile && projet[currentIndex].image) {
-        // Chargement dynamique de la source vidéo seulement sur desktop
-        videoRef.current.src = projet[currentIndex].image;
-        videoRef.current.load();
-        videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
-      }
-    }, [isVisible, currentIndex, isMobile]);
 
     const nextProject = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projet.length);
@@ -102,7 +93,7 @@ export const Projets = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + projet.length) % projet.length);
     };
 
-    const projet = [
+    const projet = useMemo(() => [
         {
             link: "https://www.atelier-chokoku.com/",
             name: "CHOKOKU",
@@ -115,9 +106,8 @@ export const Projets = () => {
             name: "HENDRICX PEINTURE",
             desc: "Site vitrine pour un artisan peintre basé à Paule, près de Carhaix : peinture intérieure et extérieure, rénovation, fresques murales et réalisations.",
             image: "",
-            images: "/images/hendricx-peinture.webp"
-        },
-        {
+            images: "/images/hendricx-site.webp"
+        },        {
             link: "https://www.ocapri.fr/",
             name: "O’CAPRI",
             desc: "Site créatif pour un bar à tiramisu à Brest : univers gourmand, carte et parcours pour composer son dessert selon ses goûts.",
@@ -188,6 +178,13 @@ export const Projets = () => {
             images: "/images/latias.png"
         },
         {
+            link: "",
+            name: "CHARPENTE — CONCEPT",
+            desc: "Concept de site pour une entreprise familiale de charpente, avec une direction visuelle moderne et des animations subtiles.",
+            image: "carpenter.webm",
+            images: "/images/carpenters.png"
+        },
+        {
             link: "https://gengo-weld.vercel.app/",
             name: "GENGO (DESKTOP)",
             desc: "Plateforme ludique pour apprendre le français avec jeux, défis et récompenses.",
@@ -201,7 +198,17 @@ export const Projets = () => {
             image: "hauteligne.webm",
             images: "/images/fallwinters.png"
         },
-    ]
+    ], []);
+
+    // Effet pour gérer le chargement de la vidéo quand la section est visible
+    useEffect(() => {
+      if (isVisible && videoRef.current && !isMobile && projet[currentIndex].image) {
+        // Chargement dynamique de la source vidéo seulement sur desktop
+        videoRef.current.src = projet[currentIndex].image;
+        videoRef.current.load();
+        videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+      }
+    }, [isVisible, currentIndex, isMobile, projet]);
 
     return (
         <div className={s.projetContainer} ref={sectionRef}>
@@ -233,7 +240,7 @@ export const Projets = () => {
                 // Afficher l'image statique sur mobile
                 <Image
                   src={projet[currentIndex].images}
-                  alt={projet[currentIndex].name === "HENDRICX PEINTURE" ? "Fresque murale présentée sur le site Hendricx Peinture" : `Aperçu du projet ${projet[currentIndex].name}`}
+                  alt={`Aperçu du projet ${projet[currentIndex].name}`}
                   width={1200}
                   height={700}
                   className={s.imgProjet}

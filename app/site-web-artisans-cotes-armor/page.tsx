@@ -101,6 +101,7 @@ export default function ArtisansCotesArmorPage() {
           </p>
         </div>
       </div>
+      <Projets />
       <Footer />
     </>
   );

@@ -28,23 +28,26 @@ export default function ArtistesCarhaix() {
             <Link className={styles.secondaryCta} href="/site-web-pour-creatifs">Voir mon approche créative</Link>
           </div>
         </header>
-        <div className={styles.sections}>
-          <section className={styles.section}>
+        <div className={[styles.sections, styles.bentoSections].join(" ")}>
+          <section className={[styles.bentoPanel, styles.bentoFull].join(" ")}>
+            <p className={styles.bentoEyebrow}>01 / Votre pratique</p>
             <h2 className={styles.sectionTitle}>Le bon contenu pour votre pratique</h2>
-            <div className={styles.cards}>
-              <div className={styles.card}><h3 className={styles.cardTitle}>Artiste visuel ou photographe</h3><p className={styles.cardText}>Un portfolio par série ou discipline, des œuvres légendées, une démarche artistique et un contact pour expositions ou commandes.</p></div>
-              <div className={styles.card}><h3 className={styles.cardTitle}>Musicien ou spectacle vivant</h3><p className={styles.cardText}>Une présentation courte, des extraits, des dates à venir, un dossier de presse et une demande de programmation facile à envoyer.</p></div>
-              <div className={styles.card}><h3 className={styles.cardTitle}>Créateur et artisan d’art</h3><p className={styles.cardText}>Des collections, des pièces sur commande, le processus de fabrication et les informations pratiques pour acheter ou visiter l’atelier.</p></div>
+            <div className={styles.bentoCardGrid}>
+              <article className={styles.card}><h3 className={styles.cardTitle}>Artiste visuel ou photographe</h3><p className={styles.cardText}>Un portfolio par série ou discipline, des œuvres légendées, une démarche artistique et un contact pour expositions ou commandes.</p></article>
+              <article className={styles.card}><h3 className={styles.cardTitle}>Musicien ou spectacle vivant</h3><p className={styles.cardText}>Une présentation courte, des extraits, des dates à venir, un dossier de presse et une demande de programmation facile à envoyer.</p></article>
+              <article className={styles.card}><h3 className={styles.cardTitle}>Créateur et artisan d’art</h3><p className={styles.cardText}>Des collections, des pièces sur commande, le processus de fabrication et les informations pratiques pour acheter ou visiter l’atelier.</p></article>
             </div>
           </section>
-          <section className={styles.section}>
+          <section className={[styles.bentoPanel, styles.bentoLarge, styles.bentoDark].join(" ")}>
+            <p className={styles.bentoEyebrow}>02 / Visibilité</p>
             <h2 className={styles.sectionTitle}>Être trouvé pour son travail, pas seulement pour son nom</h2>
             <p className={styles.sectionLead}>Nous choisissons des intitulés qui décrivent votre pratique : « photographe de portrait à Carhaix », « céramiste en Centre-Bretagne » ou « groupe de musique en Bretagne », uniquement lorsqu’ils correspondent à votre activité. Les pages présentent des œuvres et des informations utiles, pas une suite de mots clés.</p>
             <p className={styles.sectionLead}>Le site peut relier vos réseaux sociaux, mais il donne aussi un point d’entrée stable aux personnes qui ne vous y suivent pas encore.</p>
           </section>
-          <section className={styles.section}>
+          <section className={[styles.bentoPanel, styles.bentoSmall, styles.bentoAccent].join(" ")}>
+            <p className={styles.bentoEyebrow}>03 / Prise de contact</p>
             <h2 className={styles.sectionTitle}>Un portfolio qui mène à une vraie demande</h2>
-            <ul className={styles.checklist}>
+            <ul className={[styles.checklist, styles.bentoChecklist].join(" ")}>
               <li>Images et vidéos choisies avec soin, légendes descriptives et navigation adaptée au téléphone.</li>
               <li>Informations de disponibilité, commande ou réservation adaptées à votre activité.</li>
               <li>Page de contact pour les particuliers, lieux culturels et professionnels.</li>
@@ -53,9 +56,8 @@ export default function ArtistesCarhaix() {
         </div>
       </main>
           
-          <Projets />
-            <Contact />
-      <Footer />
+      <Projets />
+      <div id="contact"><Contact /></div>      <Footer />
     </>
   );
 }

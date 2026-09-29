@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import { Projets } from "../components/Projets";
 import styles from "@/app/styles/Post.module.css";
 import pageStyles from "@/app/page.module.css";
 
@@ -96,6 +97,7 @@ export default function ArtisansFinisterePage() {
           </p>
         </div>
       </div>
+      <Projets />
       <Footer />
     </>
   );

@@ -81,11 +81,11 @@ export default function Home() {
           <div className={styles.artisanCardRight}><span className={styles.artisanCtaText}>Voir l’offre</span></div>
         </Link>
       </div>
-      <div id="projets">
-        <Projets />
-      </div>
       <div id="about">
         <About />
+      </div>
+      <div id="projets" style={{ scrollMarginTop: "8rem" }}>
+        <Projets />
       </div>
       <div id="contact">
         <Contact />

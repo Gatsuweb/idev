@@ -6,6 +6,7 @@ import styles from '@/app/styles/Blog.module.css';
 import pageStyles from "@/app/page.module.css";
 import { Nav } from '../components/Nav';
 import { Footer } from "../components/Footer";
+import { Projets } from "../components/Projets";
 
 export const metadata: Metadata = {
   title: "Conseils site web et visibilité locale pour artisans et créatifs",
@@ -90,6 +91,7 @@ export default function BlogIndex() {
         ))}
       </div>
     </div>
+    <Projets />
     <Footer />
     </>
   );
