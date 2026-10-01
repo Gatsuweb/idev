@@ -77,6 +77,7 @@ export default function ArtisansCotesArmorPage() {
           </ul>
 
           <h2>Pages liées</h2>
+          <p>Votre site est déjà en ligne mais manque de visibilité ? Découvrez comment <Link href="/referencement-site-internet-bretagne">améliorer le référencement de votre site internet dans les Côtes-d’Armor et en Bretagne</Link>.</p>
           <ul>
             <li>
               <Link href="/site-web-artisans-bretagne">Page artisans Bretagne</Link>

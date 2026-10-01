@@ -25,6 +25,7 @@ export const Footer = () => {
                         <li><Link href="/">Accueil</Link></li>
                         <li><Link href="/blog">Blog</Link></li>
                         <li><Link href="/creation-site-internet-carhaix">Artisans à Carhaix</Link></li>
+                        <li><Link href="/referencement-site-internet-bretagne">Visibilité & référencement</Link></li>
                         <li><Link href="/site-web-artistes-carhaix">Artistes</Link></li>
                         <li><Link href="/site-web-association-carhaix">Associations · 200 €</Link></li>
                         <li><Link href="/site-web-artisans-bretagne">Artisans en Bretagne</Link></li>

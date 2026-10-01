@@ -52,6 +52,16 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.artisanCta}>
+        <Link href="/referencement-site-internet-bretagne" className={styles.artisanCard}>
+          <div className={styles.artisanCardLeft}>
+            <p className={styles.artisanKicker}>Entreprises · Finistère et Côtes-d’Armor</p>
+            <p className={styles.artisanTitle}>Votre site existe, mais reste difficile à trouver ?</p>
+            <p className={styles.artisanText}>Améliorons ses pages, sa visibilité locale et le chemin vers vos prises de contact.</p>
+          </div>
+          <div className={styles.artisanCardRight}>
+            <span className={styles.artisanCtaText}>Découvrir</span>
+          </div>
+        </Link>
         <Link href="/creation-site-internet-carhaix" className={styles.artisanCard}>
           <div className={styles.artisanCardLeft}>
             <p className={styles.artisanKicker}>Artisans du Poher</p>

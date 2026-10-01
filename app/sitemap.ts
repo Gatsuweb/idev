@@ -5,6 +5,7 @@ import { siteUrl } from "@/lib/site";
 const paths = [
   "/",
   "/creation-site-internet-carhaix",
+  "/referencement-site-internet-bretagne",
   "/site-web-artistes-carhaix",
   "/site-web-association-carhaix",
   "/site-web-artisans-bretagne",

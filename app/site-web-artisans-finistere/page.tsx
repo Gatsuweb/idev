@@ -73,6 +73,7 @@ export default function ArtisansFinisterePage() {
           </ul>
 
           <h2>Pages liées</h2>
+          <p>Vous avez déjà un site mais il attire peu de demandes ? Découvrez comment <Link href="/referencement-site-internet-bretagne">améliorer le référencement de votre site internet en Finistère et en Bretagne</Link>.</p>
           <ul>
             <li>
               <Link href="/site-web-artisans-bretagne">Page artisans Bretagne</Link>
